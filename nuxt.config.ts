@@ -4,5 +4,12 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   typescript: {
     typeCheck: true
-  }
+  },
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+  css: ['/assets/css/main.scss']
 })
