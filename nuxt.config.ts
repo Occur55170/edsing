@@ -11,5 +11,16 @@ export default defineNuxtConfig({
       autoprefixer: {},
     },
   },
-  css: ['/assets/css/main.scss']
+  css: [
+    '~/assets/css/main.scss'
+  ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        scss: {
+          api: 'modern-compiler'
+        }
+      }
+    }
+  }
 })
