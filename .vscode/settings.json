@@ -2,13 +2,7 @@
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
     "source.fixAll": false,
-    "source.fixAll.eslint": true,
-    "source.fixAll.stylelint": "explicit",
-    "source.fixAll.markdownlint": "explicit"
-  },
-  "[markdown]": {
-    "editor.formatOnSave": true
-    // "editor.formatOnPaste": true
+    "source.fixAll.eslint": "afterDelay",
   },
   "stylelint.validate": ["css", "scss", "vue"],
   "files.eol": "\n",

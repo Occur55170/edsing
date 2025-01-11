@@ -21,7 +21,7 @@ function returnNothing():void{
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     /* Write scss here */
     div {
         color: red;
