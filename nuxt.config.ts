@@ -22,5 +22,24 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  modules: [
+    '@nuxtjs/i18n'
+  ],
+  i18n: {
+    langDir: './locales',
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-US',
+        file: 'en.json'
+      },
+      {
+        code: 'zh-tw',
+        iso: 'zh-TW',
+        file: 'zh.json'
+      }
+    ],
+    defaultLocale: 'zh-tw'
   }
 })

@@ -1,7 +1,9 @@
 <template>
   <div>
     index
-    {{ a }}
+    <!-- {{ a }} -->
+    ---
+    {{ $t('hello') }}
     <div style="background-color:#000;">
       	<p class="text-white">
         lorem
