@@ -8,8 +8,9 @@
     hello
     {{ t('hello') }}
     -
+
     <div style="background-color:#000;">
-      	<p class="text-white">
+      <p class="text-white">
         lorem
       </p>
     </div>
@@ -17,24 +18,24 @@
 </template>
 
 <script lang="ts" setup>
-const { locale, locales, setLocale, t } = useI18n();
+const { locale, locales, setLocale, t } = useI18n()
 
 const a: string = '11'
 
 const num: number = 123
 
-function returnNothing():void{
-    console.log('returnNothing')
+function returnNothing ():void {
+  console.log('returnNothing')
 }
 
-const myFunc = function() {
-    return `template <NBSP>string`;
+const myFunc = function () {
+  return 'template <NBSP>string'
 }
 
-const qux = function() {
-    return 'test';  /*<ENSP>*/
+const qux = function () {
+  return 'test'  /* <ENSP> */
 }
-const b = "a"
+const b = 'a'
 
 </script>
 
