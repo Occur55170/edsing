@@ -29,11 +29,11 @@ function returnNothing ():void {
 }
 
 const myFunc = function () {
-  return 'template <NBSP>string'
+  return 'template<NBSP>string'
 }
 
 const qux = function () {
-  return 'test'  /* <ENSP> */
+  return 'test' /* <ENSP> */
 }
 const b = 'a'
 

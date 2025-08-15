@@ -5,29 +5,29 @@
     <label>Email</label>
     <input type="email" name="user_email">
     <label>Message</label>
-    <textarea name="message"></textarea>
+    <textarea name="message" />
     <input type="submit" value="Send">
   </form>
 </template>
 
 <script>
-import emailjs from '@emailjs/browser';
+import emailjs from '@emailjs/browser'
 
 export default {
   methods: {
-    sendEmail() {
+    sendEmail () {
       emailjs.sendForm('service_tp7qeh3', 'template_kug2a2a', this.$refs.form, {
-          publicKey: 'fL-vN95f6SYL7knPF',
-        })
+        publicKey: 'fL-vN95f6SYL7knPF'
+      })
         .then(
           () => {
-            console.log('SUCCESS!');
+            console.log('SUCCESS!')
           },
           (error) => {
-            console.log('FAILED...', error.text);
-          },
-        );
-    },
-  },
-};
+            console.log('FAILED...', error.text)
+          }
+        )
+    }
+  }
+}
 </script>

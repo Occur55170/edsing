@@ -1,7 +1,7 @@
 <template>
   <div class="header flex justify-between">
-    <img src="~/public/logo.png" alt="logo" />
-    
+    <img src="~/public/logo.png" alt="logo">
+
     <div class="flex flex-col items-center bg-white">
       <div class="flex gap-4">
         <button
@@ -25,7 +25,7 @@
 </template>
 
 <script setup>
-const { locale, locales, setLocale, t } = useI18n();
+const { locale, locales, setLocale, t } = useI18n()
 
 </script>
 
