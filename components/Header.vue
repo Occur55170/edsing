@@ -2,6 +2,10 @@
   <div class="header flex justify-between">
     <img src="~/public/logo.png" alt="logo">
 
+    <ul>
+      <li />
+    </ul>
+
     <div class="flex flex-col items-center bg-white">
       <div class="flex gap-4">
         <button

@@ -1,19 +1,27 @@
 <template>
   <div>
-    <div class="flex flex-row justify-center bg-white">
-      <label class="text-gray-600">{{ t('language') }}</label>
-      <span class="ml-4 font-bold text-gray-800">{{ locale }}</span>
-    </div>
-    ---
-    hello
-    {{ t('hello') }}
-    -
+    <NuxtLayout>
+      <div class="flex flex-row justify-center bg-white">
+        <label class="text-gray-600">{{ t('language') }}</label>
+        <span class="ml-4 font-bold text-gray-800">{{ locale }}</span>
+      </div>
+      ---
+      hello
+      {{ t('hello') }}
+      -
 
-    <div style="background-color:#000;">
-      <p class="text-white">
-        lorem
-      </p>
-    </div>
+      <div style="background-color:#000;">
+        <p class="text-white">
+          lorem
+        </p>
+      </div>
+      <div>
+        <div class="list" />
+        <div class="cycle" />
+        <div class="equipment" />
+        <div />
+      </div>
+    </NuxtLayout>
   </div>
 </template>
 
