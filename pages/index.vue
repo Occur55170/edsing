@@ -10,6 +10,10 @@
       {{ t('hello') }}
       -
 
+      <NuxtLink to="/recycle">
+        go recycle.vue
+      </NuxtLink>
+
       <div style="background-color:#000;">
         <p class="text-white">
           lorem

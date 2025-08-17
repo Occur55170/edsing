@@ -1,9 +1,47 @@
 <template>
-  <div class="header flex justify-between">
+  <div class="header flex justify-between items-center p-4">
     <img src="~/public/logo.png" alt="logo">
-
-    <ul>
-      <li />
+    <ul class="flex justify-between">
+      <li>
+        <NuxtLink to="/" class="text-white">
+          關於我們
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          回收
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          碳化鎢粉
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          切割鉅片
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          機械設備
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          研磨材料
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/" class="text-white">
+          量測設備
+        </NuxtLink>
+      </li>
+      <li>
+        <NuxtLink to="/email" class="text-white">
+          聯繫我們
+        </NuxtLink>
+      </li>
     </ul>
 
     <div class="flex flex-col items-center bg-white">
@@ -29,7 +67,7 @@
 </template>
 
 <script setup>
-const { locale, locales, setLocale, t } = useI18n()
+const { locale } = useI18n()
 
 </script>
 

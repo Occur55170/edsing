@@ -1,20 +1,12 @@
 {
+  "editor.tabSize": 2,
   "files.autoSave": "afterDelay",
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
   "editor.formatOnSave": true,
-  "eslint.validate": ["javascript", "typescript", "vue"],
+  "eslint.validate": ["javascript", "typescript", "css", "scss","vue"],
   "eslint.run": "onSave",
-},
-
-{
-  "editor.tabSize": 2,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": "never",
-    "source.fixAll.eslint": "explicit"
-  },
-  "stylelint.validate": ["css", "scss", "vue"],
   "files.eol": "\n",
   "files.exclude": {
     "**/.git": false
@@ -69,7 +61,8 @@
     "weibo",
     "xstate",
     "youtube",
-    "YOUTUBE"
+    "YOUTUBE",
+    "NuxtLink"
   ],
   "css.validate": false,
   "scss.validate": false

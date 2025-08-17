@@ -5,6 +5,7 @@ import Footer from '~/components/Footer.vue'
 <template>
   <div>
     <Header />
+    123
     <slot />
     <Footer />
   </div>
