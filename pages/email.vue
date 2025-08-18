@@ -17,8 +17,8 @@ import emailjs from '@emailjs/browser'
 export default {
   methods: {
     sendEmail () {
-      emailjs.sendForm('service_tp7qeh3', 'template_kug2a2a', this.$refs.form, {
-        publicKey: 'fL-vN95f6SYL7knPF'
+      emailjs.sendForm('service_9hriy3l', 'template_8x1k1z1', this.$refs.form, {
+        publicKey: '_sL4fACYgE7BhhDyA'
       })
         .then(
           () => {
