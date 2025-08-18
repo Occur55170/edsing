@@ -1,6 +1,11 @@
 <template>
   <div>
     <NuxtLayout>
+      <div>
+        <img class="block" src="../public/header.jpg" alt="">
+        <img class="hidden" src="../public/header-m.jpg" alt="">
+      </div>
+      <!-- #020F17 -->
       <div class="flex flex-row justify-center bg-white">
         <label class="text-gray-600">{{ t('language') }}</label>
         <span class="ml-4 font-bold text-gray-800">{{ locale }}</span>
@@ -20,10 +25,17 @@
         </p>
       </div>
       <div>
-        <div class="list" />
+        <div class="list">
+          <h3>
+            <span>貴金屬</span>資源循環
+            <br>
+            保護土地，力求
+            <span>環保永續</span>
+          </h3>
+          <p>重視製造過程水與空氣的環保處理，並建構完整設備及機制確保工廠用水及空氣排放安全及潔淨，保護土地，力求環保永續。</p>
+        </div>
         <div class="cycle" />
         <div class="equipment" />
-        <div />
       </div>
     </NuxtLayout>
   </div>

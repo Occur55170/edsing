@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <img src="~/public/logo.png" alt="logo">
+    <img src="~/public/logo-white.svg" alt="logo">
     <p>聯絡電話:(07)6115753</p>
     <p>傳真:(07)6113753</p>
     <p>地址:高雄市路竹區民有路153-1號</p>
