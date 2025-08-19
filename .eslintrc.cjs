@@ -23,6 +23,13 @@ module.exports = {
     'array-bracket-spacing': ['warn', 'never'], // 陣列括號內不允許空格
     'object-curly-spacing': ['warn', 'always'], // 物件大括號內要有空格
     'no-console': 'off', // 關閉 no-console 規則，允許使用 console
-    'vue/multi-word-component-names': 'off'
+    'vue/multi-word-component-names': 'off',
+    'vue/html-self-closing': ['error', {
+      html: {
+        void: 'always', // 像 <img>、<br> 這類 void element 要自閉合
+        normal: 'never', // 像 <div>、<a> 這種要正常閉合
+        component: 'always' // 自訂元件允許自閉合
+      }
+    }]
   }
 }

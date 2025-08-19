@@ -32,24 +32,24 @@
       </div>
       <form class="w-50">
         <div>
-          <label to="name">聯絡人姓名<input id="name" type="text"></label>
-          <label to="companyName">公司名稱<input id="companyName" type="text"></label>
+          <label to="name">聯絡人姓名<input id="name" type="text" /></label>
+          <label to="companyName">公司名稱<input id="companyName" type="text" /></label>
         </div>
         <div>
-          <label to="email">電子郵件<input id="email" type="text"></label>
-          <label to="phone">電話<input id="phone" type="text"></label>
+          <label to="email">電子郵件<input id="email" type="text" /></label>
+          <label to="phone">電話<input id="phone" type="text" /></label>
         </div>
         <div>
-          <label to="country">國家<input id="country" type="text"></label>
-          <label to="zone">州/省/地區<input id="zone" type="text"></label>
+          <label to="country">國家<input id="country" type="text" /></label>
+          <label to="zone">州/省/地區<input id="zone" type="text" /></label>
         </div>
         <div>
-          <label to="material">材料<input id="material" type="text"></label>
-          <label to="materialCount">材料多少<input id="materialCount" type="text"></label>
+          <label to="material">材料<input id="material" type="text" /></label>
+          <label to="materialCount">材料多少<input id="materialCount" type="text" /></label>
         </div>
         <div>
-          <label to="materialImg">上傳素材圖片<input id="materialImg" type="text"></label>
-          <label to="message">訊息<input id="message" type="text"></label>
+          <label to="materialImg">上傳素材圖片<input id="materialImg" type="text" /></label>
+          <label to="message">訊息<input id="message" type="text" /></label>
         </div>
       </form>
     </div>
