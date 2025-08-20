@@ -3,12 +3,12 @@ module.exports = {
   root: true,
   extends: [
     '@nuxtjs/eslint-config-typescript',
-    'plugin:vue/vue3-recommended' // ← 確保這行有
+    'plugin:vue/vue3-recommended', // ← 確保這行有
   ],
   parserOptions: {
     ecmaVersion: 2021,
     sourceType: 'module',
-    parser: '@typescript-eslint/parser'
+    parser: '@typescript-eslint/parser',
   },
   rules: { // 自訂規則
     quotes: ['error', 'single'], // 使用單引號
@@ -28,8 +28,18 @@ module.exports = {
       html: {
         void: 'always', // 像 <img>、<br> 這類 void element 要自閉合
         normal: 'never', // 像 <div>、<a> 這種要正常閉合
-        component: 'always' // 自訂元件允許自閉合
-      }
-    }]
-  }
+        component: 'always', // 自訂元件允許自閉合
+      },
+    }],
+    // 陣列、物件、函式參數的尾逗號
+    'comma-dangle': [
+      'warn',
+      {
+        arrays: 'always-multiline', // 多行陣列要逗號
+        objects: 'always-multiline', // 多行物件要逗號
+        imports: 'always-multiline', // 多行 import 要逗號
+        exports: 'always-multiline', // 多行 export 要逗號
+        functions: 'never', // 函式參數不使用尾逗號
+      }],
+  },
 }

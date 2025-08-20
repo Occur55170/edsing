@@ -1,3 +1,8 @@
+<script setup>
+const { locale, t } = useI18n()
+
+</script>
+
 <template>
   <div class="nav flex justify-between items-center p-4">
     <img src="~/public/logo.png" alt="logo" />
@@ -39,8 +44,8 @@
       </li>
       <li class="mx-2">
         <NuxtLink to="/email" class="text-white">
-          聯繫我們
-        </NuxtLink>ß
+          {{ t('contact us') }}
+        </NuxtLink>
       </li>
       <li class="mx-2">
         <div class="flex flex-col items-center gap-4">
@@ -65,11 +70,6 @@
     </ul>
   </div>
 </template>
-
-<script setup>
-const { locale, t } = useI18n()
-
-</script>
 
 <style scoped>
 .nav{
