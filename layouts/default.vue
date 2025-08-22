@@ -4,8 +4,8 @@ import Footer from '~/components/Footer.vue'
 </script>
 <template>
   <div>
-    <Nav />
-    <slot />
-    <Footer />
+    <!-- <Nav /> -->
+    <slot></slot>
+    <!-- <Footer /> -->
   </div>
 </template>

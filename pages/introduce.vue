@@ -2,8 +2,8 @@
 <template>
   <div class="introduce">
     <div>
-      <img class="block" src="../public/header.jpg" alt="" />
-      <img class="hidden" src="../public/header-m.jpg" alt="" />
+      <img class="block" src="/public/img/header.jpg" alt="" />
+      <img class="hidden" src="/public/img/header-mobile.jpg" alt="" />
     </div>
     <h1>Welcome to Our Application</h1>
     <p>

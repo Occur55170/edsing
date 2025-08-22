@@ -43,7 +43,7 @@ const { locale, t } = useI18n()
         </NuxtLink>
       </li>
       <li class="mx-2">
-        <NuxtLink to="/email" class="text-white">
+        <NuxtLink to="/contactUs" class="text-white">
           {{ t('contact us') }}
         </NuxtLink>
       </li>
