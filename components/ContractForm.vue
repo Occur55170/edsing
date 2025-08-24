@@ -24,8 +24,8 @@ function removeImage () {
 }
 </script>
 <template>
-  <div :class="`${ props.class } formSection flex border-1 bg-slate-500`">
-    <div class="grow">
+  <div :class="`${ props.class } formSection flex border-1 relative`">
+    <div class="grow z-10">
       <h3 class="text-white text-[56px] mb-8">
         請求定價
       </h3>
@@ -36,49 +36,65 @@ function removeImage () {
         將為您的材料提供最優惠的價格。<br />
       </p>
     </div>
-    <form class="w-50 bg-slate-700 p-4">
+    <form class="w-[40%] bg-slate-700 p-4 z-10">
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="name">
           <span class="requireInput mb-2 block text-white">聯絡人姓名</span>
-          <input id="name" class="block p-1 w-full" type="text" />
+          <input id="name" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="companyName">
           <span class="requireInput mb-2 block text-white">公司名稱</span>
-          <input id="companyName" class="block p-1 w-full" type="text" />
+          <input id="companyName" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="email">
           <span class="requireInput mb-2 block text-white">電子郵件</span>
-          <input id="email" class="block p-1 w-full" type="text" /></label>
+          <input id="email" class="block p-2 w-full" type="text" />
+        </label>
         <label class="w-[49%]" to="phone">
           <span class="requireInput mb-2 block text-white">電話</span>
-          <input id="phone" class="block p-1 w-full" type="text" /></label>
+          <input
+            id="phone"
+            class="block p-2 w-full"
+            name="phone"
+            type="tel"
+            autocomplete="tel"
+            placeholder="+886 912 345 678"
+            pattern="^\+?[0-9\s\-()]{7,}$"
+          />
+        </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="country">
           <span class="requireInput mb-2 block text-white">國家</span>
-          <input id="country" class="block p-1 w-full" type="text" />
+          <select id="country" class="block p-2 w-full" name="country" required autocomplete="country">
+            <option value="" selected disabled>--- 請選擇---</option>
+            <option value="TW">台灣</option>
+            <option value="HK">香港</option>
+            <option value="JP">日本</option>
+            <option value="US">美國</option>
+            <option value="OTHER">其他</option>
+          </select>
         </label>
         <label class="w-[49%]" to="zone">
           <span class="requireInput mb-2 block text-white">州/省/地區</span>
-          <input id="zone" class="block p-1 w-full" type="text" />
+          <input id="zone" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="material">
           <span class="requireInput mb-2 block text-white">材料</span>
-          <input id="material" class="block p-1 w-full" type="text" />
+          <input id="material" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="materialCount">
           <span class="requireInput mb-2 block text-white">材料多少</span>
-          <input id="materialCount" class="block p-1 w-full" type="text" />
+          <input id="materialCount" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="mb-6">
         <label to="materialImg">
           <span class="requireInput mb-2 block text-white">上傳素材圖片</span>
-          <!-- <input id="materialImg" class="block p-1 w-full" type="text" /> -->
           <div class="my-4">
             <div v-if="previewUrl" class="relative">
               <img
@@ -115,7 +131,7 @@ function removeImage () {
         <textarea id="mailContent" name="" cols="20" rows="5" class="w-full"></textarea>
       </div>
       <div class="flex justify-end w-full">
-        <button class="bg-red-600 py-2 px-8 inline-block" type="submit">
+        <button class="bg-red-600 py-2 px-8 inline-block text-white" type="submit">
           送出
         </button>
       </div>
@@ -123,8 +139,18 @@ function removeImage () {
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .formSection{
-  padding: 50px calc((100% - 1600px)/2) ;
+  @include baseWidth;
+  background-image:url('/img/TungstenHard/recycle-bottom-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top 10% right 0%;
+
+  &::after {
+    content: '';
+    display: block;
+    @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/70 via-accent/95 to-accent/100;
+  }
 }
 </style>

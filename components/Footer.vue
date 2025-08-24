@@ -22,7 +22,7 @@ const { locale, t } = useI18n()
   </div>
 </template>
 
-<style>
+<style lang="scss" scoped>
 .footer {
   @apply bg-brand relative;
   &::before {
@@ -33,8 +33,7 @@ const { locale, t } = useI18n()
     border-color: #020F17 transparent transparent #020F17;
   }
   & > div{
-    max-width: 1600px;
-    margin: 0 auto;
+    @include baseWidth;
   }
 }
 </style>

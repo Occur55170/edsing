@@ -24,7 +24,10 @@ useHead({
       <div class="precious bg-accent py-10">
         <div class="flex">
           <h3 class="text-white text-[84px] w-[25%] flex items-center justify-center content-center flex-wrap">
-            回收<span class="text-bold block w-full">鎢</span>
+            <div class="text-left">
+              回收
+              <span class="text-bold block w-full">鎢</span>
+            </div>
           </h3>
           <ul class="flex justify-between w-[75%]">
             <li class="relative w-[33%] text-right">
@@ -181,17 +184,10 @@ useHead({
 .recycle {
   @include baseWidth;
   // background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.45)), url('/img/index/index-list-3.jpg');
-  background-image:url('/img/index/index-list-3.jpg');
+  background-image:url('/img/index/recycleBg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: rgba(0,0,0,0.7); // 黑色遮罩
-    z-index: 1;
-  }
   > * {
     position: relative;
     z-index: 2;

@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+useHead({
+  title: '收購項目-高速鋼合金廢料',
+})
 </script>
 
 <template>
