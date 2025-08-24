@@ -1,11 +1,18 @@
-<script setup>
-const { locale, t } = useI18n()
+<script lang="ts" setup>
+interface Props {
+  class?: string;
+}
 
+const props = withDefaults(defineProps<Props>(), {
+  class: '',
+})
+
+const { locale, t } = useI18n()
 </script>
 
 <template>
-  <div class="nav flex justify-between items-center p-4">
-    <img src="~/public/logo.png" alt="logo" />
+  <div :class="`nav flex justify-between items-center bg-accent ${props.class}`">
+    <img src="/img/logo.png" alt="logo" />
     <ul class="flex justify-between items-center">
       <li class="mx-2">
         <NuxtLink to="/" class="text-white">
@@ -73,7 +80,7 @@ const { locale, t } = useI18n()
 
 <style scoped>
 .nav{
-  background: #020F17
+  padding: 20px calc((100% - 1600px)/2);
 }
 
 </style>

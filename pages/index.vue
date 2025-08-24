@@ -1,61 +1,64 @@
+<script lang="ts" setup>
+import MaterialSymbolsMail from '~icons/material-symbols/mail'
+import MdiClockTimeThree from '~icons/mdi/clock-time-three'
+import MaterialSymbolsCall from '~icons/material-symbols/call'
+import MaterialSymbolsCheck from '~icons/material-symbols/check'
+
+const { locale, locales, setLocale, t } = useI18n()
+</script>
+
 <template>
   <div>
     <NuxtLayout>
-      <!-- <div>
-        <img class="block" src="../public/img/header.jpg" alt="">
-        <img class="hidden" src="../public/img/header-mobile.jpg" alt="">
-      </div> -->
-      <!-- <div class="flex flex-row justify-center bg-white">
-        <label class="text-gray-600">{{ t('language') }}</label>
-        <span class="ml-4 font-bold text-gray-800">{{ locale }}</span>
-      </div> -->
-
-      <!-- align-content: center; -->
+      <div class="w-full">
+        <img class="block w-full" src="/img/header.jpg" alt="" />
+        <img class="hidden" src="/img/header-mobile.jpg" alt="" />
+      </div>
 
       <div class="precious bg-accent py-10">
         <div class="flex">
           <h3 class="text-white text-[84px] w-[25%] flex items-center justify-center content-center flex-wrap">
             回收<span class="text-bold block w-full">鎢</span>
           </h3>
-          <ul class="flex w-[75%]">
-            <li class="relative w-[30%]">
-              <img src="/img/index/index-list-1.jpg" class="w-full" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] p-2">
-                <p class="text-white text-bold text-2xl">
+          <ul class="flex justify-between w-[75%]">
+            <li class="relative w-[33%] text-right">
+              <img src="/img/index/index-list-1.jpg" class="w-full grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+                <p class="text-white text-bold text-3xl mb-4 text-left">
                   鎢硬廢料/合金
                 </p>
-                <p class="text-white">
+                <p class="text-white mb-6 text-left leading-[2]">
                   鑽頭/刀片/採礦等級/鎢基合金鈷鎳高溫合金
                 </p>
-                <NuxtLink to="/tungstenHard" class="text-brand">
+                <NuxtLink to="/tungstenHard" class="text-brand text-right">
                   {{ t('more') }}
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-[30%]">
-              <img src="/img/index/index-list-2.jpg" class="w-full" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] p-2">
-                <p class="text-white text-bold text-2xl">
+            <li class="relative w-[33%] text-right">
+              <img src="/img/index/index-list-2.jpg" class="w-full grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+                <p class="text-white text-bold text-3xl mb-4 text-left">
                   鎢軟廢料
                 </p>
-                <p class="text-white">
+                <p class="text-white mb-6 text-left leading-[2]">
                   碳化鎢泥/切屑粉末/過濾材料/下腳料
                 </p>
-                <NuxtLink to="/tungstenSoft" class="text-brand">
+                <NuxtLink to="/tungstenSoft" class="text-brand text-right">
                   {{ t('more') }}
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-[30%]">
-              <img src="/img/index/index-list-3.jpg" class="w-full" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] p-2">
-                <p class="text-white text-bold text-2xl">
+            <li class="relative w-[33%] text-right">
+              <img src="/img/index/index-list-3.jpg" class="w-full grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+                <p class="text-white text-bold text-3xl mb-4 text-left">
                   高速鋼
                 </p>
-                <p class="text-white">
+                <p class="text-white mb-6 text-left leading-[2]">
                   高速鋼刨花/銑刀/鑽頭/牙板/各式合金
                 </p>
-                <NuxtLink to="/highSpeedSteel" class="text-brand">
+                <NuxtLink to="/highSpeedSteel" class="text-brand text-right">
                   {{ t('more') }}
                 </NuxtLink>
               </div>
@@ -71,34 +74,67 @@
         <p class="text-white">
           關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
         </p>
+        <NuxtLink to="/" class="text-white bg-brand">
+          {{ t('more') }}
+        </NuxtLink>
       </div>
 
-      <div class="equipment relative h-0 pb-[400px]">
-        <div class="bg-white/75 inline-block p-4 absolute top-1/2 right-1/4 -translate-x-1/4 -translate-y-1/2">
-          <h3><span class="text-brand">專業</span>設備</h3>
-          <ul class="grid grid-cols-2 gap-4">
+      <div class="equipment">
+        <div class="bg-white/90 py-12 px-16">
+          <h3 class="text-center font-bold text-[60px] mb-10">
+            <span class="text-brand">專業</span>設備
+          </h3>
+          <ul class="grid grid-cols-2 gap-6 w-[400px] text-xl">
             <li>
-              <div>合金工具</div>
+              <div>
+                <MaterialSymbolsCheck class="inline text-brand" />
+                合金工具
+              </div>
             </li>
             <li>
-              <div>機械設備</div>
+              <div>
+                <MaterialSymbolsCheck class="inline text-brand" />
+                機械設備
+              </div>
             </li>
             <li>
-              <div>量測設備</div>
+              <div>
+                <MaterialSymbolsCheck class="inline text-brand" />
+                量測設備
+              </div>
             </li>
             <li>
-              <div>磨料</div>
+              <div>
+                <MaterialSymbolsCheck class="inline text-brand" />
+                磨料
+              </div>
             </li>
           </ul>
         </div>
       </div>
+
+      <div class="information bg-accent py-[100px]">
+        <p class="text-white text-center text-xl">
+          刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料
+        </p>
+        <ul class="flex justify-center text-white max-w-[1600px] mx-auto mt-10 text-xl">
+          <li class="flex items-center mx-10">
+            <MaterialSymbolsCall class="bg-brand p-2 box-content rounded-full mr-3" />
+            07-6115753
+          </li>
+          <li class="flex items-center mx-10">
+            <MaterialSymbolsMail class="bg-brand p-2 box-content rounded-full mr-3" />
+            Edsingpolitech@hotmail.com
+          </li>
+          <li class="flex items-center mx-10">
+            <MdiClockTimeThree class="bg-brand p-2 box-content rounded-full mr-3" />
+            週一至週五8:30-17:30
+          </li>
+        </ul>
+      </div>
     </NuxtLayout>
   </div>
 </template>
-
-<script lang="ts" setup>
-const { locale, locales, setLocale, t } = useI18n()
-</script>
 
 <style lang="scss" scoped>
 .precious {
@@ -142,12 +178,31 @@ const { locale, locales, setLocale, t } = useI18n()
     width: 100%;
     height: 100%;
     backdrop-filter: brightness(60%);
-
   }
 }
 
 .equipment {
+  @apply relative;
   background: url('/img/index/equipment.png') no-repeat;
   background-size:cover ;
+  width: 100%;
+  height: 0;
+  padding-bottom: 35%;
+  &>div{
+    @apply absolute top-1/2 -translate-y-1/2;
+    right: clamp(50px, 10%, 500px);
+    /* 右邊距離最少 50px，最大 500px，10% 自適應 */
+  }
+}
+
+.information {
+  &>p {
+    @apply relative flex items-center justify-center;
+    &::before, &::after {
+      content: '';
+      @apply top-1/2 bg-white w-[50px] block mx-2;
+      height: 1px;
+    }
+  }
 }
 </style>

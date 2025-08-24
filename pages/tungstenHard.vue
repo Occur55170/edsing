@@ -1,59 +1,95 @@
+<script>
+
+</script>
 <template>
   <NuxtLayout name="list">
-    <div class="recycleBlock">
-      <p class="title">
-        碳化鎢硬廢料
-      </p>
-      <p>各種不同行業包括車間和製造商，我們回收多種形式歡迎下方諮詢</p>
-      <NuxtLink>請求報價</NuxtLink>
+    <div class="recycleHead bg-brand text-white flex items-stretch">
+      <div class="grow flex flex-wrap items-center">
+        <div class="w-full">
+          <h2 class="text-[64px] mb-16">
+            碳化鎢硬廢料
+          </h2>
+          <p class="text-2xl leading-[2]">
+            各種不同行業包括車間和製造商，
+            <br />
+            我們回收多種形式歡迎下方諮詢
+          </p>
+        </div>
+        <NuxtLink to="/" class="bg-brand text-2xl text-white font-bold border border-white inline-block py-2 px-8" style="border-width: 4px 6px">
+          請求報價
+        </NuxtLink>
+      </div>
+      <img
+        src="/img/TungstenHard/recycle-head-1-s.jpg"
+        alt=""
+        class="w-[50%] h-[800px] object-cover object-[80%_30%]
+         [mask-image:linear-gradient(to_right,transparent,black)]
+         [mask-repeat:no-repeat]
+         [mask-size:100%_100%]"
+      />
     </div>
-    <div>
-      <h3>我們收購的項目</h3>
-      回收固體、刨花、M2、M35、M42、T5、T15、D2各式型號歡迎詢問。
-      <ul>
-        <li>HSS各式工具</li>
-        <li>HSS刨花</li>
-        <li>M2牙板</li>
-        <li>沖棒</li>
-        <li>頭尾料</li>
-        <li>工具鋼</li>
+    <div class="recycleBlock bg-accent text-white">
+      <h3 class="text-[64px] font-bold">
+        我們收購的項目
+      </h3>
+      <p class="text-[32px] mb-8">
+        回收您使用過的鑽頭和刀片的
+        <br />
+        價值硬質合金。
+      </p>
+      <ul class="grid grid-cols-3 gap-6">
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            HSS各式工具
+          </p>
+        </li>
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            HSS刨花
+          </p>
+        </li>
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            M2牙板
+          </p>
+        </li>
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            沖棒
+          </p>
+        </li>
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            頭尾料
+          </p>
+        </li>
+        <li>
+          <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="h-[300px] object-cover object-[80%_30%]" />
+          <p class="text-xl">
+            工具鋼
+          </p>
+        </li>
       </ul>
     </div>
-    <div class="flex border-1">
-      <div class="flex-1">
-        <p>
-          請求定價
-        </p>
-        若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。
-        我們可以輕鬆回收您的鎢廢料。
-        提交下面的表格，我們的採購國隊將與您聯繫以討論報償。
-        將為您的材料提供最優惠的價格。
-      </div>
-      <form class="w-50">
-        <div>
-          <label to="name">聯絡人姓名<input id="name" type="text" /></label>
-          <label to="companyName">公司名稱<input id="companyName" type="text" /></label>
-        </div>
-        <div>
-          <label to="email">電子郵件<input id="email" type="text" /></label>
-          <label to="phone">電話<input id="phone" type="text" /></label>
-        </div>
-        <div>
-          <label to="country">國家<input id="country" type="text" /></label>
-          <label to="zone">州/省/地區<input id="zone" type="text" /></label>
-        </div>
-        <div>
-          <label to="material">材料<input id="material" type="text" /></label>
-          <label to="materialCount">材料多少<input id="materialCount" type="text" /></label>
-        </div>
-        <div>
-          <label to="materialImg">上傳素材圖片<input id="materialImg" type="text" /></label>
-          <label to="message">訊息<input id="message" type="text" /></label>
-        </div>
-      </form>
-    </div>
+    <!-- recycleBlock -->
+    <ContractForm />
   </NuxtLayout>
 </template>
 
-<style>
+<style scoped>
+
+.recycleHead {
+  padding: 50px 50px 50px calc((100% - 1600px)/2) ;
+  clip-path:polygon(10% 30%, 10% 60%,90% 60%,90% 30%);
+}
+
+.recycleBlock {
+  padding: 50px calc((100% - 1600px)/2) ;
+}
+
 </style>

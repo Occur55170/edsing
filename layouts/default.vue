@@ -1,11 +1,9 @@
 <script lang="ts" setup>
-import Nav from '~/components/Nav.vue'
-import Footer from '~/components/Footer.vue'
 </script>
 <template>
   <div>
-    <!-- <Nav /> -->
+    <Nav :class="'absolute top-[10%] right-0 left-0 '" />
     <slot></slot>
-    <!-- <Footer /> -->
+    <Footer />
   </div>
 </template>
