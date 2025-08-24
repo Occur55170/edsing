@@ -3,8 +3,14 @@ import MaterialSymbolsMail from '~icons/material-symbols/mail'
 import MdiClockTimeThree from '~icons/mdi/clock-time-three'
 import MaterialSymbolsCall from '~icons/material-symbols/call'
 import MaterialSymbolsCheck from '~icons/material-symbols/check'
+import MaterialSymbolsArrowForwardIos from '~icons/material-symbols/arrow-forward-ios'
+import MaterialSymbolsLineEndArrowNotchRounded from '~icons/material-symbols/line-end-arrow-notch-rounded'
 
 const { locale, locales, setLocale, t } = useI18n()
+
+useHead({
+  title: '益鼎興金屬有限公司-首頁',
+})
 </script>
 
 <template>
@@ -23,43 +29,46 @@ const { locale, locales, setLocale, t } = useI18n()
           <ul class="flex justify-between w-[75%]">
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
                 <p class="text-white text-bold text-3xl mb-4 text-left">
                   鎢硬廢料/合金
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
                   鑽頭/刀片/採礦等級/鎢基合金鈷鎳高溫合金
                 </p>
-                <NuxtLink to="/tungstenHard" class="text-brand text-right">
+                <NuxtLink to="/tungstenHard" class="text-brand text-right absolute bottom-0 right-0">
                   {{ t('more') }}
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
                 </NuxtLink>
               </div>
             </li>
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-2.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
                 <p class="text-white text-bold text-3xl mb-4 text-left">
                   鎢軟廢料
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
                   碳化鎢泥/切屑粉末/過濾材料/下腳料
                 </p>
-                <NuxtLink to="/tungstenSoft" class="text-brand text-right">
+                <NuxtLink to="/tungstenSoft" class="text-brand text-right absolute bottom-0 right-0">
                   {{ t('more') }}
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
                 </NuxtLink>
               </div>
             </li>
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-3.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] px-4 py-8">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
                 <p class="text-white text-bold text-3xl mb-4 text-left">
                   高速鋼
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
                   高速鋼刨花/銑刀/鑽頭/牙板/各式合金
                 </p>
-                <NuxtLink to="/highSpeedSteel" class="text-brand text-right">
+                <NuxtLink to="/highSpeedSteel" class="text-brand text-right absolute bottom-0 right-0">
                   {{ t('more') }}
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
                 </NuxtLink>
               </div>
             </li>
@@ -68,15 +77,23 @@ const { locale, locales, setLocale, t } = useI18n()
       </div>
 
       <div class="recycle">
-        <h3 class="text-white">
-          <span class="text-brand">鎢</span>資源循環
-        </h3>
-        <p class="text-white">
-          關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
-        </p>
-        <NuxtLink to="/" class="text-white bg-brand">
-          {{ t('more') }}
-        </NuxtLink>
+        <div class="flex items-center justify-between my-8">
+          <div class="flex flex-wrap items-center w-[20%]">
+            <h3 class="text-white text-[64px] w-full mb-6">
+              <span class="text-brand">鎢</span>資源循環
+            </h3>
+            <p class="text-xl leading-[2] text-white mb-52">
+              關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
+            </p>
+            <NuxtLink to="/" class="text-white bg-brand py-2 px-6 text-xl rounded inline-block flex items-center justify-between">
+              <span class="mr-10">More</span>
+              <i>
+                <MaterialSymbolsArrowForwardIos class="text-xs block" />
+              </i>
+            </NuxtLink>
+          </div>
+          <img src="/img/index/index-process.svg" alt="" class="block w-[70%]" />
+        </div>
       </div>
 
       <div class="equipment">
@@ -140,9 +157,8 @@ const { locale, locales, setLocale, t } = useI18n()
 .precious {
   @apply bg-accent;
   &>div {
-    max-width: 1200px;
+    @include baseWidth;
     margin: 0 auto;
-    padding: 0 1%;
     box-sizing: border-box;
     h3 {
       text-align: center;
@@ -161,23 +177,24 @@ const { locale, locales, setLocale, t } = useI18n()
       }
     }
   }
-  img {
-    width: 100%;
-    height: 400px;
-  }
 }
 .recycle {
-  background: url('/img/index/index-list-3.jpg') no-repeat center center;
+  @include baseWidth;
+  // background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.45)), url('/img/index/index-list-3.jpg');
+  background-image:url('/img/index/index-list-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   position: relative;
-  height: 400px;
-  &::after {
-    content: '';
+  &::before {
+    content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: brightness(60%);
+    inset: 0;
+    background: rgba(0,0,0,0.7); // 黑色遮罩
+    z-index: 1;
+  }
+  > * {
+    position: relative;
+    z-index: 2;
   }
 }
 
@@ -191,7 +208,6 @@ const { locale, locales, setLocale, t } = useI18n()
   &>div{
     @apply absolute top-1/2 -translate-y-1/2;
     right: clamp(50px, 10%, 500px);
-    /* 右邊距離最少 50px，最大 500px，10% 自適應 */
   }
 }
 

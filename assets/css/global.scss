@@ -1,0 +1,15 @@
+
+@mixin baseWidth($t:80px, $r:calc((100% - 1600px)/2), $b:80px, $l:calc((100% - 1600px)/2)) {
+  padding-top: $t;
+  padding-right: $r;
+  padding-bottom: $b;
+  padding-left: $l;
+}
+
+
+.requireInput {
+  &::after{
+    color: red;
+    content: '*';
+  }
+}

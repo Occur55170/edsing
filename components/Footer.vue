@@ -14,8 +14,8 @@ const { locale, t } = useI18n()
         <p>地址:高雄市路竹區民有路153-1號</p>
         <p>Copyright © EDSING Metal Products Co. Ltd All rights reserved.</p>
       </div>
-      <NuxtLink to="" class="text-white bg-accent px-4 py-2 grow-0 flex items-center">
-        {{ t('contact us') }}
+      <NuxtLink to="" class="text-white bg-accent font-bold text-xl px-8 py-4 grow-0 flex items-center">
+        <span class="mr-10">{{ t('contact us') }}</span>
         <MaterialSymbolsArrowForwardIos />
       </NuxtLink>
     </div>
