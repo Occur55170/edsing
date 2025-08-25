@@ -15,7 +15,7 @@ const { locale, t } = useI18n()
     <img src="/img/logo.png" alt="logo" />
     <ul class="flex justify-between items-center">
       <li class="mx-2">
-        <NuxtLink to="/" class="text-white">
+        <NuxtLink to="/contact" class="text-white">
           {{ t('about us') }}
         </NuxtLink>
       </li>
@@ -78,9 +78,8 @@ const { locale, t } = useI18n()
   </div>
 </template>
 
-<style scoped>
+<style lang="scss" scoped>
 .nav{
-  padding: 20px calc((100% - 1600px)/2);
+  @include baseWidth(20px, 2%,20px,2%);
 }
-
 </style>

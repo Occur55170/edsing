@@ -6,7 +6,7 @@ import MaterialSymbolsCheck from '~icons/material-symbols/check'
 import MaterialSymbolsArrowForwardIos from '~icons/material-symbols/arrow-forward-ios'
 import MaterialSymbolsLineEndArrowNotchRounded from '~icons/material-symbols/line-end-arrow-notch-rounded'
 
-const { locale, locales, setLocale, t } = useI18n()
+const { t } = useI18n()
 
 useHead({
   title: '益鼎興金屬有限公司-首頁',
