@@ -13,7 +13,21 @@ const props = withDefaults(defineProps<Props>(), {
 
 const previewUrl = ref<string | null>(null)
 const form = ref<HTMLFormElement | null>(null)
-const state = reactive({
+const errors = ref({})
+
+const formSchema = z.object({
+  name: z.string().min(1, { message: '請輸入姓名' }),
+  companyName: z.string(),
+  email: z.string().email('請輸入正確的Email格式').min(1, { message: '請輸入Email' }),
+  phone: z.string().min(1, { message: '請輸電話' }),
+  country: z.string(),
+  zone: z.string().min(1, { message: '請輸地區' }),
+  material: z.string(),
+  materialCount: z.string(),
+  mailContent: z.string(),
+})
+
+const formData = reactive({
   name: '',
   companyName: '',
   email: '',
@@ -39,9 +53,19 @@ function removeImage () {
 
 function onSubmit (e: Event) {
   e.preventDefault()
-  if (form.value) {
-    console.log('submitEmail', form.value.name)
+
+  try {
+    formSchema.parse(formData)
+    console.log('Form submitted successfully:', formData)
+    errors.value = {} // Clear errors on success
+  } catch (e) {
+    if (e instanceof z.ZodError) {
+      errors.value = e.flatten().fieldErrors
+    }
   }
+  // if (form.value) {
+  //   console.log('submitEmail', form.value.name)
+  // }
 //   alert('表單送出')
 }
 
@@ -63,22 +87,23 @@ function onSubmit (e: Event) {
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="name">
           <span class="requireInput mb-2 block text-white">聯絡人姓名</span>
-          <input id="name" v-model="state.name" class="block p-2 w-full" type="text" />
+          <input id="name" v-model="formData.name" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="companyName">
           <span class="requireInput mb-2 block text-white">公司名稱</span>
-          <input id="companyName" v-model="state.companyName" class="block p-2 w-full" type="text" />
+          <input id="companyName" v-model="formData.companyName" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="email">
           <span class="requireInput mb-2 block text-white">電子郵件</span>
-          <input id="email" class="block p-2 w-full" type="text" />
+          <input id="email" v-model="formData.email" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="phone">
           <span class="requireInput mb-2 block text-white">電話</span>
           <input
             id="phone"
+            v-model="formData.phone"
             class="block p-2 w-full"
             name="phone"
             type="tel"
@@ -91,7 +116,14 @@ function onSubmit (e: Event) {
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="country">
           <span class="requireInput mb-2 block text-white">國家</span>
-          <select id="country" class="block p-2 w-full" name="country" required autocomplete="country">
+          <select
+            id="country"
+            v-model="formData.country"
+            class="block p-2 w-full"
+            name="country"
+            required
+            autocomplete="country"
+          >
             <option value="" selected disabled>--- 請選擇---</option>
             <option value="TW">台灣</option>
             <option value="HK">香港</option>
@@ -102,17 +134,22 @@ function onSubmit (e: Event) {
         </label>
         <label class="w-[49%]" to="zone">
           <span class="requireInput mb-2 block text-white">州/省/地區</span>
-          <input id="zone" class="block p-2 w-full" type="text" />
+          <input
+            id="zone"
+            v-model="formData.zone"
+            class="block p-2 w-full"
+            type="text"
+          />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="material">
           <span class="requireInput mb-2 block text-white">材料</span>
-          <input id="material" class="block p-2 w-full" type="text" />
+          <input id="material" v-model="formData.material" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="materialCount">
           <span class="requireInput mb-2 block text-white">材料多少</span>
-          <input id="materialCount" class="block p-2 w-full" type="text" />
+          <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="mb-6">
@@ -151,7 +188,14 @@ function onSubmit (e: Event) {
       </div>
       <div class="mb-6">
         <span class="requireInput mb-2 block text-white">訊息</span>
-        <textarea id="mailContent" name="" cols="20" rows="5" class="w-full"></textarea>
+        <textarea
+          id="mailContent"
+          v-model="formData.materialCount"
+          name=""
+          cols="20"
+          rows="5"
+          class="w-full"
+        ></textarea>
       </div>
       <div class="flex justify-end w-full">
         <button class="bg-red-600 py-2 px-8 inline-block text-white" type="submit">
