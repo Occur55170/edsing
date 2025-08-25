@@ -81,7 +81,7 @@ useHead({
 
       <div class="recycle">
         <div class="flex items-center justify-between my-8">
-          <div class="flex flex-wrap items-center w-[20%]">
+          <div class="flex flex-wrap items-center 2xl:w-[20%] w-[30%]">
             <h3 class="text-white text-[64px] w-full mb-6">
               <span class="text-brand">鎢</span>資源循環
             </h3>
@@ -95,7 +95,7 @@ useHead({
               </i>
             </NuxtLink>
           </div>
-          <img src="/img/index/index-process.svg" alt="" class="block w-[70%]" />
+          <img src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] w-[60%]" />
         </div>
       </div>
 
@@ -160,9 +160,10 @@ useHead({
 .precious {
   @apply bg-accent;
   &>div {
-    @include baseWidth;
     margin: 0 auto;
     box-sizing: border-box;
+
+    @include baseWidth;
     h3 {
       text-align: center;
       vertical-align: middle;
@@ -182,7 +183,6 @@ useHead({
   }
 }
 .recycle {
-  @include baseWidth;
   // background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.45)), url('/img/index/index-list-3.jpg');
   background-image:url('/img/index/recycleBg.jpg');
   background-repeat: no-repeat;
@@ -192,6 +192,7 @@ useHead({
     position: relative;
     z-index: 2;
   }
+  @include baseWidth;
 }
 
 .equipment {

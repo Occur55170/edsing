@@ -13,17 +13,33 @@ const props = withDefaults(defineProps<Props>(), {
 
 const previewUrl = ref<string | null>(null)
 const form = ref<HTMLFormElement | null>(null)
-const state = reactive({
+
+const formSchema = z.object({
+  name: z.string().min(1, { message: '請輸入姓名' }),
+  companyName: z.string(),
+  email: z.string().email('請輸入正確的Email格式').min(1, { message: '請輸入Email' }),
+  phone: z.string().min(1, { message: '請輸電話' }),
+  country: z.string(),
+  zone: z.string().min(1, { message: '請輸地區' }),
+  // material: z.string(),
+  // materialCount: z.string(),
+  // mailContent: z.string(),
+})
+
+// type formSchema = z.infer<typeof emailRequestSchema>
+
+const formData = reactive({
   name: '',
   companyName: '',
   email: '',
   phone: '',
   country: '',
   zone: '',
-  material: '',
-  materialCount: '',
-  mailContent: '',
+  // material: '',
+  // materialCount: '',
+  // mailContent: '',
 })
+const errors = ref({})
 
 function onFileChange (e: Event) {
   const target = e.target as HTMLInputElement
@@ -39,46 +55,48 @@ function removeImage () {
 
 function onSubmit (e: Event) {
   e.preventDefault()
-  if (form.value) {
-    console.log('submitEmail', form.value.name)
+  try {
+    formSchema.parse(formData)
+    // Form data is valid, proceed with submission
+    console.log('Form submitted successfully:', formData)
+    errors.value = {} // Clear errors on success
+  } catch (e) {
+    if (e instanceof z.ZodError) {
+      errors.value = e.flatten().fieldErrors
+    }
   }
+  // if (form.value) {
+  //   console.log('submitEmail', form.value.name)
+  // }
 //   alert('表單送出')
 }
 
 </script>
 <template>
-  <div :class="`${ props.class } formSection flex border-1 relative`">
-    <div class="grow z-10">
-      <h3 class="text-white text-[56px] mb-8">
-        請求定價
-      </h3>
-      <p class="text-white text-xl leading-[2]">
-        若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。<br />
-        我們可以輕鬆回收您的鎢廢料。<br />
-        提交下面的表格，我們的採購國隊將與您聯繫以討論報償。<br />
-        將為您的材料提供最優惠的價格。<br />
-      </p>
-    </div>
+  <div>
+    {{ formData }}
+    {{ errors }}
     <form ref="form" class="w-[40%] bg-slate-700 p-4 z-10" @submit="onSubmit">
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="name">
           <span class="requireInput mb-2 block text-white">聯絡人姓名</span>
-          <input id="name" v-model="state.name" class="block p-2 w-full" type="text" />
+          <input id="name" v-model="formData.name" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="companyName">
           <span class="requireInput mb-2 block text-white">公司名稱</span>
-          <input id="companyName" v-model="state.companyName" class="block p-2 w-full" type="text" />
+          <input id="companyName" v-model="formData.companyName" class="block p-2 w-full" type="text" />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="email">
           <span class="requireInput mb-2 block text-white">電子郵件</span>
-          <input id="email" class="block p-2 w-full" type="text" />
+          <input id="email" v-model="formData.email" class="block p-2 w-full" type="text" />
         </label>
         <label class="w-[49%]" to="phone">
           <span class="requireInput mb-2 block text-white">電話</span>
           <input
             id="phone"
+            v-model="formData.phone"
             class="block p-2 w-full"
             name="phone"
             type="tel"
@@ -91,7 +109,14 @@ function onSubmit (e: Event) {
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="country">
           <span class="requireInput mb-2 block text-white">國家</span>
-          <select id="country" class="block p-2 w-full" name="country" required autocomplete="country">
+          <select
+            id="country"
+            v-model="formData.country"
+            class="block p-2 w-full"
+            name="country"
+            required
+            autocomplete="country"
+          >
             <option value="" selected disabled>--- 請選擇---</option>
             <option value="TW">台灣</option>
             <option value="HK">香港</option>
@@ -102,7 +127,12 @@ function onSubmit (e: Event) {
         </label>
         <label class="w-[49%]" to="zone">
           <span class="requireInput mb-2 block text-white">州/省/地區</span>
-          <input id="zone" class="block p-2 w-full" type="text" />
+          <input
+            id="zone"
+            v-model="formData.zone"
+            class="block p-2 w-full"
+            type="text"
+          />
         </label>
       </div>
       <div class="flex justify-between mb-10">
@@ -163,19 +193,13 @@ function onSubmit (e: Event) {
 </template>
 
 <style lang="scss" scoped>
-.formSection{
-
-  background-image:url('/img/TungstenHard/recycle-bottom-bg.jpg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top 10% right 0%;
-
-  &::after {
-    content: '';
-    display: block;
-    @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/70 via-accent/95 to-accent/100;
-  }
-
-  @include baseWidth;
+form {
+  background: unset;
+}
+labal, span {
+  color: #000;
+}
+input {
+  border: 1px solid #000;
 }
 </style>

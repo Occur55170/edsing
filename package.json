@@ -15,7 +15,8 @@
     "@emailjs/browser": "^4.4.1",
     "nuxt": "^3.14.1592",
     "vue": "latest",
-    "vue-router": "latest"
+    "vue-router": "latest",
+    "zod": "^4.1.1"
   },
   "devDependencies": {
     "@iconify/json": "^2.2.377",
