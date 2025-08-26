@@ -15,7 +15,7 @@ const { locale, t } = useI18n()
     <img src="/img/logo.png" alt="logo" />
     <ul class="flex justify-between items-center">
       <li class="mx-2">
-        <NuxtLink to="/contact" class="text-white">
+        <NuxtLink to="/contactUs" class="text-white">
           {{ t('about us') }}
         </NuxtLink>
       </li>

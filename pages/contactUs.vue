@@ -2,6 +2,10 @@
 import { z } from 'zod'
 import { sendForm } from '@emailjs/browser'
 
+useHead({
+  title: '聯絡我們',
+})
+
 const form = ref<HTMLFormElement | null>(null)
 const errors = ref({})
 
@@ -43,11 +47,14 @@ function sendEmail () {
   //   }
   // )
 }
+
 </script>
 
 <template>
   <div>
     <NuxtLayout>
+      <h1>Contact Us</h1>
+      <p>Feel free to reach out to us with any questions or inquiries!</p>
       <form ref="form" @submit.prevent="sendEmail">
         <label>Name</label>
         <input type="text" name="user_name" />
