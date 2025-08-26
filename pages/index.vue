@@ -21,7 +21,7 @@ useHead({
         <img class="hidden" src="/img/header-mobile.jpg" alt="" />
       </div>
 
-      <div class="precious bg-accent py-10">
+      <div class="precious bg-accent py-20">
         <div class="flex">
           <h3 class="text-white text-[84px] w-[25%] flex items-center justify-center content-center flex-wrap">
             <div class="text-left">
@@ -79,7 +79,7 @@ useHead({
         </div>
       </div>
 
-      <div class="recycle">
+      <div class="recycle py-20">
         <div class="flex items-center justify-between my-8">
           <div class="flex flex-wrap items-center 2xl:w-[20%] w-[30%]">
             <h3 class="text-white text-[64px] w-full mb-6">
@@ -99,7 +99,7 @@ useHead({
         </div>
       </div>
 
-      <div class="equipment">
+      <div class="equipment ppy-20">
         <div class="bg-white/90 py-12 px-16">
           <h3 class="text-center font-bold text-[60px] mb-10">
             <span class="text-brand">專業</span>設備
@@ -133,7 +133,7 @@ useHead({
         </div>
       </div>
 
-      <div class="information bg-accent py-[100px]">
+      <div class="information bg-accent py-[100px] mb-[100px]">
         <p class="text-white text-center text-xl">
           刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料
         </p>

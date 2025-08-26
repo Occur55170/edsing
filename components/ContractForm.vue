@@ -5,10 +5,12 @@ import StreamlineInterfaceUploadButton1ArrowButtonDownloadInternetNetworkServerU
 
 interface Props {
   class?: string;
+  bannerImg: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   class: '',
+  bannerImg: '',
 })
 
 const previewUrl = ref<string | null>(null)
@@ -71,7 +73,10 @@ function onSubmit (e: Event) {
 
 </script>
 <template>
-  <div :class="`${ props.class } formSection flex border-1 relative`">
+  <div
+    :class="`${ props.class } formSection flex border-1 relative`"
+    :style="{ backgroundImage: `url(${props.bannerImg})` }"
+  >
     <div class="grow z-10">
       <h3 class="text-white text-[56px] mb-8">
         請求定價
@@ -208,18 +213,17 @@ function onSubmit (e: Event) {
 
 <style lang="scss" scoped>
 .formSection{
-
-  background-image:url('/img/TungstenHard/recycle-bottom-bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top 10% right 0%;
 
-  &::after {
+  &::before {
     content: '';
     display: block;
-    @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/70 via-accent/95 to-accent/100;
+    @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/0 via-accent/95 to-accent/100;
   }
 
+  padding-top: 100px;
   @include baseWidth;
 }
 </style>

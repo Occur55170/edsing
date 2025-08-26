@@ -11,7 +11,7 @@ const { locale, t } = useI18n()
 </script>
 
 <template>
-  <div :class="`nav flex justify-between items-center bg-accent ${props.class}`">
+  <div :class="`nav flex justify-between items-center bg-accent py-4 ${props.class}`">
     <img src="/img/logo.png" alt="logo" />
     <ul class="flex justify-between items-center">
       <li class="mx-2">
@@ -80,6 +80,6 @@ const { locale, t } = useI18n()
 
 <style lang="scss" scoped>
 .nav{
-  @include baseWidth(20px, 2%,20px,2%);
+  @include baseWidth(2%, 2%);
 }
 </style>

@@ -65,12 +65,9 @@ useHead({
         </li>
       </ul>
     </div>
-    <ContractForm id="ContractForm" />
+    <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/TungstenHard/recycle-bottom-bg.jpg" />
   </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>
-.recycleBlock {
-  @include baseWidth(100px, calc((100% - 1200px)/2), 100px, calc((100% - 1200px)/2));
-}
 </style>
