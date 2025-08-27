@@ -1,32 +1,14 @@
 
-@mixin baseWidth($r:calc((100% - 1600px)/2), $l:calc((100% - 1600px)/2)) {
+@mixin baseWidth($r:calc((100% - 1600px)/2), $l:calc((100% - 1600px)/2), $r-mobile: null, $l-mobile: null) {
   & {
-    // padding-top: $t;
     padding-right: $r;
-    // padding-bottom: $b;
     padding-left: $l;
   }
 
   @media (max-width: 1600px) {
-    // padding-top: 50px;
-    // padding-bottom: 50px;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding-right: if($r-mobile != null, $r-mobile, 5%);
+    padding-left: if($l-mobile != null, $l-mobile, 5%);
   }
-
-  // @media (max-width: 1024px) {
-  //   padding-right: 16px;
-  //   padding-left: 16px;
-  //   padding-top: 40px;
-  //   padding-bottom: 40px;
-  // }
-
-  // @media (max-width: 768px) {
-  //   padding-right: 12px;
-  //   padding-left: 12px;
-  //   padding-top: 24px;
-  //   padding-bottom: 24px;
-  // }
 }
 
 

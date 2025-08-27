@@ -16,24 +16,24 @@ useHead({
 <template>
   <div>
     <NuxtLayout>
-      <div class="w-full">
+      <div class="header w-full overflow-hidden">
         <img class="block w-full" src="/img/header.jpg" alt="" />
         <img class="hidden" src="/img/header-mobile.jpg" alt="" />
       </div>
 
       <div class="precious bg-accent py-20">
         <div class="flex">
-          <h3 class="text-white text-[84px] w-[25%] flex items-center justify-center content-center flex-wrap">
+          <h3 class="text-white text-[60px] xl:text-[84px] w-[20%] xl:w-[25%] flex items-center justify-center content-center flex-wrap">
             <div class="text-left">
               回收
               <span class="text-bold block w-full">鎢</span>
             </div>
           </h3>
-          <ul class="flex justify-between w-[75%]">
+          <ul class="flex justify-between w-[80%] xl:w-[75%]">
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
-                <p class="text-white text-bold text-3xl mb-4 text-left">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-2 py-8">
+                <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   鎢硬廢料/合金
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
@@ -47,8 +47,8 @@ useHead({
             </li>
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-2.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
-                <p class="text-white text-bold text-3xl mb-4 text-left">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-2 py-8">
+                <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   鎢軟廢料
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
@@ -62,8 +62,8 @@ useHead({
             </li>
             <li class="relative w-[33%] text-right">
               <img src="/img/index/index-list-3.jpg" class="w-full grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-4 py-8">
-                <p class="text-white text-bold text-3xl mb-4 text-left">
+              <div class="absolute bottom-0 right-0 bg-accent w-[80%] h-[200px] px-2 py-8">
+                <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   高速鋼
                 </p>
                 <p class="text-white mb-6 text-left leading-[2]">
@@ -81,8 +81,8 @@ useHead({
 
       <div class="recycle py-20">
         <div class="flex items-center justify-between my-8">
-          <div class="flex flex-wrap items-center 2xl:w-[20%] w-[30%]">
-            <h3 class="text-white text-[64px] w-full mb-6">
+          <div class="flex flex-wrap items-center 2xl:w-[25%] w-[32%]">
+            <h3 class="text-white text-[50px] xl:text-[64px] w-full mb-6">
               <span class="text-brand">鎢</span>資源循環
             </h3>
             <p class="text-xl leading-[2] text-white mb-52">
@@ -95,12 +95,12 @@ useHead({
               </i>
             </NuxtLink>
           </div>
-          <img src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] w-[60%]" />
+          <img src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] w-[65%]" />
         </div>
       </div>
 
       <div class="equipment ppy-20">
-        <div class="bg-white/90 py-12 px-16">
+        <div class="bg-white/90 py-6 px-8 xl:py-12 xl:px-16">
           <h3 class="text-center font-bold text-[60px] mb-10">
             <span class="text-brand">專業</span>設備
           </h3>
@@ -133,20 +133,20 @@ useHead({
         </div>
       </div>
 
-      <div class="information bg-accent py-[100px] mb-[100px]">
+      <div class="information bg-accent py-[100px] mb-[100px] xl:mb-[100px]">
         <p class="text-white text-center text-xl">
           刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料
         </p>
         <ul class="flex justify-center text-white max-w-[1600px] mx-auto mt-10 text-xl">
-          <li class="flex items-center mx-10">
+          <li class="flex items-center mx-4 xl:mx-10">
             <MaterialSymbolsCall class="bg-brand p-2 box-content rounded-full mr-3" />
             07-6115753
           </li>
-          <li class="flex items-center mx-10">
+          <li class="flex items-center mx-4 xl:mx-10">
             <MaterialSymbolsMail class="bg-brand p-2 box-content rounded-full mr-3" />
             Edsingpolitech@hotmail.com
           </li>
-          <li class="flex items-center mx-10">
+          <li class="flex items-center mx-4 xl:mx-10">
             <MdiClockTimeThree class="bg-brand p-2 box-content rounded-full mr-3" />
             週一至週五8:30-17:30
           </li>
@@ -157,6 +157,20 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.header {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    left: 70%;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background:url('/img/circle-S.svg') no-repeat;
+    background-size: 30%;
+  }
+}
 .precious {
   @apply bg-accent;
   &>div {
@@ -183,7 +197,6 @@ useHead({
   }
 }
 .recycle {
-  // background-image: linear-gradient(rgba(0,0,0,0.95), rgba(0,0,0,0.45)), url('/img/index/index-list-3.jpg');
   background-image:url('/img/index/recycleBg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
