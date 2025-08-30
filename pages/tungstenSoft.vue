@@ -21,7 +21,7 @@ useHead({
         </template>
       </AcquisitionItem>
       <div class="recycleBlock bg-accent text-white">
-        <h3 class="text-[64px] font-bold mb-4">
+        <h3 class="text-[48px] tableSmWidth:text-[64px] font-bold mb-4">
           我們收購的項目
         </h3>
         <p class="text-2xl mb-20 leading-[2]">

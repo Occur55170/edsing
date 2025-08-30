@@ -56,4 +56,10 @@ onMounted(() => {
     background-color: #020F17;
   }
 }
+
+@media (max-width: 600px) {
+  .footer{
+    clip-path: unset
+  }
+}
 </style>

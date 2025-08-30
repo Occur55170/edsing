@@ -12,7 +12,7 @@ useHead({
       :quote-url="`${ route.path }#ContractForm`"
     >
       <template #desc>
-        <p class="text-2xl leading-[2]">
+        <p class="text-xl tableSmWidth:text-2xl leading-[2] mb-5">
           各種不同行業包括車間和製造商，
           <br />
           我們回收多種形式歡迎下方諮詢
@@ -20,13 +20,13 @@ useHead({
       </template>
     </AcquisitionItem>
     <div class="recycleBlock mx-auto bg-accent text-white">
-      <h3 class="text-[64px] font-bold mb-4">
+      <h3 class="text-[48px] tableSmWidth:text-[64px] font-bold mb-4">
         我們收購的項目
       </h3>
       <p class="text-2xl mb-20">
         回收您使用過的鑽頭和刀片的價值硬質合金。
       </p>
-      <ul class="grid grid-cols-3 gap-x-6 gap-y-20">
+      <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="mb-3 w-full" />
           <p class="text-2xl">

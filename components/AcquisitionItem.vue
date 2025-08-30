@@ -15,10 +15,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="bg-brand text-white flex items-stretch border-[30px] border-brand">
-    <div class="grow flex flex-wrap items-center px-8 py-2">
+  <div class="bg-brand text-white flex items-stretch border-[10px] flex-wrap tableSmWidth:flex-nowrap tableSmWidth:border-[30px] border-brand">
+    <div class="grow flex flex-wrap items-center px-6 lg:px-8 pt-6 pb-2 tableSmWidth:py-2">
       <div class="w-full">
-        <h2 class="text-[64px] mb-16">
+        <h2 class="text-[48px] tableSmWidth:text-[64px] mb-8 tableSmWidth:mb-16">
           {{ props.itemName }}
         </h2>
         <slot name="desc"></slot>
@@ -30,8 +30,9 @@ const props = withDefaults(defineProps<Props>(), {
     <img
       :src="props.itemImg"
       alt=""
-      class="w-[50%] h-[800px] object-cover object-[80%_30%]
-         [mask-image:linear-gradient(to_right,transparent,black)]
+      class="w-[100%] tableSmWidth:w-[50%] h-[300px] tableSmWidth:h-[800px] object-cover object-[90%_10%] tableSmWidth:object-[80%_30%]
+         tableSmWidth:[mask-image:linear-gradient(to_right,transparent,black)]
+         [mask-image:linear-gradient(to_bottom,transparent,black)]
          [mask-repeat:no-repeat]
          [mask-size:100%_100%]"
     />

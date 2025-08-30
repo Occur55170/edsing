@@ -74,7 +74,7 @@ function onSubmit (e: Event) {
 </script>
 <template>
   <div
-    :class="`${ props.class } formSection flex border-1 relative`"
+    :class="`${ props.class } formSection flex flex-wrap desktopSmWidth:flex-nowrap border-1 relative`"
     :style="{ backgroundImage: `url(${props.bannerImg})` }"
   >
     <div class="grow z-10">
@@ -88,7 +88,7 @@ function onSubmit (e: Event) {
         將為您的材料提供最優惠的價格。<br />
       </p>
     </div>
-    <form ref="form" class="w-[40%] bg-slate-700 p-4 z-10" @submit="onSubmit">
+    <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[40%] bg-slate-700 p-4 z-10" @submit="onSubmit">
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="name">
           <span class="requireInput mb-2 block text-white">聯絡人姓名</span>
