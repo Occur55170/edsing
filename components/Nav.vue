@@ -102,7 +102,7 @@ function openMenu () {
           </div>
         </li>
       </ul>
-      <div v-if="width > 900" class="changeLangueBtn flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
+      <div v-if="width > 900" class="changeLangueBtn shrink-0 flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
         <TablerWorld class="desktopSmWidth:text-white" />
         <div
           class="px-2 xl:px-4 text-xl desktopSmWidth:text-white bg-brand"
