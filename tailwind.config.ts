@@ -19,6 +19,10 @@ module.exports = {
           DEFAULT: '#020F17',
         },
       },
+      screens: {
+        desktopSmWidth: '900px',
+        tableSmWidth: '600px',
+      },
     },
   },
   plugins: [],

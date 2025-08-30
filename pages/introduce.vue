@@ -64,7 +64,7 @@ useHead({
 </template>
 <style lang="scss" scoped>
 .baseWidth {
-  @include baseWidth;
   background: linear-gradient(45deg, #030f17, #032736);
+  @include baseWidth;
 }
 </style>

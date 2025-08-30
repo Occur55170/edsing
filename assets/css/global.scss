@@ -9,6 +9,12 @@
     padding-right: if($r-mobile != null, $r-mobile, 5%);
     padding-left: if($l-mobile != null, $l-mobile, 5%);
   }
+
+
+  @media (max-width: 900px) {
+    padding-right: if($r-mobile != null, $r-mobile, 2%);
+    padding-left: if($l-mobile != null, $l-mobile, 2%);
+  }
 }
 
 

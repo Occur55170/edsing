@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import MaterialSymbolsArrowForwardIos from '~icons/material-symbols/arrow-forward-ios'
 const { t } = useI18n()
+const { width } = useWindowWidth()
 
 type NType<T> = T | null;
 const footerElement = ref < NType<HTMLElement>>(null)
-// let footerStyle: string = ''
 
 const footerStyle = ref<string>('')
 
@@ -16,11 +16,11 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="relative footerWrap" :style="footerStyle">
-    <div ref="footerElement" class="footer absolute bottom-0 left-0 w-full">
+  <div class="relative footerWrap" :style="width > 600 ? footerStyle : ''">
+    <div ref="footerElement" class="footer relative tableSmWidth:absolute bottom-0 left-0 w-full">
       <div class="flex justify-center xl:justify-between items-center py-20 text-center xl:text-left xl:px-10 flex-wrap xl:flex-nowrap">
         <img src="/img/logo-white.svg" class="grow-0" alt="logo" />
-        <div class="text-white leading-[2] xl:leading-[3] my-20 xl:my-0 xl:mx-16 grow text-xl w-full xl:w-auto">
+        <div class="text-white leading-[2] xl:leading-[3] my-10 tableSmWidth:my-20 xl:my-0 xl:mx-16 grow text-xl w-full xl:w-auto">
           <p>聯絡電話:(07)6115753</p>
           <p>傳真:(07)6113753</p>
           <p>地址:高雄市路竹區民有路153-1號</p>
@@ -56,6 +56,4 @@ onMounted(() => {
     background-color: #020F17;
   }
 }
-
-// 1400px 以上都ok
 </style>
