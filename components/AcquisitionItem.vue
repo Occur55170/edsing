@@ -15,10 +15,10 @@ const props = withDefaults(defineProps<Props>(), {
 </script>
 
 <template>
-  <div class="bg-brand text-white flex items-stretch border-[10px] flex-wrap tableSmWidth:flex-nowrap tableSmWidth:border-[30px] border-brand">
-    <div class="grow flex flex-wrap items-center px-6 lg:px-8 pt-6 pb-2 tableSmWidth:py-2">
+  <div class="bg-brand text-white flex items-stretch border-[10px] desktopSmWidth:border-[30px] flex-wrap tableSmWidth:flex-nowrap border-brand">
+    <div class="grow flex flex-wrap items-center desktopSmWidth:px-6 px-0 lg:px-8 pt-6 pb-2 tableSmWidth:py-2">
       <div class="w-full">
-        <h2 class="text-[48px] tableSmWidth:text-[64px] mb-8 tableSmWidth:mb-16">
+        <h2 class="text-[48px] desktopSmWidth:text-[64px] mb-8 tableSmWidth:mb-16">
           {{ props.itemName }}
         </h2>
         <slot name="desc"></slot>

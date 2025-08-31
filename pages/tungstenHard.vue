@@ -20,46 +20,46 @@ useHead({
       </template>
     </AcquisitionItem>
     <div class="recycleBlock mx-auto bg-accent text-white">
-      <h3 class="text-[48px] tableSmWidth:text-[64px] font-bold mb-4">
+      <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
         我們收購的項目
       </h3>
-      <p class="text-2xl mb-20">
+      <p class="desktopSmWidth:text-2xl text-xl mb-20">
         回收您使用過的鑽頭和刀片的價值硬質合金。
       </p>
       <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             鎢鑽頭
           </p>
         </li>
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-2.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             碳化鎢耐磨件
           </p>
         </li>
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-3.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             鎢刀片
           </p>
         </li>
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-4.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             各式碳化鎢邊角料
           </p>
         </li>
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-5.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             切割料
           </p>
         </li>
         <li class="w-full">
           <img src="/img/TungstenHard/recycle-list-6.jpg" alt="" class="mb-3 w-full" />
-          <p class="text-2xl">
+          <p class="desktopSmWidth:text-2xl text-xl">
             礦山工具
           </p>
         </li>
@@ -70,4 +70,9 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.recycleBlock {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include baseWidth(calc((100% - 1200px)/2), calc((100% - 1200px)/2));
+}
 </style>

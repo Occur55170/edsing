@@ -17,16 +17,9 @@
   }
 }
 
-
 .requireInput {
   &::after{
     color: red;
     content: '*';
   }
-}
-
-.recycleBlock {
-  padding-top: 100px;
-  padding-bottom: 100px;
-  @include baseWidth(calc((100% - 1200px)/2), calc((100% - 1200px)/2));
 }

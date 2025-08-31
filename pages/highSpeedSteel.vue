@@ -20,25 +20,61 @@ useHead({
         </template>
       </AcquisitionItem>
       <div class="recycleBlock bg-accent text-white">
-        <h3 class="text-[64px] font-bold mb-4">
+        <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
           我們收購的項目
-          <br />
-          各式型號歡迎詢問。
         </h3>
         <p class="text-2xl mb-20 leading-[2]">
-          回收固體、刨花、M2、M35、M42、T5、T15、D2
+          回收固體、刨花、M2、M35、M42、T5、T15、D2，
+          各式型號歡迎詢問。
         </p>
-
-        <ul>
-          <li>HSS各式工具</li>
-          <li>HSS刨花</li>
-          <li>M2牙板</li>
-          <li>沖棒</li>
-          <li>頭尾料</li>
-          <li>工具鋼</li>
+        <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-10">
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-1.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              HSS各式工具
+            </p>
+          </li>
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-2.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              HSS刨花
+            </p>
+          </li>
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-3.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              M2牙板
+            </p>
+          </li>
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-4.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              沖棒
+            </p>
+          </li>
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-5.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              頭尾料
+            </p>
+          </li>
+          <li>
+            <img src="/img/HighSpeedSteel/HighSpeedSteel-list-6.jpg" alt="" />
+            <p class="text-xl desktopSmWidth:text-2xl mt-2">
+              工具鋼
+            </p>
+          </li>
         </ul>
       </div>
       <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/HighSpeedSteel/HighSpeedSteel-bottom.jpg" />
     </div>
   </NuxtLayout>
 </template>
+
+<style lang="scss" scoped>
+.recycleBlock {
+  padding-top: 100px;
+  padding-bottom: 100px;
+  @include baseWidth(calc((100% - 1200px)/2), calc((100% - 1200px)/2));
+}
+</style>

@@ -29,7 +29,9 @@ function openMenu () {
 
 <template>
   <div :class="`nav flex justify-between items-stretch bg-accent py-4 desktopSmWidth:p-0 relative ${props.class}`">
-    <img src="/img/logo.png" alt="logo" class="self-center" />
+    <NuxtLink to="/" class="inline-block self-center">
+      <img src="/img/logo.png" alt="logo" />
+    </NuxtLink>
     <button class="listBtn desktopSmWidth:hidden block w-[50px]" @click="openMenu()">
       <MaterialSymbolsFormatListBulletedRounded class="text-white w-full h-full" />
     </button>
