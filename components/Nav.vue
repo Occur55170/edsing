@@ -81,7 +81,7 @@ function openMenu () {
           </NuxtLink>
         </li>
         <li v-if="width < 900" class="flex items-center">
-          <span class="mr-4">{{ t('語言') }}:</span>
+          <span class="mr-4">{{ t('langue') }}:</span>
           <div class="flex items-stretch justify-center border border-stone-400 rounded-full overflow-hidden w-[120px] px-4 my-4">
             <div
               class="relative rounded-full bg-stone-500 h-[35px] w-[35px] my-1 transition-transform"

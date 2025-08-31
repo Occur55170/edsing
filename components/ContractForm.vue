@@ -157,7 +157,7 @@ function onSubmit (e: Event) {
           <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" />
         </label>
       </div>
-      <div class="mb-6">
+      <!-- <div class="mb-6">
         <label to="materialImg">
           <span class="requireInput mb-2 block text-white">上傳素材圖片</span>
           <div class="my-4">
@@ -190,7 +190,7 @@ function onSubmit (e: Event) {
             </label>
           </div>
         </label>
-      </div>
+      </div> -->
       <div class="mb-6">
         <span class="requireInput mb-2 block text-white">訊息</span>
         <textarea
