@@ -41,7 +41,7 @@ function openMenu () {
     >
       <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between items-center mx-4 desktopSmWidth:mx-0 my-2 xl:my-8">
         <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
-          <NuxtLink to="/contactUs" class="desktopSmWidth:text-white">
+          <NuxtLink to="/introduce" class="desktopSmWidth:text-white">
             {{ t('about us') }}
           </NuxtLink>
         </li>
