@@ -3,9 +3,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "nuxt build",
+    "build": "nuxt build && cp .htaccess .output/public/.htaccess",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && cp .htaccess .output/public/.htaccess",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue .",
