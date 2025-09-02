@@ -1,9 +1,16 @@
 // nuxt.config.ts
-import Icons from 'unplugin-icons/vite' // Import the Vite plugin for unplugin-icons
-import Components from 'unplugin-vue-components/vite'
-import IconsResolver from 'unplugin-icons/resolver'
+import Icons from 'unplugin-icons/vite'
 
 export default defineNuxtConfig({
+  app: {
+    head: {
+      link: [
+        { href: 'https://fonts.googleapis.com', rel: 'preconnect' },
+        { crossorigin: 'anonymous', href: 'https://fonts.gstatic.com', rel: 'preconnect' },
+        { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', rel: 'stylesheet' },
+      ],
+    },
+  },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
   typescript: {
@@ -29,8 +36,7 @@ export default defineNuxtConfig({
     },
     plugins: [
       Icons({
-        // Options for unplugin-icons
-        autoInstall: true, // Automatically install icon sets on demand
+        autoInstall: true,
       }),
     ],
   },

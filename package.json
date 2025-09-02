@@ -19,7 +19,7 @@
     "zod": "^4.1.1"
   },
   "devDependencies": {
-    "@iconify/json": "^2.2.377",
+    "@iconify/json": "^2.2.380",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
     "@nuxtjs/i18n": "^9.0.0-rc.2",

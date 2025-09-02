@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import { z } from 'zod'
 import { sendForm } from '@emailjs/browser'
-// import LineMdMapMarkerAltFilled from '~icons/line-md/map-marker-alt-filled'
 import MaterialSymbolsLocationOn from '~icons/material-symbols/location-on'
 import IcRoundCall from '~icons/ic/round-call'
 import BxBxsPrinter from '~icons/bx/bxs-printer'

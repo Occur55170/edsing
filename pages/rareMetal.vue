@@ -12,7 +12,7 @@ useHead({
       <div class="flex">
         <img class="tableSmWidth:block w-full" src="/img/rareMetal/global.png" alt="" />
         <div>
-        <p>我們長期大量收購各類金屬廢料,包括:</p>
+          <p>我們長期大量收購各類金屬廢料,包括:</p>
           <p>硬質合金刀具廢料</p>
           <p>金屬陶瓷廢料</p>
           <p>高速鋼廢料</p>
@@ -115,19 +115,14 @@ useHead({
 
 <style lang="scss" scoped>
 .rareMetalBottom {
-
-  @include baseWidth(calc((100% - 1300px)/2), calc((100% - 1300px)/2));
-
   background: url('/img/rareMetal/RareMetal-bottom.jpg') no-repeat;
   background-size: cover;
   width: 100%;
   height: auto;
   position: relative;
-  &>div{
-    // background: #ffffff;
-  }
 
-  // &::before {
+  @include baseWidth(calc((100% - 1300px)/2), calc((100% - 1300px)/2));
+
   //   content: '';
   //   display: block;
   //   @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-white/0 via-white/95 to-white/100;
