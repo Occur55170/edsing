@@ -23,14 +23,13 @@ useHead({
       </div>
 
       <div class="precious bg-accent py-10 desktopSmWidth:py-20">
-        <div class="flex desktopSmWidth:flex-nowrap flex-wrap">
-          <h3 class="text-white text-[60px] xl:text-[84px] desktopSmWidth:w-[20%] w-full xl:w-[25%] desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
+        <div class="flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
+          <h3 class="text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
             <div class="text-left">
-              回收
-              <span class="text-bold desktopSmWidth:block w-full">鎢</span>
+              回收鎢
             </div>
           </h3>
-          <ul class="flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap">
+          <ul class="flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
             <li class="relative w-full mb-8 tableSmWidth:my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
@@ -83,30 +82,30 @@ useHead({
       <div class="recycle py-5 tableSmWidth:py-10 desktopSmWidth:py-20">
         <div class="flex items-center justify-between tableSmWidth:my-8 desktopSmWidth:flex-nowrap flex-wrap">
           <div class="flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
-            <h3 class="text-white text-[50px] xl:text-[64px] w-full mb-6">
+            <h3 class="text-white text-[36px] tableSmWidth:text-[53px] w-full mb-6">
               <span class="text-brand">鎢</span>資源循環
             </h3>
-            <p class="text-xl leading-[2] text-white desktopSmWidth:mb-52 mb-10">
+            <p class="text-[18px] text-white leading-[2] desktopSmWidth:mb-52 mb-10">
               關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
             </p>
             <img v-if="width < 900" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
-            <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white bg-brand py-2 px-6 text-xl rounded inline-block flex items-center justify-between">
+            <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white bg-brand py-[10px] px-[20px] inline-block flex items-center justify-between">
               <span class="mr-10">More</span>
               <i>
                 <MaterialSymbolsArrowForwardIos class="text-xs block" />
               </i>
             </NuxtLink>
           </div>
-          <img v-if="width > 768" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
+          <img v-if="width > 900" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
         </div>
       </div>
 
       <div class="equipment relative py-20 w-full desktopSmWidth:h-0 desktopSmWidth:pb-[35%]">
-        <div class="bg-white/90 px-4 py-6 tableSmWidth:px-8 xl:py-12 xl:px-16 desktopSmWidth:absolute top-1/2 desktopSmWidth:-translate-y-1/2 mx-auto desktopSmWidth:m-0 w-[90%] tableSmWidth:w-[80%] desktopSmWidth:w-auto">
-          <h3 class="text-center font-bold text-[48px] tableSmWidth:text-[60px] mb-10">
+        <div class="bg-white/90 px-4 py-6 tableSmWidth:px-8 xl:py-12 xl:px-16 desktopSmWidth:absolute top-1/2 desktopSmWidth:-translate-y-1/2 mx-auto desktopSmWidth:m-0 w-[90%] tableSmWidth:w-[60%] desktopSmWidth:w-auto">
+          <h3 class="text-center font-bold text-[36px] tableSmWidth:text-[53px] mb-10">
             <span class="text-brand">專業</span>設備
           </h3>
-          <ul class="grid grid-cols-2 gap-6 desktopSmWidth:w-[400px] text-xl">
+          <ul class="grid grid-cols-2 gap-6 desktopSmWidth:w-[400px] text-xl tableSmWidth:2xl  desktopSmWidth:text-xl">
             <li>
               <div>
                 <MaterialSymbolsCheck class="inline text-brand" />
@@ -179,7 +178,7 @@ useHead({
     margin: 0 auto;
     box-sizing: border-box;
 
-    @include baseWidth;
+    @include baseWidth($l-mobile:5%, $r-mobile:5%);
     h3 {
       vertical-align: middle;
       position: relative;
@@ -206,7 +205,7 @@ useHead({
     position: relative;
     z-index: 2;
   }
-  @include baseWidth;
+  @include baseWidth($l-mobile:5%, $r-mobile:5%);
 }
 
 .equipment {

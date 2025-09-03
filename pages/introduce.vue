@@ -9,8 +9,8 @@ useHead({
       <div class="head pb-[41%] relative">
         <img class="absolute top-0 left-0 h-full w-full block" src="/public/img/introduce/introduceHead.jpg" alt="" />
         <div class="absolute top-0 left-0 h-full w-full block flex flex-wrap content-center justify-center">
-          <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[800px] mb-4" alt="logo" />
-          <h2 class="text-[32px] tableSmWidth:text-[56px] xl:text- text-white w-full text-center">
+          <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[500px] mb-4" alt="logo" />
+          <h2 class="text-[32px] tableSmWidth:text-[53px] xl:text- text-white w-full text-center">
             公司介紹
           </h2>
         </div>
@@ -18,11 +18,11 @@ useHead({
       <div
         class="baseWidth py-12 tableSmWidth:pt-20"
       >
-        <div class="text-white text-2xl tableSmWidth:text-4xl">
-          <h2 class="leading-[2]">
+        <div class="text-white text-2xl tableSmWidth:text-4xl px-[5%] leading-[1.6] tableSmWidth:leading-[2]">
+          <h2 class="text-24px tableSmWidth:text-[48px]">
             <span class="text-brand">貴金屬</span>資源循環
           </h2>
-          <h2 class="leading-[2]">
+          <h2 class="text-24px tableSmWidth:text-[48px] mb-8">
             保護土地，力求<span class="text-brand">環保永續</span>
           </h2>
           <p class="tableSmWidth:mt-8 mt-4 text-lg tableSmWidth:text-xl leading-[1.6]">
@@ -58,7 +58,7 @@ useHead({
             </div>
           </li>
         </ul>
-        <div class="text-white text-center text-xl leading-[2] my-8 tableSmWidth:mt-40 tableSmWidth:mb-12 py-10">
+        <div class="text-white text-center text-xl leading-[2] my-8 tableSmWidth:mt-40 tableSmWidth:mb-12 py-10 px-[5%]">
           <p class="mb-8">
             我們於2010年在台灣高雄成立,
             <br />

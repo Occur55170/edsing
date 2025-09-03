@@ -8,10 +8,18 @@ const footerElement = ref < NType<HTMLElement>>(null)
 
 const footerStyle = ref<string>('')
 
-onMounted(() => {
+function calculateFooterPb () {
   if (footerElement.value && footerElement.value?.offsetHeight) {
     footerStyle.value = `padding-bottom: ${footerElement.value?.offsetHeight - 100}px;`
   }
+}
+
+watch(width, () => {
+  calculateFooterPb()
+})
+
+onMounted(() => {
+  calculateFooterPb()
 })
 </script>
 
@@ -47,7 +55,7 @@ onMounted(() => {
   );
   z-index: 10;
 
-  @include baseWidth;
+  @include baseWidth($l-mobile:5%, $r-mobile:5%);
 }
 .footerWrap{
   &::after {
