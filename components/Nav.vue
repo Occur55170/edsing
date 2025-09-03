@@ -45,19 +45,33 @@ function openMenu () {
             {{ t('about us') }}
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
-          <NuxtLink to="/" class="desktopSmWidth:text-white">
-            {{ t('recycle') }}
-          </NuxtLink>
+        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
+          <div class="relative">
+            <div class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300 group-hover:text-white">
+              {{ t('recycle') }}
+            </div>
+            <ul class="absolute top-full left-0 bg-white shadow-lg hidden group-hover:block min-w-max">
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <NuxtLink to="/tungstenHard">
+                  碳化鎢硬廢料
+                </NuxtLink>
+              </li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <NuxtLink to="/tungstenSoft">
+                  碳化鎢軟廢料
+                </NuxtLink>
+              </li>
+              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
+                <NuxtLink to="/highSpeedSteel">
+                  高速鋼廢料
+                </NuxtLink>
+              </li>
+            </ul>
+          </div>
         </li>
         <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
-          <NuxtLink to="/" class="desktopSmWidth:text-white">
+          <NuxtLink to="/tungstenType" class="desktopSmWidth:text-white">
             碳化鎢粉
-          </NuxtLink>
-        </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
-          <NuxtLink to="/" class="desktopSmWidth:text-white">
-            切割鉅片
           </NuxtLink>
         </li>
         <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
@@ -66,8 +80,8 @@ function openMenu () {
           </NuxtLink>
         </li>
         <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
-          <NuxtLink to="/" class="desktopSmWidth:text-white">
-            研磨材料
+          <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white">
+            稀有金屬介紹
           </NuxtLink>
         </li>
         <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
@@ -122,8 +136,26 @@ function openMenu () {
 
 <style lang="scss" scoped>
 .nav{
-  overflow: hidden;
   @include baseWidth(0, 2%, 0%, 1%);
+}
+// .recycleA {
+//     color: blue;
+
+//     & ~ div {
+//       color: red; // hover recycleA 時，B 和 C 都變紅
+//     }
+// }
+.recycleA {
+  &:hover {
+
+    & + ul {
+      display: block; // 顯示下拉
+    }
+  }
+
+  & + ul {
+    display: none;
+  }
 }
 .changeLangueBtn {
   position: relative;
@@ -154,7 +186,6 @@ function openMenu () {
   .changeLangueBtn {
     &::before {
       width: 30px;
-
     }
   }
 }
