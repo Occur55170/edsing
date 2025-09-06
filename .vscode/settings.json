@@ -62,7 +62,8 @@
     "xstate",
     "youtube",
     "YOUTUBE",
-    "NuxtLink"
+    "NuxtLink",
+    "Tabler"
   ],
   "css.validate": false,
   "scss.validate": false

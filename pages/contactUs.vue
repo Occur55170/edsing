@@ -82,22 +82,22 @@ function sendEmail () {
             益鼎興金屬有限公司
           </p>
           <p class="text-xl leading-[2] flex items-center justify-center">
-            <MaterialSymbolsLocationOn class="text-red-500 inline" />
+            <MaterialSymbolsLocationOn class="text-red-500 hidden tableSmWidth:inline" />
             地址:高雄市路竹區民有路153之1號
           </p>
           <p class="text-xl leading-[2] flex items-center justify-center">
             Address: No.153-1, Minyou Rd., Lujhu Dist., Kaohsiung City, Taiwan
           </p>
           <p class="text-xl leading-[2] flex items-center justify-center">
-            <IcRoundCall class="text-stone-500 inline" />
+            <IcRoundCall class="text-stone-500 hidden tableSmWidth:inline" />
             TEL: +886-07-611-5753
           </p>
           <p class="text-xl leading-[2] flex items-center justify-center ">
-            <BxBxsPrinter class="text-stone-300 inline" />
+            <BxBxsPrinter class="text-stone-300 hidden tableSmWidth:inline" />
             FAX: +886-07-611-3753
           </p>
           <p class="text-xl leading-[2] flex items-center justify-center">
-            <BxsEnvelope class="text-white inline" />
+            <BxsEnvelope class="text-white hidden tableSmWidth:inline" />
             E-mail: edsingpolitech@hotmail.com
           </p>
         </div>

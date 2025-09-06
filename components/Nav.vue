@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import TablerWorld from '~icons/tabler/world'
 import MaterialSymbolsFormatListBulletedRounded from '~icons/material-symbols/format-list-bulleted-rounded'
+import IcBaselineArrowDropDown from '~icons/ic/baseline-arrow-drop-down'
+import IcBaselineArrowDropUp from '~icons/ic/baseline-arrow-drop-up'
 
 interface Props {
   class?: string;
@@ -13,6 +15,7 @@ const props = withDefaults(defineProps<Props>(), {
 const { locale, t } = useI18n()
 const { width } = useWindowWidth()
 const isMenuOpen = ref<boolean>(false)
+const isOpenRecycleList = ref<boolean>(false)
 
 function onChangeLangue () {
   if (locale.value === 'zh-tw') {
@@ -25,6 +28,10 @@ function onChangeLangue () {
 function openMenu () {
   isMenuOpen.value = !isMenuOpen.value
 }
+
+function openRecycleList () {
+  isOpenRecycleList.value = !isOpenRecycleList.value
+}
 </script>
 
 <template>
@@ -35,66 +42,84 @@ function openMenu () {
     <button class="listBtn desktopSmWidth:hidden block w-[50px]" @click="openMenu()">
       <MaterialSymbolsFormatListBulletedRounded class="text-white w-full h-full" />
     </button>
+    <div v-if="isMenuOpen" class="desktopSmWidth:hidden fixed top-0 left-0 w-full h-full bg-black/30 z-[10]" @click="isMenuOpen = false"></div>
     <div
-      class="navList bg-white absolute z-[20] top-full left-full w-full desktopSmWidth:w-auto desktopSmWidth:static desktopSmWidth:bg-transparent desktopSmWidth:flex items-stretch text-md xl:text-xl transition-transform duration-800 flex-wrap desktopSmWidth:flex-nowrap"
+      class="navList bg-white text-md xl:text-xl absolute z-[20] desktopSmWidth:top-full left-full desktopSmWidth:w-auto tableSmWidth:w-[50%] w-[80%] h-[100vh] desktopSmWidth:h-auto desktopSmWidth:w-auto desktopSmWidth:static desktopSmWidth:bg-transparent desktopSmWidth:flex items-stretch flex-wrap desktopSmWidth:flex-nowrap transition-transform duration-800 "
       :class=" isMenuOpen ? 'flex -translate-x-full' : ''"
     >
-      <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between items-center mx-4 desktopSmWidth:mx-0 my-2 xl:my-8">
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+      <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between desktopSmWidth:flex-end content-baseline items-center my-2 xl:my-8">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/introduce" class="desktopSmWidth:text-white">
             {{ t('about us') }}
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
+        <li class="xl:mx-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
           <div class="relative">
-            <div class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300 group-hover:text-white">
+            <div
+              class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300  desktopSmWidth:group-hover:text-white flex justify-between items-center px-4"
+              @click="openRecycleList()"
+            >
               {{ t('recycle') }}
+              <IcBaselineArrowDropDown v-if="!isOpenRecycleList" class="text-2xl" />
+              <IcBaselineArrowDropUp v-else class="text-2xl" />
             </div>
-            <ul class="absolute top-full left-0 bg-white shadow-lg hidden group-hover:block min-w-max">
-              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                <NuxtLink to="/tungstenHard">
-                  碳化鎢硬廢料
-                </NuxtLink>
-              </li>
-              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                <NuxtLink to="/tungstenSoft">
-                  碳化鎢軟廢料
-                </NuxtLink>
-              </li>
-              <li class="px-4 py-2 hover:bg-gray-100 cursor-pointer">
-                <NuxtLink to="/highSpeedSteel">
-                  高速鋼廢料
-                </NuxtLink>
-              </li>
-            </ul>
+            <transition
+              enter-active-class="transition-all duration-300 ease-out"
+              enter-from-class="max-h-0 opacity-0"
+              enter-to-class="max-h-96 opacity-100"
+              leave-active-class="transition-all duration-300 ease-in"
+              leave-from-class="max-h-96 opacity-100"
+              leave-to-class="max-h-0 opacity-0"
+            >
+              <ul
+                v-if="isOpenRecycleList"
+                class="desktopSmWidth:absolute top-full left-0 bg-white desktopSmWidth:shadow-lg desktopSmWidth:hidden desktopSmWidth:group-hover:block min-w-max bg-slate-100"
+              >
+                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
+                  <NuxtLink to="/tungstenHard">
+                    碳化鎢硬廢料
+                  </NuxtLink>
+                </li>
+                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
+                  <NuxtLink to="/tungstenSoft">
+                    碳化鎢軟廢料
+                  </NuxtLink>
+                </li>
+                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer">
+                  <NuxtLink to="/highSpeedSteel">
+                    高速鋼廢料
+                  </NuxtLink>
+                </li>
+              </ul>
+            </transition>
           </div>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/tungstenType" class="desktopSmWidth:text-white">
             碳化鎢粉
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
             機械設備
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white">
             稀有金屬介紹
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
             量測設備
           </NuxtLink>
         </li>
-        <li class="mx-1 xl:mx-2 my-2 desktopSmWidth:my-0 py-2 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/contactUs" class="desktopSmWidth:text-white">
             {{ t('contact us') }}
           </NuxtLink>
         </li>
-        <li v-if="width < 900" class="flex items-center">
+        <li v-if="width < 900" class="mx-4 flex items-center">
           <span class="mr-4">{{ t('langue') }}:</span>
           <div class="flex items-stretch justify-center border border-stone-400 rounded-full overflow-hidden w-[120px] px-4 my-4">
             <div
@@ -137,25 +162,6 @@ function openMenu () {
 <style lang="scss" scoped>
 .nav{
   @include baseWidth(0, 2%, 0%, 1%);
-}
-// .recycleA {
-//     color: blue;
-
-//     & ~ div {
-//       color: red; // hover recycleA 時，B 和 C 都變紅
-//     }
-// }
-.recycleA {
-  &:hover {
-
-    & + ul {
-      display: block; // 顯示下拉
-    }
-  }
-
-  & + ul {
-    display: none;
-  }
 }
 .changeLangueBtn {
   position: relative;

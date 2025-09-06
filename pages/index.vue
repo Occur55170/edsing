@@ -89,7 +89,7 @@ useHead({
               關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
             </p>
             <img v-if="width < 900" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
-            <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white bg-brand py-[10px] px-[20px] inline-block flex items-center justify-between">
+            <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white hover:text-brand bg-brand hover:bg-white py-[10px] px-[20px] inline-block flex items-center justify-between">
               <span class="mr-10">More</span>
               <i>
                 <MaterialSymbolsArrowForwardIos class="text-xs block" />

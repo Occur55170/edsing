@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import IcRoundCall from '~icons/ic/round-call'
+
 useHead({
   title: '稀有金屬介紹',
 })
@@ -6,30 +8,37 @@ useHead({
 <template>
   <div>
     <NuxtLayout>
-      <div class="header w-full overflow-hidden">
-        <img class="tableSmWidth:block w-full" src="/img/rareMetal/RareMetal-top.jpg" alt="" />
+      <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] bg-[url('/img/rareMetal/RareMetal-top.jpg')] bg-no-repeat bg-cover bg-bottom relative">
+        <h2 class="text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-0 left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)]">
+          稀有金屬
+        </h2>
       </div>
-      <div class="flex items-center bg-brand">
-        <div class="tableSmWidth:block w-[50%]">
-          <img src="/img/rareMetal/global.png" alt="" class="w-full" />
+      <div class="flex flex-wrap bg-brand tableSmWidth:bg-transparent tableSmWidth:flex-nowrap items-center relative desktopSmWidth:mt-40">
+        <div class="flex w-[80%] mx-auto mt-8 tableSmWidth:mt-0 tableSmWidth:w-[40%] desktopSmWidth:w-[50%] flex justify-end pr-[5%] tableSmWidth:absolute left-0 top-[50%] tableSmWidth:-translate-y-1/2 z-[2]">
+          <img src="/img/rareMetal/global.png" alt="" class="w-full max-w-[700px]" />
         </div>
-        <div class="text-white">
-          <p>我們長期大量收購各類金屬廢料,包括:</p>
-          <p>硬質合金刀具廢料</p>
-          <p>金屬陶瓷廢料</p>
-          <p>高速鋼廢料</p>
-          <p>粉末及固體廢料</p>
-          <p>油、水、鐵混合廢料</p>
-          <p>同時,我們也提供各式特殊及稀有金屬的回收服務。</p>
-          <p>歡迎直接聯繫我們,洽詢詳情!</p>
+        <div class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
+          <p>我們長期大量收購各類金屬廢料,包括：</p>
+          <ol class="list-disc list-inside">
+            <li>硬質合金刀具廢料</li>
+            <li>金屬陶瓷廢料</li>
+            <li>高速鋼廢料</li>
+            <li>粉末及固體廢料</li>
+            <li>油、水、鐵混合廢料</li>
+          </ol>
+          <p class="mt-4 desktopSmWidth:my-8">
+            同時,我們也提供各式特殊及稀有金屬的回收服務。
+          </p>
+          <p>
+            <IcRoundCall class="inline" />
+            歡迎直接聯繫我們,洽詢詳情!
+          </p>
         </div>
       </div>
-      <div
-        class="rareMetalBottom mb-0 tableSmWidth:mb-[100px]"
-      >
-        <div class="grid grid-cols-2 grid-rows-5 gap-6 bg-white/50 p-4">
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-1.jpg" alt="" class="w-[50%]" />
+      <div class="rareMetalBottom mb-0 pb-[200px] pt-20 desktopSmWidth:pt-48">
+        <div class="grid  tableSmWidth:grid-cols-2 grid-rows-5 gap-6 bg-white/50 p-4 relative">
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-1.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Co鈷</h3>
               <p>
@@ -37,8 +46,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-2.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-2.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>V釩</h3>
               <p>
@@ -46,8 +55,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-3.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-3.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Cr鉻</h3>
               <p>
@@ -55,8 +64,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-4.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-4.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ti鈦</h3>
               <p>
@@ -64,8 +73,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-5.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-5.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Mo鉬</h3>
               <p>
@@ -73,8 +82,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-6.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-6.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ta 鉭</h3>
               <p>
@@ -82,8 +91,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-7.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-7.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>W鎢</h3>
               <p>
@@ -91,8 +100,8 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-8.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-8.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ir 銥</h3>
               <p>
@@ -100,14 +109,16 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2">
-            <img src="/img/rareMetal/6-9.jpg" alt="" class="w-[50%]" />
+          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+            <img src="/img/rareMetal/6-9.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3> 稀土元素 各種稀土元素廣泛應用於電子(如手機、雷達)、永磁體(電動車、風力渦輪)、螢光體、 催化劑、能源技術與國防裝備等」</h3>
             </div>
           </div>
         </div>
-        <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/TungstenHard/recycle-bottom-bg.jpg" />
+        <div class="p-4 pt-32 bg-white/50">
+          <ContractForm id="ContractForm" class="bg-white !p-4" banner-img="" text-class="!text-accent-light" />
+        </div>
       </div>
     </NuxtLayout>
   </div>
@@ -120,6 +131,15 @@ useHead({
   width: 100%;
   height: auto;
   position: relative;
+
+  &::before {
+    content: '';
+    @apply absolute top-0 left-0 w-full h-full w-full z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.4)_30%,rgba(255,255,255,0.1)_100%)];
+  }
+
+  & > * {
+    @apply z-[1];
+  }
 
   @include baseWidth(calc((100% - 1300px)/2), calc((100% - 1300px)/2));
 }

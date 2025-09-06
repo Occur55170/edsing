@@ -5,12 +5,14 @@ import StreamlineInterfaceUploadButton1ArrowButtonDownloadInternetNetworkServerU
 
 interface Props {
   class?: string;
-  bannerImg: string;
+  bannerImg?: string | null;
+  textClass?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   class: '',
-  bannerImg: '',
+  bannerImg: null,
+  textClass: '',
 })
 
 const previewUrl = ref<string | null>(null)
@@ -75,13 +77,14 @@ function onSubmit (e: Event) {
 <template>
   <div
     :class="`${ props.class } formSection flex flex-wrap desktopSmWidth:flex-nowrap border-1 relative`"
-    :style="{ backgroundImage: `url(${props.bannerImg})` }"
+    :style="!!props.bannerImg ? { backgroundImage: `url(${props.bannerImg})` } : { }"
   >
-    <div class="grow z-10">
-      <h3 class="text-white text-[56px] mb-8">
+    <div v-if="!!props.bannerImg" class="formSectionBg"></div>
+    <div :class="`text-white grow z-10 ${ props.textClass }`">
+      <h3 class="text-[56px] mb-8">
         請求定價
       </h3>
-      <p class="text-white text-xl leading-[2]">
+      <p class="text-xl leading-[2]">
         若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。<br />
         我們可以輕鬆回收您的鎢廢料。<br />
         提交下面的表格，我們的採購國隊將與您聯繫以討論報償。<br />
@@ -216,14 +219,11 @@ function onSubmit (e: Event) {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top 10% right 0%;
-
-  &::before {
-    content: '';
-    display: block;
-    @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/0 via-accent/95 to-accent/100;
-  }
-
   padding-top: 100px;
   @include baseWidth;
+}
+.formSectionBg {
+  display: block;
+  @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/0 via-accent/95 to-accent/100;
 }
 </style>
