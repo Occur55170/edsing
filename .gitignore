@@ -24,4 +24,4 @@ logs
 !.env.example
 
 # public/aboutCompany.mp4
-test.vue
+# test.vue
