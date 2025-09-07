@@ -1,18 +1,22 @@
 <script lang="ts" setup>
 import { z } from 'zod'
-
+import { sendForm } from '@emailjs/browser'
 import StreamlineInterfaceUploadButton1ArrowButtonDownloadInternetNetworkServerUpUpload from '~icons/streamline/interface-upload-button-1-arrow-button-download-internet-network-server-up-upload'
 
 interface Props {
   class?: string;
   bannerImg?: string | null;
   textClass?: string;
+  formStyle?: string;
+  isHaveDescription?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   class: '',
   bannerImg: null,
   textClass: '',
+  formStyle: '',
+  isHaveDescription: true,
 })
 
 const previewUrl = ref<string | null>(null)
@@ -67,10 +71,22 @@ function onSubmit (e: Event) {
       errors.value = e.flatten().fieldErrors
     }
   }
-  // if (form.value) {
-  //   console.log('submitEmail', form.value.name)
-  // }
-//   alert('表單送出')
+
+  if (!form.value) { return }
+
+  console.log(form.value)
+
+  sendForm('service_9hriy3l', 'template_8x1k1z1', form.value, {
+    publicKey: '_sL4fACYgE7BhhDyA',
+  }).then(
+    () => {
+      console.log('SUCCESS!')
+      alert('表單送出')
+    },
+    (error) => {
+      console.log('FAILED...', error.text)
+    }
+  )
 }
 
 </script>
@@ -80,7 +96,7 @@ function onSubmit (e: Event) {
     :style="!!props.bannerImg ? { backgroundImage: `url(${props.bannerImg})` } : { }"
   >
     <div v-if="!!props.bannerImg" class="formSectionBg"></div>
-    <div :class="`text-white grow z-10 ${ props.textClass }`">
+    <div v-if="props.isHaveDescription" :class="`text-white grow z-10 ${ props.textClass }`">
       <h3 class="text-[56px] mb-8">
         請求定價
       </h3>
@@ -91,21 +107,24 @@ function onSubmit (e: Event) {
         將為您的材料提供最優惠的價格。<br />
       </p>
     </div>
-    <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[40%] bg-slate-700 p-4 z-10" @submit="onSubmit">
+    <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[40%] bg-slate-700 p-4 z-10" :class="props.formStyle" @submit="onSubmit">
+      <!-- <p class="text-white">
+        {{ errors }}
+      </p> -->
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="name">
           <span class="requireInput mb-2 block text-white">聯絡人姓名</span>
-          <input id="name" v-model="formData.name" class="block p-2 w-full" type="text" />
+          <input id="name" v-model="formData.name" class="block p-2 w-full" type="text" name="name" />
         </label>
         <label class="w-[49%]" to="companyName">
           <span class="requireInput mb-2 block text-white">公司名稱</span>
-          <input id="companyName" v-model="formData.companyName" class="block p-2 w-full" type="text" />
+          <input id="companyName" v-model="formData.companyName" class="block p-2 w-full" type="text" name="companyName" />
         </label>
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="email">
           <span class="requireInput mb-2 block text-white">電子郵件</span>
-          <input id="email" v-model="formData.email" class="block p-2 w-full" type="text" />
+          <input id="email" v-model="formData.email" class="block p-2 w-full" type="text" name="email" />
         </label>
         <label class="w-[49%]" to="phone">
           <span class="requireInput mb-2 block text-white">電話</span>
@@ -145,6 +164,7 @@ function onSubmit (e: Event) {
           <input
             id="zone"
             v-model="formData.zone"
+            name="zone"
             class="block p-2 w-full"
             type="text"
           />
@@ -153,11 +173,11 @@ function onSubmit (e: Event) {
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="material">
           <span class="requireInput mb-2 block text-white">材料</span>
-          <input id="material" v-model="formData.material" class="block p-2 w-full" type="text" />
+          <input id="material" v-model="formData.material" class="block p-2 w-full" type="text" name="material" />
         </label>
         <label class="w-[49%]" to="materialCount">
           <span class="requireInput mb-2 block text-white">材料多少</span>
-          <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" />
+          <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" name="materialCount" />
         </label>
       </div>
       <!-- <div class="mb-6">
@@ -178,13 +198,11 @@ function onSubmit (e: Event) {
                 <span class="text-xs text-gray-600">✕</span>
               </button>
             </div>
-            <label
-              v-else
-              class="flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 hover:border-blue-500"
-            >
+            <label v-else class="flex h-40 w-full cursor-pointer flex-col items-center justify-center rounded-lg border-2 border-dashed border-gray-300 hover:border-blue-500">
               <input
                 type="file"
                 accept="image/*"
+                name="my_file"
                 class="hidden"
                 @change="onFileChange"
               />
@@ -198,8 +216,8 @@ function onSubmit (e: Event) {
         <span class="requireInput mb-2 block text-white">訊息</span>
         <textarea
           id="mailContent"
-          v-model="formData.materialCount"
-          name=""
+          v-model="formData.mailContent"
+          name="mailContent"
           cols="20"
           rows="5"
           class="w-full"

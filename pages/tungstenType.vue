@@ -14,8 +14,8 @@ useHead({
     </div>
     <div class="content pb-[200px] py-4 bg-accent text-white">
       <ul>
-        <li class="flex items-center my-12">
-          <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-[20%]" />
+        <li class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-24 leading-[2]">
+          <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-[50%] desktopSmWidth:w-[20%]" />
           <div class="mx-4">
             <h4>碳化鎢粉</h4>
             <h4>Tungsten Carbide Powder</h4>
@@ -33,9 +33,11 @@ useHead({
             </p>
           </div>
         </li>
-        <li class="flex items-center my-12">
-          <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-[20%] order-2" />
-          <div class="mx-4 order-1">
+        <li class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-24">
+          <div class="relative w-[50%] desktopSmWidth:w-[20%] overflow-hidden desktopSmWidth:order-2">
+            <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-full object-cover transform scale-150 rotate-12" />
+          </div>
+          <div class="mx-4 order-1 leading-[2]">
             <h4>鎢粉</h4>
             <h4>Tungsten Metal Powder</h4>
             <p>
@@ -56,8 +58,8 @@ useHead({
             </p>
           </div>
         </li>
-        <li class="flex items-center my-12">
-          <img src="/img/TungstenType/TungstenType-list-3.jpg" alt="" class="w-[20%]" />
+        <li class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-24 leading-[2]">
+          <img src="/img/TungstenType/TungstenType-list-3.jpg" alt="" class="w-[50%] desktopSmWidth:w-[20%]" />
           <div class="mx-4">
             <h4>三氧化鎢粉</h4>
             <h4>Tungsten Trioxide</h4>
@@ -68,9 +70,9 @@ useHead({
             <p>Tungsten trioxide powder features high purity and stable physical properties. Particle size and density can be customized according to customer needs, making it suitable for a wide range of tungsten products and material applications.</p>
           </div>
         </li>
-        <li class="flex items-center my-12">
-          <img src="/img/TungstenType/TungstenType-list-4.jpg" alt="" class="w-[20%] order-2" />
-          <div class="mx-4 order-1">
+        <li class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-24">
+          <img src="/img/TungstenType/TungstenType-list-4.jpg" alt="" class="w-[50%] desktopSmWidth:w-[20%] desktopSmWidth:order-2" />
+          <div class="mx-4 order-1 leading-[2]">
             <h4>藍色氧化鎢</h4>
             <h4>Blue Tungsten Oxide</h4>
             <p>鎢含量/Tungsten Content (W): 79.2%</p>

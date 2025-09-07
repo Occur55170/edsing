@@ -101,7 +101,8 @@ function sendEmail () {
             E-mail: edsingpolitech@hotmail.com
           </p>
         </div>
-        <form ref="form" class="form bg-slate-700 pt-16 pb-12 px-2 tableSmWidth:px-8 my-20 max-w-[900px]" @submit.prevent="sendEmail">
+        <ContractForm id="ContractForm" form-style="!w-full" banner-img="" :is-have-description="false" />
+        <!-- <form ref="form" class="form bg-slate-700 pt-16 pb-12 px-2 tableSmWidth:px-8 my-20 max-w-[900px]" @submit.prevent="sendEmail">
           <div class="mb-8 text-sm tableSmWidth:text-xl">
             <label class="mr-2 text-sm tableSmWidth:text-lg">姓名</label>
             <input type="text" name="user_name" class="text-black" />
@@ -138,7 +139,7 @@ function sendEmail () {
               送出
             </button>
           </div>
-        </form>
+        </form> -->
         <div class="mt-40">
           <p class="text-[36px] tableSmWidth:text-[56px] text-center mb-8">
             想更近一步了解嗎?
