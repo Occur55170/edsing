@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+const { locale, t } = useI18n()
+
 useHead({
   title: '公司介紹',
 })
@@ -11,7 +13,7 @@ useHead({
         <div class="absolute top-0 left-0 h-full w-full block flex flex-wrap content-center justify-center">
           <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[500px] mb-4" alt="logo" />
           <h2 class="text-[32px] tableSmWidth:text-[53px] xl:text- text-white w-full text-center">
-            公司介紹
+            {{ t('company introduction') }}
           </h2>
         </div>
       </div>

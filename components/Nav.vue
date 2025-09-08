@@ -96,22 +96,22 @@ function openRecycleList () {
         </li>
         <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/tungstenType" class="desktopSmWidth:text-white">
-            碳化鎢粉
+            {{ t('wolfram carbide') }}
           </NuxtLink>
         </li>
         <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
-            機械設備
+            {{ t('mechanical equipment') }}
           </NuxtLink>
         </li>
         <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white">
-            稀有金屬介紹
+            {{ t('introduction to rare metals') }}
           </NuxtLink>
         </li>
         <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
-            量測設備
+            {{ t('measurement equipment') }}
           </NuxtLink>
         </li>
         <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
