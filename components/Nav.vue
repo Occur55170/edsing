@@ -36,7 +36,7 @@ function openRecycleList () {
 
 <template>
   <div :class="`nav flex justify-between items-stretch bg-accent py-4 desktopSmWidth:p-0 relative ${props.class}`">
-    <NuxtLink to="/" class="inline-block self-center">
+    <NuxtLink to="/" class="inline-block self-center py-2 shrink-0">
       <img src="/img/logo.png" alt="logo" />
     </NuxtLink>
     <button class="listBtn desktopSmWidth:hidden block w-[50px]" @click="openMenu()">
@@ -47,13 +47,13 @@ function openRecycleList () {
       class="navList bg-white text-md xl:text-xl absolute z-[20] desktopSmWidth:top-full left-full desktopSmWidth:w-auto tableSmWidth:w-[50%] w-[80%] h-[100vh] desktopSmWidth:h-auto desktopSmWidth:w-auto desktopSmWidth:static desktopSmWidth:bg-transparent desktopSmWidth:flex items-stretch flex-wrap desktopSmWidth:flex-nowrap transition-transform duration-800 "
       :class=" isMenuOpen ? 'flex -translate-x-full' : ''"
     >
-      <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between desktopSmWidth:flex-end content-baseline items-center my-2 xl:my-8">
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+      <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between desktopSmWidth:flex-end content-baseline items-center my-2 xl:my-8 desktopSmWidth:ml-2">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/introduce" class="desktopSmWidth:text-white">
             {{ t('about us') }}
           </NuxtLink>
         </li>
-        <li class="xl:mx-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
+        <li class="py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
           <div class="relative">
             <div
               class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300  desktopSmWidth:group-hover:text-white flex justify-between items-center px-4"
@@ -94,27 +94,27 @@ function openRecycleList () {
             </transition>
           </div>
         </li>
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/tungstenType" class="desktopSmWidth:text-white">
             {{ t('wolfram carbide') }}
           </NuxtLink>
         </li>
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
             {{ t('mechanical equipment') }}
           </NuxtLink>
         </li>
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white">
             {{ t('introduction to rare metals') }}
           </NuxtLink>
         </li>
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/" class="desktopSmWidth:text-white">
             {{ t('measurement equipment') }}
           </NuxtLink>
         </li>
-        <li class="xl:mx-4 px-4 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
+        <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/contactUs" class="desktopSmWidth:text-white">
             {{ t('contact us') }}
           </NuxtLink>
@@ -146,7 +146,7 @@ function openRecycleList () {
       <div v-if="width > 900" class="changeLangueBtn shrink-0 flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
         <TablerWorld class="desktopSmWidth:text-white" />
         <div
-          class="px-2 xl:px-4 text-xl desktopSmWidth:text-white bg-brand"
+          class="px-2 xl:px-4 desktopSmWidth:text-white bg-brand"
         >
           {{ locale === 'zh-tw' ? 'English' : '繁體中文' }}
         </div>
