@@ -39,9 +39,9 @@ useHead({
                 <p class="text-white mb-6 text-left leading-[2]">
                   鑽頭/刀片/採礦等級/鎢基合金鈷鎳高溫合金
                 </p>
-                <NuxtLink to="/tungstenHard" class="text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
+                <NuxtLink to="/tungstenHard" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
-                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline mr-4" />
                 </NuxtLink>
               </div>
             </li>
@@ -54,9 +54,9 @@ useHead({
                 <p class="text-white mb-6 text-left leading-[2]">
                   碳化鎢泥/切屑粉末/過濾材料/下腳料
                 </p>
-                <NuxtLink to="/tungstenSoft" class="text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
+                <NuxtLink to="/tungstenSoft" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
-                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline mr-4" />
                 </NuxtLink>
               </div>
             </li>
@@ -69,9 +69,9 @@ useHead({
                 <p class="text-white mb-6 text-left leading-[2]">
                   高速鋼刨花/銑刀/鑽頭/牙板/各式合金
                 </p>
-                <NuxtLink to="/highSpeedSteel" class="text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
+                <NuxtLink to="/highSpeedSteel" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
-                  <MaterialSymbolsLineEndArrowNotchRounded class="inline" />
+                  <MaterialSymbolsLineEndArrowNotchRounded class="inline mr-4" />
                 </NuxtLink>
               </div>
             </li>
@@ -195,6 +195,30 @@ useHead({
       }
     }
   }
+
+  .preciousLink {
+      svg {
+        animation-name:slideLeftRight;
+        animation-duration: 1s;
+        animation-iteration-count: infinite;
+        animation-timing-function:ease-in-out;
+      }
+      &:hover {
+        @apply text-white;
+      }
+  }
+}
+
+@keyframes slideLeftRight{
+    0%{
+      transform: translateX(0px);
+    }
+    50%{
+      transform: translateX(10px);
+    }
+    100%{
+      transform: translateX(0px);
+    }
 }
 .recycle {
   background-image:url('/img/index/recycleBg.jpg');
