@@ -24,6 +24,7 @@ export default defineNuxtConfig({
   },
   css: [
     '~/assets/css/main.scss',
+    'animate.css/animate.min.css',
   ],
   vite: {
     css: {
@@ -43,6 +44,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/i18n',
     'unplugin-icons/nuxt',
+    '@nuxtjs/device',
   ],
   i18n: {
     langDir: './locales',

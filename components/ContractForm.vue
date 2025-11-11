@@ -243,7 +243,7 @@ function onSubmit (e: Event) {
         ></textarea>
       </div>
       <div class="flex justify-end w-full">
-        <button class="bg-red-600 py-2 px-8 inline-block text-white" type="submit">
+        <button class="bg-red-600 py-2 px-8 inline-block text-white hover:bg-red-900" type="submit">
           送出
         </button>
       </div>

@@ -6,19 +6,42 @@ import MaterialSymbolsCheck from '~icons/material-symbols/check'
 import MaterialSymbolsArrowForwardIos from '~icons/material-symbols/arrow-forward-ios'
 import MaterialSymbolsLineEndArrowNotchRounded from '~icons/material-symbols/line-end-arrow-notch-rounded'
 
+import 'animate.css'
+import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
+
+const device = useDevice()
+
 const { t } = useI18n()
-const { width } = useWindowWidth()
+
+const headerAfter = device.isDesktop
+  ? useAnimateOnScroll('animate__bounceIn').target
+  : ref(null)
+const list1 = device.isDesktop
+  ? useAnimateOnScroll('animate__flipInX').target
+  : ref(null)
+const list2 = device.isDesktop
+  ? useAnimateOnScroll('animate__flipInX').target
+  : ref(null)
+const list3 = device.isDesktop
+  ? useAnimateOnScroll('animate__flipInX').target
+  : ref(null)
+const processCom = device.isDesktop
+  ? useAnimateOnScroll('animate__fanimate__slideInLeftlipInX').target
+  : ref(null)
+const processImg = device.isDesktop
+  ? useAnimateOnScroll('animate__slideInRight').target
+  : ref(null)
 
 useHead({
   title: '益鼎興金屬有限公司-首頁',
 })
 </script>
-
 <template>
   <div>
     <NuxtLayout>
       <div class="header w-full overflow-hidden">
         <img class="hidden tableSmWidth:block w-full" src="/img/header.jpg" alt="" />
+        <div ref="headerAfter" class="header-after"></div>
         <img class="block tableSmWidth:hidden w-full" src="/img/header-mobile.jpg" alt="" />
       </div>
 
@@ -30,7 +53,7 @@ useHead({
             </div>
           </h3>
           <ul class="flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
-            <li class="relative w-full mb-8 tableSmWidth:my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
+            <li ref="list1" class="relative w-full mb-8 tableSmWidth:my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
@@ -45,7 +68,7 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
+            <li ref="list2" class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-2.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
@@ -60,7 +83,7 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
+            <li ref="list3" class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-3.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
@@ -81,14 +104,14 @@ useHead({
 
       <div class="recycle py-5 tableSmWidth:py-10 desktopSmWidth:py-20">
         <div class="flex items-center justify-between tableSmWidth:my-8 desktopSmWidth:flex-nowrap flex-wrap">
-          <div class="flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
+          <div ref="processCom" class="flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
             <h3 class="text-white text-[36px] tableSmWidth:text-[53px] w-full mb-6">
               <span class="text-brand">鎢</span>資源循環
             </h3>
             <p class="text-[18px] text-white leading-[2] desktopSmWidth:mb-52 mb-10">
               關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
             </p>
-            <img v-if="width < 900" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
+            <img v-if="!device.isDesktop" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
             <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white hover:text-brand bg-brand hover:bg-white py-[10px] px-[20px] inline-block flex items-center justify-between">
               <span class="mr-10">More</span>
               <i>
@@ -96,7 +119,7 @@ useHead({
               </i>
             </NuxtLink>
           </div>
-          <img v-if="width > 900" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
+          <img v-if="device.isDesktop" ref="processImg" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
         </div>
       </div>
 
@@ -160,7 +183,7 @@ useHead({
 <style lang="scss" scoped>
 .header {
   position: relative;
-  &::before {
+  .header-after {
     content: '';
     position: absolute;
     bottom: 0%;
@@ -172,6 +195,7 @@ useHead({
     background-size: 30%;
   }
 }
+
 .precious {
   @apply bg-accent;
   &>div {
@@ -234,7 +258,8 @@ useHead({
 
 .equipment {
   background: url('/img/index/equipment.png') no-repeat;
-  background-size:cover ;
+  background-size: cover;
+  background-attachment: fixed;
 
   &>div{
     right: clamp(50px, 10%, 500px);
@@ -260,6 +285,25 @@ useHead({
         display: none;
       }
     }
+  }
+}
+
+/* 1️⃣ animate.css 結構樣式 */
+.animate__rotateIn {
+  animation-name: rotateIn;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* 2️⃣ 定義 keyframes */
+@keyframes rotateIn {
+  0% {
+    opacity: 0;
+    transform: rotateZ(0deg)
+  }
+  100% {
+    opacity: 1;
+    transform: rotateZ(360deg)
   }
 }
 </style>

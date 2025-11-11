@@ -1,5 +1,17 @@
 <script setup lang="ts">
+import 'animate.css'
 import IcRoundCall from '~icons/ic/round-call'
+import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
+
+const { target: list1 } = useAnimateOnScroll('animate__slideInLeft')
+const { target: list2 } = useAnimateOnScroll('animate__slideInRight')
+const { target: list3 } = useAnimateOnScroll('animate__slideInLeft')
+const { target: list4 } = useAnimateOnScroll('animate__slideInRight')
+const { target: list5 } = useAnimateOnScroll('animate__slideInLeft')
+const { target: list6 } = useAnimateOnScroll('animate__slideInRight')
+const { target: list7 } = useAnimateOnScroll('animate__slideInLeft')
+const { target: list8 } = useAnimateOnScroll('animate__slideInRight')
+const { target: list9 } = useAnimateOnScroll('animate__slideInLeft')
 
 useHead({
   title: '稀有金屬介紹',
@@ -37,7 +49,7 @@ useHead({
       </div>
       <div class="rareMetalBottom mb-0 pb-[200px] pt-20 desktopSmWidth:pt-48">
         <div class="grid  tableSmWidth:grid-cols-2 grid-rows-5 gap-6 bg-white/50 p-4 relative">
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list1" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-1.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Co鈷</h3>
@@ -46,7 +58,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list2" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-2.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>V釩</h3>
@@ -55,7 +67,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list3" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-3.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Cr鉻</h3>
@@ -64,7 +76,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list4" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-4.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ti鈦</h3>
@@ -73,7 +85,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list5" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-5.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Mo鉬</h3>
@@ -82,7 +94,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list6" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-6.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ta 鉭</h3>
@@ -91,7 +103,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list7" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-7.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>W鎢</h3>
@@ -100,7 +112,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list8" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-8.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3>Ir 銥</h3>
@@ -109,7 +121,7 @@ useHead({
               </p>
             </div>
           </div>
-          <div class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
+          <div ref="list9" class="flex bg-white p-2  tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-9.jpg" alt="" class="w-[50%] mx-auto" />
             <div>
               <h3> 稀土元素 各種稀土元素廣泛應用於電子(如手機、雷達)、永磁體(電動車、風力渦輪)、螢光體、 催化劑、能源技術與國防裝備等」</h3>

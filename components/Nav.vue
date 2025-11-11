@@ -53,10 +53,10 @@ function openRecycleList () {
             {{ t('about us') }}
           </NuxtLink>
         </li>
-        <li class="py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
+        <li class="desktopSmWidth:pl-2 desktopSmWidth:pr-0 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0 group">
           <div class="relative">
             <div
-              class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300  desktopSmWidth:group-hover:text-white flex justify-between items-center px-4"
+              class="recycleA desktopSmWidth:text-white cursor-pointer transition-colors duration-300  desktopSmWidth:group-hover:text-white flex justify-between items-center px-2"
               @click="openRecycleList()"
             >
               {{ t('recycle') }}

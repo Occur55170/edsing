@@ -34,7 +34,7 @@ onMounted(() => {
           <p>地址:高雄市路竹區民有路153-1號</p>
           <p>Copyright © EDSING Metal Products Co. Ltd All rights reserved.</p>
         </div>
-        <NuxtLink to="/contactUs" class="text-white bg-accent font-bold text-xl px-8 py-4 grow-0 flex items-center">
+        <NuxtLink to="/contactUs" class="text-white bg-accent font-bold text-xl px-8 py-4 grow-0 flex items-center hover:bg-white hover:text-black">
           <span class="mr-10">{{ t('contact us') }}</span>
           <MaterialSymbolsArrowForwardIos />
         </NuxtLink>
