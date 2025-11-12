@@ -13,7 +13,7 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { locale, t } = useI18n()
-const { width } = useWindowWidth()
+const device = useDevice()
 const isMenuOpen = ref<boolean>(false)
 const isOpenRecycleList = ref<boolean>(false)
 
@@ -36,7 +36,7 @@ function openRecycleList () {
 
 <template>
   <div :class="`nav flex justify-between items-stretch bg-accent py-4 desktopSmWidth:p-0 relative ${props.class}`">
-    <NuxtLink to="/" class="inline-block self-center py-2 shrink-0">
+    <NuxtLink to="/" class="cursor-pointer inline-block self-center py-2 shrink-0">
       <img src="/img/logo.png" alt="logo" />
     </NuxtLink>
     <button class="listBtn desktopSmWidth:hidden block w-[50px]" @click="openMenu()">
@@ -119,7 +119,7 @@ function openRecycleList () {
             {{ t('contact us') }}
           </NuxtLink>
         </li>
-        <li v-if="width < 900" class="mx-4 flex items-center">
+        <li v-if="!device.isDesktop" class="mx-4 flex items-center">
           <span class="mr-4">{{ t('langue') }}:</span>
           <div class="flex items-stretch justify-center border border-stone-400 rounded-full overflow-hidden w-[120px] px-4 my-4">
             <div
@@ -143,7 +143,7 @@ function openRecycleList () {
           </div>
         </li>
       </ul>
-      <div v-if="width > 900" class="changeLangueBtn shrink-0 flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
+      <div v-if="device.isDesktop" class="changeLangueBtn shrink-0 flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
         <TablerWorld class="desktopSmWidth:text-white" />
         <div
           class="px-2 xl:px-4 desktopSmWidth:text-white bg-brand"
@@ -163,6 +163,7 @@ function openRecycleList () {
 .nav{
   @include baseWidth(0, 2%, 0%, 1%);
   .NavALink {
+    @apply cursor-pointer;
     position: relative;
     &::after {
       content: '';
@@ -171,7 +172,7 @@ function openRecycleList () {
       left: 50%;
       height: 1px;
       width: 0;
-      transition: all .8s;
+      transition: all .3s;
       background: #fff;
     }
     &:hover::after {

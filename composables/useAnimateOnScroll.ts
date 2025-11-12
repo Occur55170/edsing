@@ -12,8 +12,6 @@ export function useAnimateOnScroll (animationClass = 'animate__fadeInUp') {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('animate__animated', animationClass)
-          // } else {
-            // entry.target.classList.remove('animate__animated', animationClass)
           }
         })
       },
