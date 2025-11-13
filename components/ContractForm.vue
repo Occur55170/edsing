@@ -191,11 +191,11 @@ function onSubmit (e: Event) {
       </div>
       <div class="flex justify-between mb-10">
         <label class="w-[49%]" to="material">
-          <span class="mb-2 block text-white">材料</span>
+          <span class="mb-2 block text-white">品項</span>
           <input id="material" v-model="formData.material" class="block p-2 w-full" type="text" name="material" />
         </label>
         <label class="w-[49%]" to="materialCount">
-          <span class="mb-2 block text-white">材料多少</span>
+          <span class="mb-2 block text-white">數量</span>
           <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" name="materialCount" />
         </label>
       </div>

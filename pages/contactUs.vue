@@ -101,6 +101,7 @@ function sendEmail () {
             E-mail: edsingpolitech@hotmail.com
           </p>
         </div>
+        <!-- FIXME: text white -->
         <ContractForm id="ContractForm" form-style="!w-full" banner-img="" :is-have-description="false" />
         <!-- <form ref="form" class="form bg-slate-700 pt-16 pb-12 px-2 tableSmWidth:px-8 my-20 max-w-[900px]" @submit.prevent="sendEmail">
           <div class="mb-8 text-sm tableSmWidth:text-xl">

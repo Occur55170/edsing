@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        // FIXME: favicon.ico change img
         { href: '/img/favicon.ico', rel: 'shortcut icon' },
         { href: 'https://fonts.googleapis.com', rel: 'preconnect' },
         { crossorigin: 'anonymous', href: 'https://fonts.gstatic.com', rel: 'preconnect' },
