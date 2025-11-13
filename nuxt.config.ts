@@ -5,6 +5,7 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
+        { href: '/img/favicon.ico', rel: 'shortcut icon' },
         { href: 'https://fonts.googleapis.com', rel: 'preconnect' },
         { crossorigin: 'anonymous', href: 'https://fonts.gstatic.com', rel: 'preconnect' },
         { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', rel: 'stylesheet' },

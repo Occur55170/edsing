@@ -55,7 +55,7 @@ useHead({
             <div>
               <span class="text-brand text-2xl my-4 block">回收率</span>
               <p class="text-lg leading-[2]">
-                鎢回收率100%/結回收率100%
+                鎢回收率100%/鈷回收率100%
               </p>
             </div>
           </li>
