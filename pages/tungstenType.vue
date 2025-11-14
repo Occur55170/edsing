@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const { target: list1 } = useAnimateOnScroll('animate__slideInLeft')
-const { target: list2 } = useAnimateOnScroll('animate__slideInRight')
-const { target: list3 } = useAnimateOnScroll('animate__slideInLeft')
-const { target: list4 } = useAnimateOnScroll('animate__slideInRight')
+const list1 = useAnimateOnScroll('resetAnimate').target
+const list2 = useAnimateOnScroll('resetAnimate').target
+const list3 = useAnimateOnScroll('resetAnimate').target
+const list4 = useAnimateOnScroll('resetAnimate').target
 useHead({
   title: '鎢粉種類介紹',
 })
@@ -17,7 +17,7 @@ useHead({
     </div>
     <div class="content pb-[200px] py-4 bg-accent text-white">
       <ul>
-        <li ref="list1" class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
+        <li ref="list1" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
           <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
           <div class="mx-4">
             <h4 class="my-4">
@@ -38,7 +38,7 @@ useHead({
             </p>
           </div>
         </li>
-        <li ref="list2" class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
+        <li ref="list2" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
           <div class="relative mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] overflow-hidden desktopSmWidth:order-2">
             <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-full object-cover transform scale-150 rotate-12" />
           </div>
@@ -64,7 +64,7 @@ useHead({
             </p>
           </div>
         </li>
-        <li ref="list3" class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
+        <li ref="list3" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
           <img src="/img/TungstenType/TungstenType-list-3.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
           <div class="mx-4">
             <h4 class="my-4">
@@ -82,7 +82,7 @@ useHead({
             <p>Tungsten trioxide powder features high purity and stable physical properties. Particle size and density can be customized according to customer needs, making it suitable for a wide range of tungsten products and material applications.</p>
           </div>
         </li>
-        <li ref="list4" class="flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
+        <li ref="list4" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
           <img src="/img/TungstenType/TungstenType-list-4.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] desktopSmWidth:order-2" />
           <div class="mx-4 order-1 leading-[2]">
             <h4 class="my-4">
@@ -108,6 +108,14 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.animate_start_opacity {
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.resetAnimate {
+  opacity: 1 !important;
+}
+
 .head {
   background-image:
     linear-gradient(to top, rgba(6, 39, 55, .9) 15%, rgba(6, 39, 55, .1) 40%), /* 紅色漸層 */

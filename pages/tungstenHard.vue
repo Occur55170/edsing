@@ -1,5 +1,15 @@
 <script lang="ts" setup>
+import 'animate.css'
+import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
+
 const route = useRoute()
+const tungstenHardList1 = useAnimateOnScroll('resetAnimate').target
+const tungstenHardList2 = useAnimateOnScroll('resetAnimate').target
+const tungstenHardList3 = useAnimateOnScroll('resetAnimate').target
+const tungstenHardList4 = useAnimateOnScroll('resetAnimate').target
+const tungstenHardList5 = useAnimateOnScroll('resetAnimate').target
+const tungstenHardList6 = useAnimateOnScroll('resetAnimate').target
+
 useHead({
   title: '收購項目-碳化鎢硬廢料',
 })
@@ -27,37 +37,37 @@ useHead({
         回收您使用過的鑽頭和刀片的價值硬質合金。
       </p>
       <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
-        <li class="w-full">
+        <li ref="tungstenHardList1" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             鎢鑽頭
           </p>
         </li>
-        <li class="w-full">
+        <li ref="tungstenHardList2" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-2.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             碳化鎢耐磨件
           </p>
         </li>
-        <li class="w-full">
+        <li ref="tungstenHardList3" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-3.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             鎢刀片
           </p>
         </li>
-        <li class="w-full">
+        <li ref="tungstenHardList4" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-4.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             各式碳化鎢邊角料
           </p>
         </li>
-        <li class="w-full">
+        <li ref="tungstenHardList5" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-5.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             切割料
           </p>
         </li>
-        <li class="w-full">
+        <li ref="tungstenHardList6" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-6.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
             礦山工具
@@ -70,6 +80,14 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.animate_start_opacity {
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.resetAnimate {
+  opacity: 1 !important;
+}
+
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;

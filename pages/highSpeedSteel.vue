@@ -1,5 +1,18 @@
 <script lang="ts" setup>
+import 'animate.css'
+import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
+
 const route = useRoute()
+
+const h3Text = useAnimateOnScroll('resetAnimate').target
+const description = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel1 = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel2 = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel3 = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel4 = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel5 = useAnimateOnScroll('resetAnimate').target
+const highSpeedSteel6 = useAnimateOnScroll('resetAnimate').target
+
 useHead({
   title: '收購項目-高速鋼合金廢料',
 })
@@ -20,45 +33,45 @@ useHead({
         </template>
       </AcquisitionItem>
       <div class="recycleBlock bg-accent text-white">
-        <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
+        <h3 ref="h3Text" class="animate_start_opacity text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
           我們收購的項目
         </h3>
-        <p class="text-2xl mb-20 leading-[2]">
+        <p ref="description" class="animate_start_opacity text-2xl mb-20 leading-[2]">
           回收固體、刨花、M2、M35、M42、T5、T15、D2，
           各式型號歡迎詢問。
         </p>
         <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-10">
-          <li>
+          <li ref="highSpeedSteel1" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-1.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               HSS各式工具
             </p>
           </li>
-          <li>
+          <li ref="highSpeedSteel2" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-2.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               HSS刨花
             </p>
           </li>
-          <li>
+          <li ref="highSpeedSteel3" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-3.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               M2牙板
             </p>
           </li>
-          <li>
+          <li ref="highSpeedSteel4" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-4.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               沖棒
             </p>
           </li>
-          <li>
+          <li ref="highSpeedSteel5" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-5.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               頭尾料
             </p>
           </li>
-          <li>
+          <li ref="highSpeedSteel6" class="animate_start_opacity">
             <img src="/img/HighSpeedSteel/HighSpeedSteel-list-6.jpg" alt="" />
             <p class="text-xl desktopSmWidth:text-2xl mt-2">
               工具鋼
@@ -72,6 +85,13 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.animate_start_opacity {
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.resetAnimate {
+  opacity: 1 !important;
+}
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;

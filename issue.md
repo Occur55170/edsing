@@ -1,10 +1,9 @@
 1.
 https://ogakin.co.jp/
 線圖動畫效果用這樣的方式呈現
-
 header 背景他們會討論
 
-2.
+2. FIXME: check all page, animate type
 所有網頁的動畫效果,文字也好圖片也好 用這個
 https://www.tungco.com/
 有點像是浮出水面的感覺
