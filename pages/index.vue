@@ -13,24 +13,12 @@ const device = useDevice()
 
 const { t } = useI18n()
 
-const headerAfter = device.isDesktop
-  ? useAnimateOnScroll('animate__bounceIn').target
-  : ref(null)
-const list1 = device.isDesktop
-  ? useAnimateOnScroll('animate__flipInX').target
-  : ref(null)
-const list2 = device.isDesktop
-  ? useAnimateOnScroll('animate__flipInX').target
-  : ref(null)
-const list3 = device.isDesktop
-  ? useAnimateOnScroll('animate__flipInX').target
-  : ref(null)
-const processCom = device.isDesktop
-  ? useAnimateOnScroll('animate__fanimate__slideInLeftlipInX').target
-  : ref(null)
-const processImg = device.isDesktop
-  ? useAnimateOnScroll('animate__slideInRight').target
-  : ref(null)
+const headerAfter = device.isDesktop ? useAnimateOnScroll('animate__bounceIn').target : ref(null)
+const preciousText = useAnimateOnScroll('resetAnimate').target
+const preciousList = useAnimateOnScroll('resetAnimate').target
+const recycleSection = useAnimateOnScroll('resetAnimate').target
+const recycleImg = useAnimateOnScroll('resetAnimate').target
+const equipmentSection = useAnimateOnScroll('resetAnimate').target
 
 useHead({
   title: '益鼎興金屬有限公司-首頁',
@@ -47,20 +35,20 @@ useHead({
 
       <div class="precious bg-accent py-10 desktopSmWidth:py-20">
         <div class="flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
-          <h3 class="text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
+          <h3 ref="preciousText" class="animate_start_opacity text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
             <div class="text-left">
               回收鎢
             </div>
           </h3>
-          <ul class="flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
-            <li ref="list1" class="relative w-full mb-8 tableSmWidth:my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
-              <img src="/img/index/index-list-1.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
+          <ul ref="preciousList" class="animate_start_opacity flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
+            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[450px] desktopSmWidth:w-[33%] text-right">
+              <img src="/img/index/index-list-1.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   鎢硬廢料/合金
                 </p>
-                <p class="text-white mb-6 text-left leading-[2]">
-                  鑽頭/刀片/採礦等級/鎢基合金鈷鎳高溫合金
+                <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
+                  <span>鑽頭</span>/<span>刀片</span>/<span>採礦等級</span>/<span>鎢基合金</span>/<span>鈷鎳高溫合金</span>
                 </p>
                 <NuxtLink to="/tungstenHard" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -68,14 +56,14 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li ref="list2" class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
-              <img src="/img/index/index-list-2.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
+            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[450px] desktopSmWidth:w-[33%] text-right">
+              <img src="/img/index/index-list-2.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   鎢軟廢料
                 </p>
-                <p class="text-white mb-6 text-left leading-[2]">
-                  碳化鎢泥/切屑粉末/過濾材料/下腳料
+                <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
+                  <span>碳化鎢泥</span>/<span>切屑粉末</span>/<span>過濾材料</span>/<span>下腳料</span>
                 </p>
                 <NuxtLink to="/tungstenSoft" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -83,14 +71,14 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li ref="list3" class="relative w-full my-4 tableSmWidth:w-[30%] desktopSmWidth:w-[33%] text-right">
-              <img src="/img/index/index-list-3.jpg" class="w-full h-[600px] object-cover tabletSmWidth:object-contain grayscale-[20]" />
-              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-full tabletSmWidth:w-[80%] h-auto tabletSmWidth:h-[200px] px-2 py-8">
+            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[450px] desktopSmWidth:w-[33%] text-right">
+              <img src="/img/index/index-list-3.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
+              <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
                   高速鋼
                 </p>
-                <p class="text-white mb-6 text-left leading-[2]">
-                  高速鋼刨花/銑刀/鑽頭/牙板/各式合金
+                <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
+                  <span>高速鋼刨花</span>/<span>銑刀</span>/<span>鑽頭</span>/<span>牙板</span>/<span>各式合金</span>
                 </p>
                 <NuxtLink to="/highSpeedSteel" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -104,7 +92,7 @@ useHead({
 
       <div class="recycle py-5 tableSmWidth:py-10 desktopSmWidth:py-20">
         <div class="flex items-center justify-between tableSmWidth:my-8 desktopSmWidth:flex-nowrap flex-wrap">
-          <div ref="processCom" class="flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
+          <div ref="recycleSection" class="animate_start_opacity flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
             <h3 class="text-white text-[36px] tableSmWidth:text-[53px] w-full mb-6">
               <span class="text-brand">鎢</span>資源循環
             </h3>
@@ -119,12 +107,12 @@ useHead({
               </i>
             </NuxtLink>
           </div>
-          <img v-if="device.isDesktop" ref="processImg" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
+          <img v-if="device.isDesktop" ref="recycleImg" src="/img/index/index-process.svg" alt="" class="animate_start_opacity block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
         </div>
       </div>
 
       <div class="equipment relative py-20 w-full desktopSmWidth:h-0 desktopSmWidth:pb-[35%]">
-        <div class="bg-white/90 px-4 py-6 tableSmWidth:px-8 xl:py-12 xl:px-16 desktopSmWidth:absolute top-1/2 desktopSmWidth:-translate-y-1/2 mx-auto desktopSmWidth:m-0 w-[90%] tableSmWidth:w-[60%] desktopSmWidth:w-auto">
+        <div ref="equipmentSection" class="animate_start_opacity bg-white/90 px-4 py-6 tableSmWidth:px-8 xl:py-12 xl:px-16 desktopSmWidth:absolute top-1/2 desktopSmWidth:-translate-y-1/2 mx-auto desktopSmWidth:m-0 w-[90%] tableSmWidth:w-[60%] desktopSmWidth:w-auto">
           <h3 class="text-center font-bold text-[36px] tableSmWidth:text-[53px] mb-10">
             <span class="text-brand">專業</span>設備
           </h3>
@@ -181,6 +169,14 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.animate_start_opacity {
+  transition: all 0.8s ease-in-out;
+  opacity: 0;
+}
+.resetAnimate {
+  opacity: 1 !important;
+}
+
 .header {
   position: relative;
   .header-after {
@@ -220,6 +216,20 @@ useHead({
     }
   }
 
+  ul>li {
+    overflow: hidden;
+    img{
+      will-change: transform;
+      transition: all .4s ease-in-out;
+      transition-duration: 1500ms;
+      filter: brightness(100%) contrast(120%) saturate(0%) blur(0px) hue-rotate(9deg);
+    }
+    img:hover  {
+      filter: brightness( 100% ) contrast( 100% ) saturate( 100% ) blur( 0px ) hue-rotate( 0deg );
+      transform: scale(1.2);
+    }
+  }
+
   .preciousLink {
       svg {
         animation-name:slideLeftRight;
@@ -232,7 +242,6 @@ useHead({
       }
   }
 }
-
 @keyframes slideLeftRight{
     0%{
       transform: translateX(0px);
@@ -244,6 +253,7 @@ useHead({
       transform: translateX(0px);
     }
 }
+
 .recycle {
   background-image:url('/img/index/recycleBg.jpg');
   background-repeat: no-repeat;
@@ -285,25 +295,6 @@ useHead({
         display: none;
       }
     }
-  }
-}
-
-/* 1️⃣ animate.css 結構樣式 */
-.animate__rotateIn {
-  animation-name: rotateIn;
-  animation-duration: 1s;
-  animation-fill-mode: both;
-}
-
-/* 2️⃣ 定義 keyframes */
-@keyframes rotateIn {
-  0% {
-    opacity: 0;
-    transform: rotateZ(0deg)
-  }
-  100% {
-    opacity: 1;
-    transform: rotateZ(360deg)
   }
 }
 </style>
