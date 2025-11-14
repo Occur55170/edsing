@@ -63,8 +63,8 @@ function sendEmail () {
           <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[800px] mb-4" alt="logo" />
         </div>
       </div>
-      <div class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px] text-white">
-        <div class="text-xl py-8 px-12 mb-12 border-b border-b-white">
+      <div class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
+        <div class="text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
           <p class="leading-[2] mb-8">
             尊敬的客戶您好:
             <br />
@@ -77,7 +77,7 @@ function sendEmail () {
             我們始終以專業與誠信為原則,致力於提供最適合您的解決方案,並與您建立長期穩定的合作關係。
           </p>
         </div>
-        <div>
+        <div class="text-white">
           <p class="text-[36px] tableSmWidth:text-[48px] leading-[2] text-center">
             益鼎興金屬有限公司
           </p>
@@ -141,7 +141,7 @@ function sendEmail () {
             </button>
           </div>
         </form> -->
-        <div class="mt-40">
+        <div class="mt-40 text-white">
           <p class="text-[36px] tableSmWidth:text-[56px] text-center mb-8">
             想更近一步了解嗎?
             <br />

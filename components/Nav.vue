@@ -119,7 +119,7 @@ function openRecycleList () {
             {{ t('contact us') }}
           </NuxtLink>
         </li>
-        <li v-if="!device.isDesktop" class="mx-4 flex items-center">
+        <li class="flex desktopSmWidth:hidden mx-4 items-center">
           <span class="mr-4">{{ t('langue') }}:</span>
           <div class="flex items-stretch justify-center border border-stone-400 rounded-full overflow-hidden w-[120px] px-4 my-4">
             <div
@@ -143,7 +143,7 @@ function openRecycleList () {
           </div>
         </li>
       </ul>
-      <div v-if="device.isDesktop" class="changeLangueBtn shrink-0 flex items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
+      <div class="changeLangueBtn hidden desktopSmWidth:flex shrink-0 items-center bg-brand ml-[20px] xl:ml-[50px] xl:pl-4">
         <TablerWorld class="desktopSmWidth:text-white" />
         <div
           class="px-2 xl:px-4 desktopSmWidth:text-white bg-brand"

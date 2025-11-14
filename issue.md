@@ -18,16 +18,16 @@ https://www.tungco.com/
 https://edsing.com/introduce
 翻譯的部分 看能不能跟這個一樣 給中英就好 其他都不用，直接套google
 
-5. fixed
+5. TODO: check
 https://edsing.com/introduce
 鈷，錯字要修正
 
-6. FIXME: text white
+6. TODO: check
 https://edsing.com/contactUs
 表單輸入電話 他都是白色的底白色的字
 表單 收購項目那邊的沒問題 沒有反白，聯繫我們那邊的才有問題
 
-7. fixed
+7. TODO: check
 所有有這個表單的 幫我一個忙
 材料-改成 品項
 材料多少-改成 數量

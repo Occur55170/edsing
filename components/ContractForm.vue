@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { z } from 'zod'
+import { z, ZodError } from 'zod'
 import { sendForm } from '@emailjs/browser'
 import StreamlineInterfaceUploadButton1ArrowButtonDownloadInternetNetworkServerUpUpload from '~icons/streamline/interface-upload-button-1-arrow-button-download-internet-network-server-up-upload'
 
@@ -21,13 +21,13 @@ const props = withDefaults(defineProps<Props>(), {
 
 const previewUrl = ref<string | null>(null)
 const form = ref<HTMLFormElement | null>(null)
-const errors = ref({})
+const errors = ref<Record<string, string>>({})
 
 const formSchema = z.object({
   name: z.string().min(1, { message: '請輸入姓名' }),
   companyName: z.string(),
   email: z.string().email('請輸入正確的Email格式').min(1, { message: '請輸入Email' }),
-  phone: z.string().min(1, { message: '請輸電話' }),
+  phone: z.string().min(1, { message: '請輸電話' }).regex(/^\d+$/, '電話號碼只能包含數字'),
   country: z.string(),
   zone: z.string(),
   material: z.string(),
@@ -65,16 +65,18 @@ function onSubmit (e: Event) {
   try {
     formSchema.parse(formData)
     console.log('Form submitted successfully:', formData)
-    errors.value = {} // Clear errors on success
-  } catch (e) {
-    if (e instanceof z.ZodError) {
-      errors.value = e.flatten().fieldErrors
+    errors.value = {}
+  } catch (error) {
+    if (error instanceof ZodError) {
+      const allMessages = error.issues.map(issue => issue.message).join('\n')
+      alert(allMessages)
+    } else {
+      console.error(error)
     }
+    return
   }
 
   if (!form.value) { return }
-
-  console.log(form.value)
 
   sendForm('service_9hriy3l', 'template_8x1k1z1', form.value, {
     publicKey: '_sL4fACYgE7BhhDyA',
@@ -154,7 +156,6 @@ function onSubmit (e: Event) {
             type="tel"
             autocomplete="tel"
             placeholder="+886 912 345 678"
-            pattern="^\+?[0-9\s\-()]{7,}$"
             required
           />
         </label>
