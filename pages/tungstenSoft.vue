@@ -3,8 +3,7 @@ import 'animate.css'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 
 const route = useRoute()
-const h3Text = useAnimateOnScroll('resetAnimate').target
-const description = useAnimateOnScroll('resetAnimate').target
+const tungstenSoftTitle = useAnimateOnScroll('resetAnimate').target
 const tungstenSoftList1 = useAnimateOnScroll('resetAnimate').target
 const tungstenSoftList2 = useAnimateOnScroll('resetAnimate').target
 const tungstenSoftList3 = useAnimateOnScroll('resetAnimate').target
@@ -28,11 +27,11 @@ useHead({
         </template>
       </AcquisitionItem>
       <div class="recycleBlock circleBg bg-accent text-white overflow-hidden">
-        <div>
-          <h3 ref="h3Text" class="animate_start_opacity text-[48px] desktopSmWidth:text-[64px] font-bold mb-4 animate_start_opacity">
+        <div ref="tungstenSoftTitle" class="animate_start_opacity">
+          <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
             我們收購的項目
           </h3>
-          <p ref="description" class="animate_start_opacity text-xl tableSmWidth:text-2xl mb-20 !leading-[2] animate_start_opacity">
+          <p class="text-xl tableSmWidth:text-2xl mb-20 !leading-[2]">
             我們將通過在我們的乾燥爐中乾燥來明確確認砂輪和含油和水分的硬質合金污泥的質量,從而提供合適的購買價格。
             碳化鎢泥的百分比不會太高或太低:濕的或乾的,20%W或90%W,我們都買。
             我們購買國內和國際材料,並很樂意協助任何物流。
@@ -67,14 +66,6 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.animate_start_opacity {
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-}
-.resetAnimate {
-  opacity: 1 !important;
-}
-
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;

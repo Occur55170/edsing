@@ -3,6 +3,8 @@ import 'animate.css'
 import IcRoundCall from '~icons/ic/round-call'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 
+const { target: rareMetalImg } = useAnimateOnScroll('resetAnimate')
+const { target: rareMetalTitle } = useAnimateOnScroll('resetAnimate')
 const { target: list1 } = useAnimateOnScroll('transform-none')
 const { target: list2 } = useAnimateOnScroll('transform-none')
 const { target: list3 } = useAnimateOnScroll('transform-none')
@@ -12,6 +14,7 @@ const { target: list6 } = useAnimateOnScroll('transform-none')
 const { target: list7 } = useAnimateOnScroll('transform-none')
 const { target: list8 } = useAnimateOnScroll('transform-none')
 const { target: list9 } = useAnimateOnScroll('transform-none')
+const { target: rareMetalForm } = useAnimateOnScroll('transform-none')
 
 useHead({
   title: '稀有金屬介紹',
@@ -26,25 +29,27 @@ useHead({
         </h2>
       </div>
       <div class="flex flex-wrap bg-brand tableSmWidth:bg-transparent tableSmWidth:flex-nowrap items-center relative desktopSmWidth:mt-40">
-        <div class="flex w-[80%] mx-auto mt-8 tableSmWidth:mt-0 tableSmWidth:w-[40%] desktopSmWidth:w-[50%] flex justify-end pr-[5%] tableSmWidth:absolute left-0 top-[50%] tableSmWidth:-translate-y-1/2 z-[2]">
+        <div ref="rareMetalImg" class="animate_start_opacity flex w-[80%] mx-auto mt-8 tableSmWidth:mt-0 tableSmWidth:w-[40%] desktopSmWidth:w-[50%] flex justify-end pr-[5%] tableSmWidth:absolute left-0 top-[50%] tableSmWidth:-translate-y-1/2 z-[2]">
           <img src="/img/rareMetal/global.png" alt="" class="w-full max-w-[700px]" />
         </div>
         <div class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
-          <p>我們長期大量收購各類金屬廢料,包括：</p>
-          <ol class="list-disc list-inside">
-            <li>硬質合金刀具廢料</li>
-            <li>金屬陶瓷廢料</li>
-            <li>高速鋼廢料</li>
-            <li>粉末及固體廢料</li>
-            <li>油、水、鐵混合廢料</li>
-          </ol>
-          <p class="mt-4 desktopSmWidth:my-8">
-            同時,我們也提供各式特殊及稀有金屬的回收服務。
-          </p>
-          <p>
-            <IcRoundCall class="inline" />
-            歡迎直接聯繫我們,洽詢詳情!
-          </p>
+          <div ref="rareMetalTitle" class="animate_start_opacity">
+            <p>我們長期大量收購各類金屬廢料,包括：</p>
+            <ol class="list-disc list-inside">
+              <li>硬質合金刀具廢料</li>
+              <li>金屬陶瓷廢料</li>
+              <li>高速鋼廢料</li>
+              <li>粉末及固體廢料</li>
+              <li>油、水、鐵混合廢料</li>
+            </ol>
+            <p class="mt-4 desktopSmWidth:my-8">
+              同時,我們也提供各式特殊及稀有金屬的回收服務。
+            </p>
+            <p>
+              <IcRoundCall class="inline" />
+              歡迎直接聯繫我們,洽詢詳情!
+            </p>
+          </div>
         </div>
       </div>
       <div class="rareMetalBottom mb-0 pb-[200px] pt-20 desktopSmWidth:pt-48">
@@ -146,7 +151,7 @@ useHead({
             </div>
           </div>
         </div>
-        <div class="p-4 pt-32 bg-white/50">
+        <div ref="rareMetalForm" class="animate_start_opacity p-4 pt-32 bg-white/50">
           <ContractForm id="ContractForm" class="bg-white !p-4" banner-img="" text-class="!text-accent-light" />
         </div>
       </div>
@@ -155,6 +160,7 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+
 .rareMetalBottom {
   background: url('/img/rareMetal/RareMetal-bottom.jpg') no-repeat;
   background-size: cover;
@@ -177,6 +183,7 @@ useHead({
   &>div {
     transition: all .8s;
     transition-timing-function: ease-in-out;
+    opacity: 0;
   }
   &>div:nth-child(odd) {
     transform: translateX(-100px);
@@ -187,5 +194,6 @@ useHead({
 }
 .transform-none {
   transform: translateX(0) !important;
+  opacity: 1 !important;
 }
 </style>

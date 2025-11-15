@@ -3,6 +3,7 @@ import 'animate.css'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 
 const route = useRoute()
+const tungstenHardListTitle = useAnimateOnScroll('resetAnimate').target
 const tungstenHardList1 = useAnimateOnScroll('resetAnimate').target
 const tungstenHardList2 = useAnimateOnScroll('resetAnimate').target
 const tungstenHardList3 = useAnimateOnScroll('resetAnimate').target
@@ -30,12 +31,14 @@ useHead({
       </template>
     </AcquisitionItem>
     <div class="recycleBlock mx-auto bg-accent text-white">
-      <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
-        我們收購的項目
-      </h3>
-      <p class="desktopSmWidth:text-2xl text-xl mb-20">
-        回收您使用過的鑽頭和刀片的價值硬質合金。
-      </p>
+      <div ref="tungstenHardListTitle" class="animate_start_opacity">
+        <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
+          我們收購的項目
+        </h3>
+        <p class="desktopSmWidth:text-2xl text-xl mb-20">
+          回收您使用過的鑽頭和刀片的價值硬質合金。
+        </p>
+      </div>
       <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
         <li ref="tungstenHardList1" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="mb-3 w-full" />
@@ -75,19 +78,13 @@ useHead({
         </li>
       </ul>
     </div>
-    <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/TungstenHard/recycle-bottom-bg.jpg" />
+    <div>
+      <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/TungstenHard/recycle-bottom-bg.jpg" />
+    </div>
   </NuxtLayout>
 </template>
 
 <style lang="scss" scoped>
-.animate_start_opacity {
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-}
-.resetAnimate {
-  opacity: 1 !important;
-}
-
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;

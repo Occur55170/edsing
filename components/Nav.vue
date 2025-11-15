@@ -13,7 +13,6 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const { locale, t } = useI18n()
-const device = useDevice()
 const isMenuOpen = ref<boolean>(false)
 const isOpenRecycleList = ref<boolean>(false)
 

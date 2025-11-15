@@ -108,14 +108,6 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.animate_start_opacity {
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-}
-.resetAnimate {
-  opacity: 1 !important;
-}
-
 .head {
   background-image:
     linear-gradient(to top, rgba(6, 39, 55, .9) 15%, rgba(6, 39, 55, .1) 40%), /* 紅色漸層 */

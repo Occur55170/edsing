@@ -169,13 +169,6 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.animate_start_opacity {
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-}
-.resetAnimate {
-  opacity: 1 !important;
-}
 
 .header {
   position: relative;

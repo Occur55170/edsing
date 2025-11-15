@@ -85,13 +85,6 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-.animate_start_opacity {
-  transition: all 0.8s ease-in-out;
-  opacity: 0;
-}
-.resetAnimate {
-  opacity: 1 !important;
-}
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;

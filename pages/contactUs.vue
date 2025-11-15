@@ -5,10 +5,12 @@ import MaterialSymbolsLocationOn from '~icons/material-symbols/location-on'
 import IcRoundCall from '~icons/ic/round-call'
 import BxBxsPrinter from '~icons/bx/bxs-printer'
 import BxsEnvelope from '~icons/bxs/envelope'
+const { t } = useI18n()
 
-useHead({
-  title: '聯絡我們',
-})
+const ContractDesc = useAnimateOnScroll('resetAnimate').target
+const ContractData = useAnimateOnScroll('resetAnimate').target
+const ContractFormElement = useAnimateOnScroll('resetAnimate').target
+const ContractAddress = useAnimateOnScroll('resetAnimate').target
 
 const form = ref<HTMLFormElement | null>(null)
 const errors = ref({})
@@ -52,6 +54,9 @@ function sendEmail () {
   )
 }
 
+useHead({
+  title: '聯絡我們',
+})
 </script>
 
 <template>
@@ -64,20 +69,21 @@ function sendEmail () {
         </div>
       </div>
       <div class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
-        <div class="text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
+        <div ref="ContractDesc" class="animate_start_opacity text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
           <p class="leading-[2] mb-8">
-            尊敬的客戶您好:
-            <br />
-            若您對任何產品或服務有需求,或需要進一步的報價資訊,歡迎透過E-mail 或下方表單與我們聯繫,我們將竭誠為您服務。
+            {{ t('尊敬的客戶您好：') }}
           </p>
           <p class="leading-[2] mb-8">
-            針對大量採購需求,我們也能提供最具競爭力的優惠報價(可依實際內容與數量調整)。
+            {{ t('若您對任何產品或服務有需求,或需要進一步的報價資訊,歡迎透過E-mail 或下方表單與我們聯繫,我們將竭誠為您服務。') }}
           </p>
           <p class="leading-[2] mb-8">
-            我們始終以專業與誠信為原則,致力於提供最適合您的解決方案,並與您建立長期穩定的合作關係。
+            {{ t('針對大量採購需求,我們也能提供最具競爭力的優惠報價(可依實際內容與數量調整)。') }}
+          </p>
+          <p class="leading-[2] mb-8">
+            {{ t('我們始終以專業與誠信為原則,致力於提供最適合您的解決方案,並與您建立長期穩定的合作關係。') }}
           </p>
         </div>
-        <div class="text-white">
+        <div ref="ContractData" class="animate_start_opacity text-white">
           <p class="text-[36px] tableSmWidth:text-[48px] leading-[2] text-center">
             益鼎興金屬有限公司
           </p>
@@ -101,8 +107,9 @@ function sendEmail () {
             E-mail: edsingpolitech@hotmail.com
           </p>
         </div>
-        <!-- FIXME: text white -->
-        <ContractForm id="ContractForm" form-style="!w-full" banner-img="" :is-have-description="false" />
+        <div ref="ContractFormElement" class="animate_start_opacity">
+          <ContractForm id="ContractForm" form-style="!w-full" banner-img="" :is-have-description="false" />
+        </div>
         <!-- <form ref="form" class="form bg-slate-700 pt-16 pb-12 px-2 tableSmWidth:px-8 my-20 max-w-[900px]" @submit.prevent="sendEmail">
           <div class="mb-8 text-sm tableSmWidth:text-xl">
             <label class="mr-2 text-sm tableSmWidth:text-lg">姓名</label>
@@ -141,11 +148,11 @@ function sendEmail () {
             </button>
           </div>
         </form> -->
-        <div class="mt-40 text-white">
+        <div ref="ContractAddress" class="animate_start_opacity mt-40 text-white">
           <p class="text-[36px] tableSmWidth:text-[56px] text-center mb-8">
-            想更近一步了解嗎?
+            {{ t('想更近一步了解嗎') }}?
             <br />
-            歡迎蒞臨參觀。
+            {{ t('歡迎蒞臨參觀') }}
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4774309567383!2d120.272397376788!3d22.82181942378718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0fd32bfa9ded%3A0xaf675a7c60bf6910!2z55uK6byO6IiI6YeR5bGs5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1756639320986!5m2!1szh-TW!2stw"
