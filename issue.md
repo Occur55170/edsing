@@ -1,4 +1,4 @@
-1.
+1. FINISH
 https://ogakin.co.jp/
 線圖動畫效果用這樣的方式呈現
 header 背景他們會討論

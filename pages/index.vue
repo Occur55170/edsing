@@ -5,6 +5,7 @@ import MaterialSymbolsCall from '~icons/material-symbols/call'
 import MaterialSymbolsCheck from '~icons/material-symbols/check'
 import MaterialSymbolsArrowForwardIos from '~icons/material-symbols/arrow-forward-ios'
 import MaterialSymbolsLineEndArrowNotchRounded from '~icons/material-symbols/line-end-arrow-notch-rounded'
+import headerImg from '~/public/img/header.jpg'
 
 import 'animate.css'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
@@ -13,7 +14,6 @@ const device = useDevice()
 
 const { t } = useI18n()
 
-const headerAfter = device.isDesktop ? useAnimateOnScroll('animate__bounceIn').target : ref(null)
 const preciousText = useAnimateOnScroll('resetAnimate').target
 const preciousList = useAnimateOnScroll('resetAnimate').target
 const recycleSection = useAnimateOnScroll('resetAnimate').target
@@ -28,11 +28,16 @@ useHead({
   <div>
     <NuxtLayout>
       <div class="header w-full overflow-hidden">
-        <img class="hidden tableSmWidth:block w-full" src="/img/header.jpg" alt="" />
-        <div ref="headerAfter" class="header-after"></div>
+        <img class="aaa hidden tableSmWidth:block w-full" :src="headerImg" alt="" />
+        <div class="hidden tableSmWidth:block absolute -top-[20%] -right-[45%]" style="transform:rotateZ(350deg) scaleY(-1);">
+          <headerCircle :ball-color="'#1c9328'" />
+        </div>
+        <div class="hidden tableSmWidth:block absolute -top-[14%] -right-[50%]" style="transform:rotateZ(10deg) scaleY(1.3);">
+          <headerCircle :ball-color="'#2883a4'" :delay-start-time="1" :ball-time="5" />
+        </div>
+        <div class="block tableSmWidth:hidden header-after"></div>
         <img class="block tableSmWidth:hidden w-full" src="/img/header-mobile.jpg" alt="" />
       </div>
-
       <div class="precious bg-accent py-10 desktopSmWidth:py-20">
         <div class="flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
           <h3 ref="preciousText" class="animate_start_opacity text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
@@ -172,17 +177,6 @@ useHead({
 
 .header {
   position: relative;
-  .header-after {
-    content: '';
-    position: absolute;
-    bottom: 0%;
-    left: 70%;
-    width: 100%;
-    height: 100%;
-    display: block;
-    background:url('/img/circle-S.svg') no-repeat;
-    background-size: 30%;
-  }
 }
 
 .precious {
@@ -281,6 +275,19 @@ useHead({
 }
 
 @media(max-width: 600px) {
+  .header {
+    .header-after {
+      content: '';
+      position: absolute;
+      bottom: 0%;
+      left: 70%;
+      width: 100%;
+      height: 100%;
+      display: block;
+      background:url('/img/circle-S.svg') no-repeat;
+      background-size: 30%;
+    }
+  }
   .information {
     &>p {
       &::before, &::after {
