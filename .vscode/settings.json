@@ -63,7 +63,8 @@
     "youtube",
     "YOUTUBE",
     "NuxtLink",
-    "Tabler"
+    "Tabler",
+    "emailjs"
   ],
   "css.validate": false,
   "scss.validate": false

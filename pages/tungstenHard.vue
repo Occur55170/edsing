@@ -1,8 +1,8 @@
 <script lang="ts" setup>
 import 'animate.css'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
-
 const route = useRoute()
+const { t } = useI18n()
 const tungstenHardListTitle = useAnimateOnScroll('resetAnimate').target
 const tungstenHardList1 = useAnimateOnScroll('resetAnimate').target
 const tungstenHardList2 = useAnimateOnScroll('resetAnimate').target
@@ -24,56 +24,56 @@ useHead({
     >
       <template #desc>
         <p class="text-xl tableSmWidth:text-2xl leading-[2] mb-5">
-          各種不同行業包括車間和製造商，
+          {{ t('各種不同行業包括車間和製造商，') }}
           <br />
-          我們回收多種形式歡迎下方諮詢
+          {{ t('我們回收多種形式歡迎下方諮詢') }}
         </p>
       </template>
     </AcquisitionItem>
     <div class="recycleBlock mx-auto bg-accent text-white">
       <div ref="tungstenHardListTitle" class="animate_start_opacity">
         <h3 class="text-[48px] desktopSmWidth:text-[64px] font-bold mb-4">
-          我們收購的項目
+          {{ t('我們收購的項目') }}
         </h3>
         <p class="desktopSmWidth:text-2xl text-xl mb-20">
-          回收您使用過的鑽頭和刀片的價值硬質合金。
+          {{ t('回收您使用過的鑽頭和刀片的價值硬質合金。') }}
         </p>
       </div>
       <ul class="grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
         <li ref="tungstenHardList1" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            鎢鑽頭
+            {{ t('鎢鑽頭') }}
           </p>
         </li>
         <li ref="tungstenHardList2" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-2.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            碳化鎢耐磨件
+            {{ t('碳化鎢耐磨件') }}
           </p>
         </li>
         <li ref="tungstenHardList3" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-3.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            鎢刀片
+            {{ t('鎢刀片') }}
           </p>
         </li>
         <li ref="tungstenHardList4" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-4.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            各式碳化鎢邊角料
+            {{ t('各式碳化鎢邊角料') }}
           </p>
         </li>
         <li ref="tungstenHardList5" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-5.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            切割料
+            {{ t('切割料') }}
           </p>
         </li>
         <li ref="tungstenHardList6" class="w-full animate_start_opacity">
           <img src="/img/TungstenHard/recycle-list-6.jpg" alt="" class="mb-3 w-full" />
           <p class="desktopSmWidth:text-2xl text-xl">
-            礦山工具
+            {{ t('礦山工具') }}
           </p>
         </li>
       </ul>

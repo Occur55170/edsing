@@ -13,7 +13,7 @@ https://www.tungco.com/
 3. FINISH
 頁籤 logo（也稱為網站圖示、頁面圖示）把LOGO加入上去
 
-4. TODO: check
+4. FINISH
 https://edsing.com/introduce
 翻譯的部分 看能不能跟這個一樣 給中英就好 其他都不用，直接套google
 

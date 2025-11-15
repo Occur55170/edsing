@@ -99,10 +99,10 @@ useHead({
         <div class="flex items-center justify-between tableSmWidth:my-8 desktopSmWidth:flex-nowrap flex-wrap">
           <div ref="recycleSection" class="animate_start_opacity flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
             <h3 class="text-white text-[36px] tableSmWidth:text-[53px] w-full mb-6">
-              <span class="text-brand">鎢</span>資源循環
+              <span class="text-brand">{{ t('鎢') }}</span>{{ t('資源循環') }}
             </h3>
             <p class="text-[18px] text-white leading-[2] desktopSmWidth:mb-52 mb-10">
-              關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。
+              {{ t('關注環境保護，將環保理念貫穿在鎢鋼廢料回收的整個過程中，確保產品生產和使用的環境友好性，實現可持續發展的綠能環保經濟。') }}
             </p>
             <img v-if="!device.isDesktop" src="/img/index/index-process.svg" alt="" class="block 2xl:w-[70%] desktopSmWidth:w-[65%]" />
             <NuxtLink to="/" class="mx-auto mt-16 tableSmWidth:mt-8 mb-4 desktopSmWidth:m-0 text-white hover:text-brand bg-brand hover:bg-white py-[10px] px-[20px] inline-block flex items-center justify-between">
@@ -119,31 +119,31 @@ useHead({
       <div class="equipment relative py-20 w-full desktopSmWidth:h-0 desktopSmWidth:pb-[35%]">
         <div ref="equipmentSection" class="animate_start_opacity bg-white/90 px-4 py-6 tableSmWidth:px-8 xl:py-12 xl:px-16 desktopSmWidth:absolute top-1/2 desktopSmWidth:-translate-y-1/2 mx-auto desktopSmWidth:m-0 w-[90%] tableSmWidth:w-[60%] desktopSmWidth:w-auto">
           <h3 class="text-center font-bold text-[36px] tableSmWidth:text-[53px] mb-10">
-            <span class="text-brand">專業</span>設備
+            <span class="text-brand">{{ t('專業') }}</span>{{ t('設備') }}
           </h3>
           <ul class="grid grid-cols-2 gap-6 desktopSmWidth:w-[400px] text-xl tableSmWidth:2xl  desktopSmWidth:text-xl">
             <li>
               <div>
                 <MaterialSymbolsCheck class="inline text-brand" />
-                合金工具
+                {{ t('合金工具') }}
               </div>
             </li>
             <li>
               <div>
                 <MaterialSymbolsCheck class="inline text-brand" />
-                機械設備
+                {{ t('機械設備') }}
               </div>
             </li>
             <li>
               <div>
                 <MaterialSymbolsCheck class="inline text-brand" />
-                量測設備
+                {{ t('量測設備') }}
               </div>
             </li>
             <li>
               <div>
                 <MaterialSymbolsCheck class="inline text-brand" />
-                磨料
+                {{ t('磨料') }}
               </div>
             </li>
           </ul>
@@ -152,7 +152,7 @@ useHead({
 
       <div class="information bg-accent py-[80px] tableSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
         <p class="text-white text-center text-xl leading-[2] tableSmWidth:leading-[auto] font-bold  mx-auto  w-[90%] desktopSmWidth:w-full">
-          刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料
+          {{ t('刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料') }}
         </p>
         <ul class="flex justify-center tableSmWidth:flex-nowrap flex-wrap text-white max-w-[1600px] mx-auto mt-10 text-xl">
           <li class="flex items-center my-4 tableSmWidth:my-0 mx-4 xl:mx-10">
