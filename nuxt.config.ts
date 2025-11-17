@@ -62,5 +62,7 @@ export default defineNuxtConfig({
       },
     ],
     defaultLocale: 'zh-tw',
+    detectBrowserLanguage: false,
+    strategy: 'no_prefix',
   },
 })

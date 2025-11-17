@@ -29,9 +29,9 @@ onMounted(() => {
       <div class="flex justify-center xl:justify-between items-center py-20 text-center xl:text-left xl:px-10 flex-wrap xl:flex-nowrap">
         <img src="/img/logo-white.svg" class="grow-0" alt="logo" />
         <div class="text-white leading-[2] xl:leading-[3] my-10 tableSmWidth:my-20 xl:my-0 xl:mx-16 grow text-xl w-full xl:w-auto">
-          <p>聯絡電話:(07)6115753</p>
-          <p>傳真:(07)6113753</p>
-          <p>地址:高雄市路竹區民有路153-1號</p>
+          <p>{{ t('聯絡電話') }}：(07)6115753</p>
+          <p>{{ t('傳真') }}：(07)6113753</p>
+          <p>{{ t('地址') }}：{{ t('高雄市路竹區民有路153-1號') }}</p>
           <p>Copyright © EDSING Metal Products Co. Ltd All rights reserved.</p>
         </div>
         <NuxtLink to="/contactUs" class="text-white bg-accent font-bold text-xl px-8 py-4 grow-0 flex items-center hover:bg-white hover:text-black">

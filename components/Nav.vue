@@ -35,7 +35,7 @@ function openRecycleList () {
 
 <template>
   <div :class="`nav flex justify-between items-stretch bg-accent py-4 desktopSmWidth:p-0 relative ${props.class}`">
-    <NuxtLink to="/" class="cursor-pointer inline-block self-center py-2 shrink-0">
+    <NuxtLink to="/" class="cursor-pointer inline-block self-center py-2 shrink-0 mr-4">
       <img src="/img/logo.png" alt="logo" />
     </NuxtLink>
     <button class="listBtn desktopSmWidth:hidden block w-[50px]" @click="openMenu()">
@@ -43,8 +43,7 @@ function openRecycleList () {
     </button>
     <div v-if="isMenuOpen" class="desktopSmWidth:hidden fixed top-0 left-0 w-full h-full bg-black/30 z-[10]" @click="isMenuOpen = false"></div>
     <div
-      class="navList bg-white text-md xl:text-xl absolute z-[20] desktopSmWidth:top-full left-full desktopSmWidth:w-auto tableSmWidth:w-[50%] w-[80%] h-[100vh] desktopSmWidth:h-auto desktopSmWidth:w-auto desktopSmWidth:static desktopSmWidth:bg-transparent desktopSmWidth:flex items-stretch flex-wrap desktopSmWidth:flex-nowrap transition-transform duration-800 "
-      :class=" isMenuOpen ? 'flex -translate-x-full' : ''"
+      :class="`navList bg-white text-md ${ locale === 'zh-tw' ? 'xl:text-xl' : 'xl:text-lg' } absolute z-[20] desktopSmWidth:top-full left-full desktopSmWidth:w-auto tableSmWidth:w-[50%] w-[80%] h-[100vh] desktopSmWidth:h-auto desktopSmWidth:w-auto desktopSmWidth:static desktopSmWidth:bg-transparent desktopSmWidth:flex items-stretch flex-wrap desktopSmWidth:flex-nowrap transition-transform duration-800 ${ isMenuOpen ? 'flex -translate-x-full' : '' }`"
     >
       <ul class="flex flex-wrap desktopSmWidth:flex-nowrap desktopSmWidth:w-full w-full justify-between desktopSmWidth:flex-end content-baseline items-center my-2 xl:my-8 desktopSmWidth:ml-2">
         <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
@@ -102,7 +101,7 @@ function openRecycleList () {
         </li>
         <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white NavALink">
-            {{ t('introduction to rare metals') }}
+            {{ t('稀有金屬') }}
           </NuxtLink>
         </li>
         <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
@@ -119,7 +118,7 @@ function openRecycleList () {
           <span class="mr-4">{{ t('langue') }}:</span>
           <div class="flex items-stretch justify-center border border-stone-400 rounded-full overflow-hidden w-[120px] px-4 my-4">
             <div
-              class="relative rounded-full bg-stone-500 h-[35px] w-[35px] my-1 transition-transform"
+              class="relative rounded-full bg-stone-500 h-[35px] w-[35px] my-1 transition-transform overflow-y-clip;"
               :class="locale === 'zh-tw' ? 'translate-x-full' : '-translate-x-full' "
               @click="onChangeLangue()"
             >

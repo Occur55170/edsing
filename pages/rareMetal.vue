@@ -2,6 +2,7 @@
 import 'animate.css'
 import IcRoundCall from '~icons/ic/round-call'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
+const { t } = useI18n()
 
 const { target: rareMetalImg } = useAnimateOnScroll('resetAnimate')
 const { target: rareMetalTitle } = useAnimateOnScroll('resetAnimate')
@@ -25,7 +26,7 @@ useHead({
     <NuxtLayout>
       <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] bg-[url('/img/rareMetal/RareMetal-top.jpg')] bg-no-repeat bg-cover bg-bottom relative">
         <h2 class="text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-0 left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)]">
-          稀有金屬
+          {{ t('稀有金屬') }}
         </h2>
       </div>
       <div class="flex flex-wrap bg-brand tableSmWidth:bg-transparent tableSmWidth:flex-nowrap items-center relative desktopSmWidth:mt-40">
@@ -34,20 +35,20 @@ useHead({
         </div>
         <div class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
           <div ref="rareMetalTitle" class="animate_start_opacity">
-            <p>我們長期大量收購各類金屬廢料,包括：</p>
+            <p>{{ t('我們長期大量收購各類金屬廢料,包括') }}：</p>
             <ol class="list-disc list-inside">
-              <li>硬質合金刀具廢料</li>
-              <li>金屬陶瓷廢料</li>
-              <li>高速鋼廢料</li>
-              <li>粉末及固體廢料</li>
-              <li>油、水、鐵混合廢料</li>
+              <li>{{ t('硬質合金刀具廢料') }}</li>
+              <li>{{ t('金屬陶瓷廢料') }}</li>
+              <li>{{ t('高速鋼廢料') }}</li>
+              <li>{{ t('粉末及固體廢料') }}</li>
+              <li>{{ t('油、水、鐵混合廢料') }}</li>
             </ol>
             <p class="mt-4 desktopSmWidth:my-8">
-              同時,我們也提供各式特殊及稀有金屬的回收服務。
+              {{ t('同時,我們也提供各式特殊及稀有金屬的回收服務') }}。
             </p>
             <p>
               <IcRoundCall class="inline" />
-              歡迎直接聯繫我們,洽詢詳情!
+              {{ t('歡迎直接聯繫我們,洽詢詳情!') }}
             </p>
           </div>
         </div>
@@ -58,10 +59,10 @@ useHead({
             <img src="/img/rareMetal/6-1.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Co鈷
+                {{ t('Co 鈷') }}
               </h3>
-              <p>
-                高強度合金(如鈷鉻合金)、牙科與骨科植入物、燃氣渦輪葉片等
+              <p class="leading-[2]">
+                {{ t('高強度合金(如鈷鉻合金)、牙科與骨科植入物、燃氣渦輪葉片等') }}
               </p>
             </div>
           </div>
@@ -69,10 +70,10 @@ useHead({
             <img src="/img/rareMetal/6-2.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                V釩
+                {{ t('V 釩') }}
               </h3>
-              <p>
-                用於製造高強度鋼鐵合金(如車軸、曲軸、 齒輪)、專用工具鋼、鋼中穩定碳化物、鎳鈦合金等
+              <p class="leading-[2]">
+                {{ t('用於製造高強度鋼鐵合金(如車軸、曲軸、 齒輪)、專用工具鋼、鋼中穩定碳化物、鎳鈦合金等') }}
               </p>
             </div>
           </div>
@@ -80,10 +81,10 @@ useHead({
             <img src="/img/rareMetal/6-3.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Cr鉻
+                {{ t('Cr 鉻') }}
               </h3>
-              <p>
-                製造不鏽鋼、硬化鋼鍍鉻用於裝飾與耐蝕表面:鉻酸用於航空航太陽極氧化處理等
+              <p class="leading-[2]">
+                {{ t('製造不鏽鋼、硬化鋼鍍鉻用於裝飾與耐蝕表面:鉻酸用於航空航太陽極氧化處理等') }}
               </p>
             </div>
           </div>
@@ -91,10 +92,10 @@ useHead({
             <img src="/img/rareMetal/6-4.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Ti鈦
+                {{ t('Ti 鈦') }}
               </h3>
-              <p>
-                航太結構件、醫療植入物(義肢、牙科、骨科)、工業加工設備、運動器材、 3D列印、表面塗層等
+              <p class="leading-[2]">
+                {{ t('航太結構件、醫療植入物(義肢、牙科、骨科)、工業加工設備、運動器材、 3D列印、表面塗層等') }}
               </p>
             </div>
           </div>
@@ -102,10 +103,10 @@ useHead({
             <img src="/img/rareMetal/6-5.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Mo鉬
+                {{ t('Mo 鉬') }}
               </h3>
-              <p>
-                作為添加劑用於鋼鐵、耐高溫超合金化工催化劑、阻燃劑。顏料用途等
+              <p class="leading-[2]">
+                {{ t('作為添加劑用於鋼鐵、耐高溫超合金化工催化劑、阻燃劑。顏料用途等') }}
               </p>
             </div>
           </div>
@@ -113,10 +114,10 @@ useHead({
             <img src="/img/rareMetal/6-6.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Ta 鉭
+                {{ t('Ta 鉭') }}
               </h3>
-              <p>
-                製造高溫合金:電子元件中的電解電容器:作為擴散阻barrier薄膜:硬質合金刀片中的担化合物等
+              <p class="leading-[2]">
+                {{ t('製造高溫合金:電子元件中的電解電容器:作為擴散阻barrier薄膜:硬質合金刀片中的担化合物等') }}
               </p>
             </div>
           </div>
@@ -124,10 +125,10 @@ useHead({
             <img src="/img/rareMetal/6-7.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                W鎢
+                {{ t('W 鎢') }}
               </h3>
-              <p>
-                製造鎢化合物(如鎢鋼)用於切削工具、採礦設備、火藥、醫療器械焊接電極、電燈燈絲、高溫合金部件等
+              <p class="leading-[2]">
+                {{ t('製造鎢化合物(如鎢鋼)用於切削工具、採礦設備、火藥、醫療器械焊接電極、電燈燈絲、高溫合金部件等') }}
               </p>
             </div>
           </div>
@@ -135,19 +136,19 @@ useHead({
             <img src="/img/rareMetal/6-8.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
-                Ir 銥
+                {{ t('Ir 銥') }}
               </h3>
-              <p>
-                「用於高性能火花塞、半導體重結晶用坩場、 電解槽電極:蘊含於OLED材料中在高温高腐蝕環境中使用合金部件等
+              <p class="leading-[2]">
+                {{ t('用於高性能火花塞、半導體重結晶用坩場、 電解槽電極:蘊含於OLED材料中在高温高腐蝕環境中使用合金部件等') }}
               </p>
             </div>
           </div>
           <div ref="list9" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
             <img src="/img/rareMetal/6-9.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
-              <h3 class="text-bold text-[24px] mb-2">
-                稀土元素 各種稀土元素廣泛應用於電子(如手機、雷達)、永磁體(電動車、風力渦輪)、螢光體、 催化劑、能源技術與國防裝備等」
-              </h3>
+              <p class="leading-[2]">
+                {{ t('稀土元素 各種稀土元素廣泛應用於電子(如手機、雷達)、永磁體(電動車、風力渦輪)、螢光體、催化劑、能源技術與國防裝備等') }}
+              </p>
             </div>
           </div>
         </div>

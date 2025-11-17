@@ -42,7 +42,7 @@ useHead({
         <div class="flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
           <h3 ref="preciousText" class="animate_start_opacity text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
             <div class="text-left">
-              回收鎢
+              {{ t('回收鎢') }}
             </div>
           </h3>
           <ul ref="preciousList" class="animate_start_opacity flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
@@ -50,10 +50,10 @@ useHead({
               <img src="/img/index/index-list-1.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
-                  鎢硬廢料/合金
+                  {{ t('鎢硬廢料') }}/{{ t('合金') }}
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
-                  <span>鑽頭</span>/<span>刀片</span>/<span>採礦等級</span>/<span>鎢基合金</span>/<span>鈷鎳高溫合金</span>
+                  <span>{{ t('鑽頭') }}</span>/<span>{{ t('刀片') }}</span>/<span>{{ t('採礦等級') }}</span>/<span>{{ t('鎢基合金') }}</span>/<span>{{ t('鈷鎳高溫合金') }}</span>
                 </p>
                 <NuxtLink to="/tungstenHard" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -65,10 +65,10 @@ useHead({
               <img src="/img/index/index-list-2.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
-                  鎢軟廢料
+                  {{ t('鎢軟廢料') }}
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
-                  <span>碳化鎢泥</span>/<span>切屑粉末</span>/<span>過濾材料</span>/<span>下腳料</span>
+                  <span>{{ t('碳化鎢泥') }}</span>/<span>{{ t('切屑粉末') }}</span>/<span>{{ t('過濾材料') }}</span>/<span>{{ t('下腳料') }}</span>
                 </p>
                 <NuxtLink to="/tungstenSoft" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -80,10 +80,10 @@ useHead({
               <img src="/img/index/index-list-3.jpg" class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div class="absolute bottom-0 right-0 bg-accent/80 tableSmWidth:bg-accent w-[90%] tableSmWidth:w-[85%] h-auto tableSmWidth:h-[200px] p-5">
                 <p class="text-white text-bold text-2xl xl:text-3xl mb-4 text-left font-bold">
-                  高速鋼
+                  {{ t('高速鋼') }}
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
-                  <span>高速鋼刨花</span>/<span>銑刀</span>/<span>鑽頭</span>/<span>牙板</span>/<span>各式合金</span>
+                  <span>{{ t('高速鋼刨花') }}</span>/<span>{{ t('銑刀') }}</span>/<span>{{ t('鑽頭') }}</span>/<span>{{ t('牙板') }}</span>/<span>{{ t('各式合金') }}</span>
                 </p>
                 <NuxtLink to="/highSpeedSteel" class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
                   {{ t('more') }}
@@ -165,7 +165,7 @@ useHead({
           </li>
           <li class="flex items-center my-4 tableSmWidth:my-0 mx-4 xl:mx-10">
             <MdiClockTimeThree class="bg-brand p-2 box-content rounded-full mr-3" />
-            週一至週五8:30-17:30
+            {{ t('週一至週五') }} 8:30-17:30
           </li>
         </ul>
       </div>
