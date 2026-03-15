@@ -1,0 +1,69 @@
+{
+  "editor.tabSize": 2,
+  "files.autoSave": "afterDelay",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSave": true,
+  "eslint.validate": ["javascript", "typescript", "css", "scss","vue"],
+  "eslint.run": "onSave",
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": false
+  },
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.quickSuggestions": {
+    "strings": true
+  },
+  "cSpell.words": [
+    "amphtml",
+    "camelcase",
+    "Casified",
+    "Casify",
+    "composables",
+    "dayjs",
+    "fantasticon",
+    "FEEDLY",
+    "googletag",
+    "itemprop",
+    "Jsonld",
+    "lastmod",
+    "longform",
+    "nitropack",
+    "nuxt",
+    "Nuxt",
+    "nuxtjs",
+    "ofetch",
+    "ohmyfetch",
+    "Paids",
+    "pinia",
+    "pubdate",
+    "Roboto",
+    "Segoe",
+    "sehseh",
+    "signin",
+    "Signout",
+    "stylelint",
+    "swiper",
+    "tailwindcss",
+    "thirdparty",
+    "tiktok",
+    "TIKTOK",
+    "vetur",
+    "vitepress",
+    "vuejs",
+    "vueuse",
+    "Vuex",
+    "vvip",
+    "VVIP",
+    "weibo",
+    "xstate",
+    "youtube",
+    "YOUTUBE",
+    "NuxtLink"
+  ],
+  "css.validate": false,
+  "scss.validate": false
+}
