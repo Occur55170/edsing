@@ -1,1 +1,0 @@
-import{m as r,c as e,o as a,a as t}from"./BajFARO2.js";const s={viewBox:"0 0 24 24",width:"1.2em",height:"1.2em"};function l(m,o){return a(),e("svg",s,o[0]||(o[0]=[t("path",{fill:"currentColor",d:"M8.025 22L6.25 20.225L14.475 12L6.25 3.775L8.025 2l10 10z"},null,-1)]))}const i=r({name:"material-symbols-arrow-forward-ios",render:l});export{i as M};
