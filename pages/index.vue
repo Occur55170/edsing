@@ -50,7 +50,7 @@ useHead({
             </div>
           </h3>
           <ul ref="preciousList"
-            class="preciousList animate_start_opacity flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
+            class="animate_start_opacity flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
             <li
               class="relative w-full my-4 tableSmWidth:w-[33%] h-[500px] desktopSmWidth:h-[800px] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg"
@@ -62,7 +62,7 @@ useHead({
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
                   <span>{{ t('鑽頭') }}</span>/<span>{{ t('刀片') }}</span>/<span>{{ t('採礦等級') }}</span>/<span>{{ t('鎢基合金')
-                  }}</span>/<span>{{ t('鈷鎳高溫合金') }}</span>
+                    }}</span>/<span>{{ t('鈷鎳高溫合金') }}</span>
                 </p>
                 <NuxtLink to="/tungstenHard"
                   class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
@@ -102,7 +102,7 @@ useHead({
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
                   <span>{{ t('高速鋼刨花') }}</span>/<span>{{ t('銑刀') }}</span>/<span>{{ t('鑽頭') }}</span>/<span>{{ t('牙板')
-                  }}</span>/<span>{{ t('各式合金') }}</span>
+                    }}</span>/<span>{{ t('各式合金') }}</span>
                 </p>
                 <NuxtLink to="/highSpeedSteel"
                   class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">

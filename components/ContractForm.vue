@@ -48,7 +48,7 @@ const formData = reactive({
   mailContent: '',
 })
 
-function onSubmit (e: Event) {
+function onSubmit(e: Event) {
   e.preventDefault()
 
   try {
@@ -84,82 +84,50 @@ const formDesc = useAnimateOnScroll('resetAnimate').target
 const formElement = useAnimateOnScroll('resetAnimate').target
 </script>
 <template>
-  <div
-    :class="`${ props.class } formSection flex flex-wrap desktopSmWidth:flex-nowrap border-1 relative`"
-    :style="!!props.bannerImg ? { backgroundImage: `url(${props.bannerImg})` } : { }"
-  >
+  <div :class="`${props.class} formSection flex flex-col items-center desktopSmWidth:flex-nowrap border-1 relative`"
+    :style="!!props.bannerImg ? { backgroundImage: `url(${props.bannerImg})` } : {}">
     <div v-if="!!props.bannerImg" class="formSectionBg"></div>
-    <div v-if="props.isHaveDescription" ref="formDesc" :class="`animate_start_opacity text-white grow z-10 ${ props.textClass }`">
+    <div v-if="props.isHaveDescription" ref="formDesc"
+      :class="`animate_start_opacity text-white text-center grow z-10 mb-10 w-[50%] ${props.textClass}`">
       <h3 class="text-[56px] mb-8">
         {{ t('請求定價') }}
       </h3>
       <p class="text-xl leading-[2] whitespace-pre-line">
-        {{ t('若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。我們可以輕鬆回收您的鎢廢料。提交下面的表格，我們的採購國隊將與您聯繫以討論報償。將為您的材料提供最優惠的價格。') }}
+        {{ t('若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。我們可以輕鬆回收您的鎢廢料。提交下面的表格，我們的採購團隊將與您聯繫以討論報償。將為您的材料提供最優惠的價格。') }}
       </p>
     </div>
-    <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[40%] z-10" :class="props.formStyle" @submit="onSubmit">
+    <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[50%] z-10" :class="props.formStyle"
+      @submit="onSubmit">
       <div ref="formElement" class="animate_start_opacity bg-slate-700 p-4">
         <div class="flex justify-between mb-10">
           <label class="w-[49%]" to="name">
             <span class="requireInput mb-2 block text-white">{{ t('聯絡人姓名') }}</span>
-            <input
-              id="name"
-              v-model="formData.name"
-              class="block p-2 w-full text-black"
-              type="text"
-              name="name"
-              required
-            />
+            <input id="name" v-model="formData.name" class="block p-2 w-full text-black" type="text" name="name"
+              required />
           </label>
           <label class="w-[49%]" to="companyName">
             <span class="requireInput mb-2 block text-white">{{ t('公司名稱') }}</span>
-            <input
-              id="companyName"
-              v-model="formData.companyName"
-              class="block p-2 w-full text-black"
-              type="text"
-              name="companyName"
-              required
-            />
+            <input id="companyName" v-model="formData.companyName" class="block p-2 w-full text-black" type="text"
+              name="companyName" required />
           </label>
         </div>
         <div class="flex justify-between mb-10">
           <label class="w-[49%]" to="email">
             <span class="requireInput mb-2 block text-white">{{ t('電子郵件') }}</span>
-            <input
-              id="email"
-              v-model="formData.email"
-              class="block p-2 w-full text-black"
-              type="text"
-              name="email"
-              required
-            />
+            <input id="email" v-model="formData.email" class="block p-2 w-full text-black" type="text" name="email"
+              required />
           </label>
           <label class="w-[49%]" to="phone">
             <span class="requireInput mb-2 block text-white">{{ t('電話') }}</span>
-            <input
-              id="phone"
-              v-model="formData.phone"
-              class="block p-2 w-full"
-              name="phone"
-              type="tel"
-              autocomplete="tel"
-              placeholder="+886 912 345 678"
-              required
-            />
+            <input id="phone" v-model="formData.phone" class="block p-2 w-full" name="phone" type="tel"
+              autocomplete="tel" placeholder="+886 912 345 678" required />
           </label>
         </div>
         <div class="flex justify-between mb-10">
           <label class="w-[49%]" to="country">
             <span class="mb-2 block text-white">{{ t('國家') }}</span>
-            <select
-              id="country"
-              v-model="formData.country"
-              class="block p-2 w-full text-black"
-              name="country"
-              required
-              autocomplete="country"
-            >
+            <select id="country" v-model="formData.country" class="block p-2 w-full text-black" name="country" required
+              autocomplete="country">
               <option value="" selected disabled>{{ t('--- 請選擇---') }}</option>
               <option value="TW">台灣</option>
               <option value="HK">香港</option>
@@ -170,13 +138,7 @@ const formElement = useAnimateOnScroll('resetAnimate').target
           </label>
           <label class="w-[49%]" to="zone">
             <span class="mb-2 block text-white">{{ t('州/省/地區') }}</span>
-            <input
-              id="zone"
-              v-model="formData.zone"
-              name="zone"
-              class="block p-2 w-full text-black"
-              type="text"
-            />
+            <input id="zone" v-model="formData.zone" name="zone" class="block p-2 w-full text-black" type="text" />
           </label>
         </div>
         <div class="flex justify-between mb-10">
@@ -186,19 +148,14 @@ const formElement = useAnimateOnScroll('resetAnimate').target
           </label>
           <label class="w-[49%]" to="materialCount">
             <span class="mb-2 block text-white">{{ t('數量') }}</span>
-            <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text" name="materialCount" />
+            <input id="materialCount" v-model="formData.materialCount" class="block p-2 w-full" type="text"
+              name="materialCount" />
           </label>
         </div>
         <div class="mb-6">
           <span class="mb-2 block text-white">{{ t('訊息') }}</span>
-          <textarea
-            id="mailContent"
-            v-model="formData.mailContent"
-            name="mailContent"
-            cols="20"
-            rows="5"
-            class="w-full text-black"
-          ></textarea>
+          <textarea id="mailContent" v-model="formData.mailContent" name="mailContent" cols="20" rows="5"
+            class="w-full text-black"></textarea>
         </div>
         <div class="flex justify-end w-full">
           <button class="bg-red-600 py-2 px-8 inline-block text-white hover:bg-red-900" type="submit">
@@ -211,13 +168,14 @@ const formElement = useAnimateOnScroll('resetAnimate').target
 </template>
 
 <style lang="scss" scoped>
-.formSection{
+.formSection {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top 10% right 0%;
   padding-top: 100px;
   @include baseWidth;
 }
+
 .formSectionBg {
   display: block;
   @apply absolute z-0 w-full h-full top-0 left-0 inset-0 bg-gradient-to-tr from-accent/0 via-accent/95 to-accent/100;

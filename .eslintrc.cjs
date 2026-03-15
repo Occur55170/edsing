@@ -71,6 +71,8 @@ module.exports = {
     // 建議補這條：屬性之間空格
     'vue/no-spaces-around-equal-signs-in-attribute': 'warn',
 
+    'space-before-function-paren': ['warn', 'never'],
+
     // =========================
     // 尾逗號
     // =========================
