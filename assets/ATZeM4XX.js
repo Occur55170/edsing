@@ -1,0 +1,1 @@
+import{_,a as c}from"./CawOVU1t.js";import{_ as s,c as r,o as a,b as o,q as d}from"./CSweduXM.js";import"./DDVUi75m.js";const m={},f={class:"overflow-hidden"};function l(e,p){const t=_,n=c;return a(),r("div",f,[o(t),d(e.$slots,"default"),o(n)])}const h=s(m,[["render",l]]);export{h as default};
