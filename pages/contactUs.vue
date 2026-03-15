@@ -27,7 +27,7 @@ const formSchema = z.object({
   mailContent: z.string(),
 })
 
-function sendEmail () {
+function sendEmail() {
   if (!form.value) { return }
 
   console.log('form', form.value)
@@ -68,8 +68,10 @@ useHead({
           <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[800px] mb-4" alt="logo" />
         </div>
       </div>
-      <div class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
-        <div ref="ContractDesc" class="animate_start_opacity text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
+      <div
+        class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
+        <div ref="ContractDesc"
+          class="animate_start_opacity text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
           <p class="leading-[2] mb-8">
             {{ t('尊敬的客戶您好：') }}
           </p>
@@ -156,13 +158,8 @@ useHead({
           </p>
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4774309567383!2d120.272397376788!3d22.82181942378718!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346e0fd32bfa9ded%3A0xaf675a7c60bf6910!2z55uK6byO6IiI6YeR5bGs5pyJ6ZmQ5YWs5Y-4!5e0!3m2!1szh-TW!2stw!4v1756639320986!5m2!1szh-TW!2stw"
-            width="100%"
-            height="500"
-            style="border:0;"
-            allowfullscreen="false"
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-          ></iframe>
+            width="100%" height="500" style="border:0;" allowfullscreen="false" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </NuxtLayout>
@@ -173,15 +170,18 @@ useHead({
 .contract {
   @include baseWidth(calc((100% - 900px)/2), calc((100% - 900px)/2));
 }
+
 .form {
-  &>div{
+  &>div {
     width: 100%;
     display: flex;
     align-items: center;
+
     &>*:nth-child(1) {
       width: 10%;
       text-align: center;
     }
+
     &>*:nth-child(2) {
       padding: .4em .8em;
       width: 90%;
@@ -191,10 +191,11 @@ useHead({
 
 @media(max-width: 900px) {
   .form {
-    &>div{
+    &>div {
       &>*:nth-child(1) {
         width: 20%;
       }
+
       &>*:nth-child(2) {
         padding: .4em .8em;
         width: 80%;

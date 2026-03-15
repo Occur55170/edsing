@@ -3,6 +3,8 @@ import 'animate.css'
 import IcRoundCall from '~icons/ic/round-call'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 const { t } = useI18n()
+const config = useRuntimeConfig()
+const baseURL = config.app.baseURL
 
 const { target: rareMetalImg } = useAnimateOnScroll('resetAnimate')
 const { target: rareMetalTitle } = useAnimateOnScroll('resetAnimate')
@@ -24,16 +26,21 @@ useHead({
 <template>
   <div>
     <NuxtLayout>
-      <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] bg-[url('/img/rareMetal/RareMetal-top.jpg')] bg-no-repeat bg-cover bg-bottom relative">
-        <h2 class="text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-0 left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)]">
+      <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] bg-no-repeat bg-cover bg-bottom relative"
+        :style="`background: url('${baseURL}/img/RareMetal/RareMetal-top.jpg')`">
+        <h2
+          class="text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-0 left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)]">
           {{ t('稀有金屬') }}
         </h2>
       </div>
-      <div class="flex flex-wrap bg-brand tableSmWidth:bg-transparent tableSmWidth:flex-nowrap items-center relative desktopSmWidth:mt-40">
-        <div ref="rareMetalImg" class="animate_start_opacity flex w-[80%] mx-auto mt-8 tableSmWidth:mt-0 tableSmWidth:w-[40%] desktopSmWidth:w-[50%] flex justify-end pr-[5%] tableSmWidth:absolute left-0 top-[50%] tableSmWidth:-translate-y-1/2 z-[2]">
-          <img src="/img/rareMetal/global.png" alt="" class="w-full max-w-[700px]" />
+      <div
+        class="flex flex-wrap bg-brand tableSmWidth:bg-transparent tableSmWidth:flex-nowrap items-center relative desktopSmWidth:mt-40">
+        <div ref="rareMetalImg"
+          class="animate_start_opacity flex w-[80%] mx-auto mt-8 tableSmWidth:mt-0 tableSmWidth:w-[40%] desktopSmWidth:w-[50%] flex justify-end pr-[5%] tableSmWidth:absolute left-0 top-[50%] tableSmWidth:-translate-y-1/2 z-[2]">
+          <img src="/img/RareMetal/global.png" alt="" class="w-full max-w-[700px]" />
         </div>
-        <div class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
+        <div
+          class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
           <div ref="rareMetalTitle" class="animate_start_opacity">
             <p>{{ t('我們長期大量收購各類金屬廢料,包括') }}：</p>
             <ol class="list-disc list-inside">
@@ -53,10 +60,16 @@ useHead({
           </div>
         </div>
       </div>
-      <div class="rareMetalBottom mb-0 pb-[200px] pt-20 desktopSmWidth:pt-48">
+
+      <div class="rareMetalBottom mb-0 pb-[200px] pt-20 desktopSmWidth:pt-48" :style="{
+        backgroundImage: `url('${baseURL}/img/RareMetal/RareMetal-bottom.jpg')`,
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        backgroundSize: 'cover'
+      }">
         <div class="rareMetaList grid tableSmWidth:grid-cols-2 grid-rows-5 gap-6 bg-white/50 p-4 relative">
           <div ref="list1" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-1.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-1.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Co 鈷') }}
@@ -67,7 +80,7 @@ useHead({
             </div>
           </div>
           <div ref="list2" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-2.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-2.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('V 釩') }}
@@ -78,7 +91,7 @@ useHead({
             </div>
           </div>
           <div ref="list3" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-3.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-3.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Cr 鉻') }}
@@ -89,7 +102,7 @@ useHead({
             </div>
           </div>
           <div ref="list4" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-4.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-4.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Ti 鈦') }}
@@ -100,7 +113,7 @@ useHead({
             </div>
           </div>
           <div ref="list5" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-5.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-5.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Mo 鉬') }}
@@ -111,7 +124,7 @@ useHead({
             </div>
           </div>
           <div ref="list6" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-6.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-6.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Ta 鉭') }}
@@ -122,7 +135,7 @@ useHead({
             </div>
           </div>
           <div ref="list7" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-7.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-7.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('W 鎢') }}
@@ -133,7 +146,7 @@ useHead({
             </div>
           </div>
           <div ref="list8" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-8.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-8.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <h3 class="text-bold text-[24px] mb-2">
                 {{ t('Ir 銥') }}
@@ -144,7 +157,7 @@ useHead({
             </div>
           </div>
           <div ref="list9" class="flex bg-white px-4 py-2 tableSmWidth:flex-nowrap flex-wrap">
-            <img src="/img/rareMetal/6-9.jpg" alt="" class="w-[50%] mx-auto" />
+            <img src="/img/RareMetal/6-9.jpg" alt="" class="w-[50%] mx-auto" />
             <div class="p-1">
               <p class="leading-[2]">
                 {{ t('稀土元素 各種稀土元素廣泛應用於電子(如手機、雷達)、永磁體(電動車、風力渦輪)、螢光體、催化劑、能源技術與國防裝備等') }}
@@ -161,38 +174,43 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
-
 .rareMetalBottom {
-  background: url('/img/rareMetal/RareMetal-bottom.jpg') no-repeat;
-  background-size: cover;
   width: 100%;
   height: auto;
   position: relative;
 
   &::before {
     content: '';
-    @apply absolute top-0 left-0 w-full h-full w-full z-0 bg-[linear-gradient(to_bottom,rgba(255,255,255,0.9)_0%,rgba(255,255,255,0.4)_30%,rgba(255,255,255,0.1)_100%)];
+    @apply absolute top-0 left-0 w-full h-full z-0;
+    background: linear-gradient(to bottom,
+        rgba(255, 255, 255, 0.9) 0%,
+        rgba(255, 255, 255, 0.4) 30%,
+        rgba(255, 255, 255, 0.1) 100%);
   }
 
-  & > * {
+  &>* {
     @apply z-[1];
   }
 
   @include baseWidth(calc((100% - 1300px)/2), calc((100% - 1300px)/2));
 }
+
 .rareMetaList {
   &>div {
     transition: all .8s;
     transition-timing-function: ease-in-out;
     opacity: 0;
   }
+
   &>div:nth-child(odd) {
     transform: translateX(-100px);
   }
+
   &>div:nth-child(even) {
     transform: translateX(100px);
   }
 }
+
 .transform-none {
   transform: translateX(0) !important;
   opacity: 1 !important;

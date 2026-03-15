@@ -4,6 +4,8 @@ import { sendForm } from '@emailjs/browser'
 import 'animate.css'
 import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 const { t } = useI18n()
+const config = useRuntimeConfig()
+const baseURL = config.app.baseURL
 
 interface Props {
   class?: string;
@@ -85,7 +87,7 @@ const formElement = useAnimateOnScroll('resetAnimate').target
 </script>
 <template>
   <div :class="`${props.class} formSection flex flex-col items-center desktopSmWidth:flex-nowrap border-1 relative`"
-    :style="!!props.bannerImg ? { backgroundImage: `url(${props.bannerImg})` } : {}">
+    :style="!!props.bannerImg ? { backgroundImage: `url(${baseURL + props.bannerImg})` } : {}">
     <div v-if="!!props.bannerImg" class="formSectionBg"></div>
     <div v-if="props.isHaveDescription" ref="formDesc"
       :class="`animate_start_opacity text-white text-center grow z-10 mb-10 w-[50%] ${props.textClass}`">

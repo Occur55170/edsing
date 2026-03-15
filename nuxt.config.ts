@@ -45,6 +45,17 @@ export default defineNuxtConfig({
         autoInstall: true,
       }),
     ],
+    // build: {
+    //   rollupOptions: {
+    //     output: {
+    //       // JS 檔案加上時間戳 Hash
+    //       chunkFileNames: `_nuxt/[name].[hash].${Date.now()}.js`,
+    //       entryFileNames: `_nuxt/[name].[hash].${Date.now()}.js`,
+    //       // CSS 與其他資產
+    //       assetFileNames: `_nuxt/[name].[hash].${Date.now()}.[ext]`,
+    //     },
+    //   },
+    // },
   },
   modules: [
     '@nuxtjs/i18n',
