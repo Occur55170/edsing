@@ -40,17 +40,19 @@ useHead({
         <div class="block tableSmWidth:hidden header-after"></div>
         <img class="block tableSmWidth:hidden w-full" src="/img/header-mobile.jpg" alt="" />
       </div>
-      <div class="precious bg-accent py-10 desktopSmWidth:py-20">
-        <div class="flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
+      <div class="precious bg-accent py-20 desktopSmWidth:py-20">
+        <div class="precious-before"></div>
+        <div class="preciousCon flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
           <h3 ref="preciousText"
-            class="animate_start_opacity text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[20%] w-full desktopSmWidth:mb-0 py-8 flex items-center justify-center content-center flex-wrap">
-            <div class="text-left">
+            class="animate_start_opacity text-white text-[36px] tableSmWidth:text-[53px] desktopSmWidth:w-[15%] w-full desktopSmWidth:mb-0 py-8 flex justify-center content-center flex-wrap">
+            <div class="text-left transform desktopSmWidth:-translate-y-3/4">
               {{ t('回收鎢') }}
             </div>
           </h3>
           <ul ref="preciousList"
             class="preciousList animate_start_opacity flex justify-between desktopSmWidth:w-[80%] xl:w-[75%] tableSmWidth:flex-nowrap flex-wrap grow">
-            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[520px] desktopSmWidth:w-[33%] text-right">
+            <li
+              class="relative w-full my-4 tableSmWidth:w-[33%] h-[500px] desktopSmWidth:h-[800px] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-1.jpg"
                 class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div
@@ -69,7 +71,8 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[520px] desktopSmWidth:w-[33%] text-right">
+            <li
+              class="relative w-full my-4 tableSmWidth:w-[33%] h-[500px] desktopSmWidth:h-[800px] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-2.jpg"
                 class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div
@@ -88,7 +91,8 @@ useHead({
                 </NuxtLink>
               </div>
             </li>
-            <li class="relative w-full my-4 tableSmWidth:w-[33%] h-[520px] desktopSmWidth:w-[33%] text-right">
+            <li
+              class="relative w-full my-4 tableSmWidth:w-[33%] h-[500px] desktopSmWidth:h-[800px] desktopSmWidth:w-[33%] text-right">
               <img src="/img/index/index-list-3.jpg"
                 class="w-full object-cover tableSmWidth:object-contain grayscale-[20]" />
               <div
@@ -109,10 +113,11 @@ useHead({
             </li>
           </ul>
         </div>
+        <div class="precious-after"></div>
       </div>
 
       <div class="recycle py-5 tableSmWidth:py-10 desktopSmWidth:py-20">
-        <div class="flex items-center justify-between tableSmWidth:my-8 desktopSmWidth:flex-nowrap flex-wrap">
+        <div class="flex items-center justify-between tableSmWidth:my-12 desktopSmWidth:flex-nowrap flex-wrap">
           <div ref="recycleSection"
             class="animate_start_opacity flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
             <h3 class="text-white text-[36px] tableSmWidth:text-[53px] w-full mb-6">
@@ -204,8 +209,42 @@ useHead({
 .precious {
   @apply bg-accent;
 
-  &>div {
+  .precious-before {
+    width: 100%;
+    padding: 0 5vw;
+    margin-bottom: 80px;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 5vw;
+      height: 5vw;
+      border-width: 10px 0 0 10px;
+      border-color: theme('colors.brand.DEFAULT');
+      border-style: solid;
+    }
+  }
+
+  .precious-after {
+    width: 100%;
+    padding: 0 4vw;
+    display: flex;
+    justify-content: flex-end;
+
+    &::before {
+      content: '';
+      display: block;
+      width: 5vw;
+      height: 5vw;
+      border-width: 0 10px 10px 0;
+      border-color: theme('colors.brand.DEFAULT');
+      border-style: solid;
+    }
+  }
+
+  &>.preciousCon {
     margin: 0 auto;
+    margin-bottom: 40px;
     box-sizing: border-box;
 
     @include baseWidth($l-mobile: 5%, $r-mobile: 5%);
@@ -213,18 +252,6 @@ useHead({
     h3 {
       vertical-align: middle;
       position: relative;
-
-      &::before {
-        content: '';
-        position: absolute;
-        top: 10px;
-        left: 10px;
-        width: 5vw;
-        height: 5vw;
-        border-width: 10px 0 0 10px;
-        border-color: theme('colors.brand.DEFAULT');
-        border-style: solid;
-      }
     }
   }
 
@@ -245,7 +272,6 @@ useHead({
 
     img {
       transition: all .4s linear;
-      // transition-duration: 1500ms;
 
       @media (max-width: 899px) {
         will-change: transform;
@@ -257,9 +283,8 @@ useHead({
         bottom: 0;
         left: 0;
         width: 100%;
-        height: calc(100% + 80px);
         object-fit: cover;
-        clip-path: inset(80px 0 0 0);
+        clip-path: inset(50px 0 0 0);
         will-change: clip-path, filter;
         filter: brightness(100%) contrast(120%) saturate(0%) blur(0px) hue-rotate(9deg);
       }
