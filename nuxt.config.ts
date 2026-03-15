@@ -11,6 +11,10 @@ export default defineNuxtConfig({
         { href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap', rel: 'stylesheet' },
       ],
     },
+    // 替換為你的 repository 名稱，前後都要有斜線
+    baseURL: '/edsing/',
+    // 避開預設的 _nuxt 避免 Jekyll 抓不到資源
+    buildAssetsDir: 'assets',
   },
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
