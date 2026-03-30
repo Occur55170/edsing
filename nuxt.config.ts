@@ -45,17 +45,41 @@ export default defineNuxtConfig({
         autoInstall: true,
       }),
     ],
-    // build: {
-    //   rollupOptions: {
-    //     output: {
-    //       // JS 檔案加上時間戳 Hash
-    //       chunkFileNames: `_nuxt/[name].[hash].${Date.now()}.js`,
-    //       entryFileNames: `_nuxt/[name].[hash].${Date.now()}.js`,
-    //       // CSS 與其他資產
-    //       assetFileNames: `_nuxt/[name].[hash].${Date.now()}.[ext]`,
-    //     },
-    //   },
-    // },
+    build: {
+      rollupOptions: {
+        output: {
+          // JS 檔案加上時間格式 Hash (YYYYMMDDHHmm)
+          chunkFileNames: (chunkInfo) => {
+            const now = new Date();
+            const buildTime = now.getFullYear().toString() + 
+                             (now.getMonth() + 1).toString().padStart(2, '0') + 
+                             now.getDate().toString().padStart(2, '0') + 
+                             now.getHours().toString().padStart(2, '0') + 
+                             now.getMinutes().toString().padStart(2, '0');
+            return `assets/[name].[hash].${buildTime}.js`;
+          },
+          entryFileNames: (chunkInfo) => {
+            const now = new Date();
+            const buildTime = now.getFullYear().toString() + 
+                             (now.getMonth() + 1).toString().padStart(2, '0') + 
+                             now.getDate().toString().padStart(2, '0') + 
+                             now.getHours().toString().padStart(2, '0') + 
+                             now.getMinutes().toString().padStart(2, '0');
+            return `assets/[name].[hash].${buildTime}.js`;
+          },
+          // CSS 與其他資產
+          assetFileNames: (assetInfo) => {
+            const now = new Date();
+            const buildTime = now.getFullYear().toString() + 
+                             (now.getMonth() + 1).toString().padStart(2, '0') + 
+                             now.getDate().toString().padStart(2, '0') + 
+                             now.getHours().toString().padStart(2, '0') + 
+                             now.getMinutes().toString().padStart(2, '0');
+            return `assets/[name].[hash].${buildTime}.[ext]`;
+          },
+        },
+      },
+    },
   },
   modules: [
     '@nuxtjs/i18n',
