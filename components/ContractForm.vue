@@ -13,6 +13,7 @@ interface Props {
   textClass?: string;
   formStyle?: string;
   isHaveDescription?: boolean;
+  description?: string;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -21,6 +22,7 @@ const props = withDefaults(defineProps<Props>(), {
   textClass: '',
   formStyle: '',
   isHaveDescription: true,
+  description: 'contract_desc_tungsten',
 })
 
 const form = ref<HTMLFormElement | null>(null)
@@ -90,12 +92,12 @@ const formElement = useAnimateOnScroll('resetAnimate').target
     :style="!!props.bannerImg ? { backgroundImage: `url(${baseURL + props.bannerImg})` } : {}">
     <div v-if="!!props.bannerImg" class="formSectionBg"></div>
     <div v-if="props.isHaveDescription" ref="formDesc"
-      :class="`animate_start_opacity text-white text-center grow z-10 mb-10 w-[50%] ${props.textClass}`">
+      :class="`animate_start_opacity text-white text-center grow z-10 mb-10 desktopSmWidth:w-[50%] ${props.textClass}`">
       <h3 class="text-[56px] mb-8">
         {{ t('請求定價') }}
       </h3>
       <p class="text-xl leading-[2] whitespace-pre-line">
-        {{ t('若您沒有在上面看到您想回收的商品也可以直接聯繫我們喔。我們可以輕鬆回收您的鎢廢料。提交下面的表格，我們的採購團隊將與您聯繫以討論報償。將為您的材料提供最優惠的價格。') }}
+        {{ t(props.description) }}
       </p>
     </div>
     <form ref="form" class="mt-12 desktopSmWidth:mt-0 w-[100%] desktopSmWidth:w-[50%] z-10" :class="props.formStyle"

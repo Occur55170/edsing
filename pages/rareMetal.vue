@@ -166,7 +166,8 @@ useHead({
           </div>
         </div>
         <div ref="rareMetalForm" class="animate_start_opacity p-4 pt-32 bg-white/50">
-          <ContractForm id="ContractForm" class="bg-white !p-4" banner-img="" text-class="!text-accent-light" />
+          <ContractForm id="ContractForm" class="bg-white !p-4" banner-img="" text-class="!text-accent-light"
+            description="contract_desc_rare" />
         </div>
       </div>
     </NuxtLayout>

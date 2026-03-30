@@ -88,7 +88,8 @@ useHead({
           </li>
         </ul>
       </div>
-      <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/HighSpeedSteel/HighSpeedSteel-bottom.jpg" />
+      <ContractForm id="ContractForm" class="pb-[200px]" banner-img="/img/HighSpeedSteel/HighSpeedSteel-bottom.jpg"
+        description="contract_desc_hss" />
     </div>
   </NuxtLayout>
 </template>

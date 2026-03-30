@@ -80,4 +80,7 @@ export default defineNuxtConfig({
     detectBrowserLanguage: false,
     strategy: 'no_prefix',
   },
+  experimental: {
+    payloadExtraction: false,
+  }
 })

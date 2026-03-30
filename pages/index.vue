@@ -193,7 +193,7 @@ useHead({
           </li>
           <li class="flex items-center my-4 tableSmWidth:my-0 mx-4 xl:mx-10">
             <MdiClockTimeThree class="bg-brand p-2 box-content rounded-full mr-3" />
-            {{ t('週一至週五') }} 8:30-17:30
+            {{ t('週一至週五') }} 8:00-17:00
           </li>
         </ul>
       </div>
