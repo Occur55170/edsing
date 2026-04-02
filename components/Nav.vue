@@ -67,18 +67,18 @@ function openRecycleList() {
               leave-from-class="max-h-96 opacity-100" leave-to-class="max-h-0 opacity-0">
               <ul v-if="isOpenRecycleList"
                 class="z-[12] desktopSmWidth:absolute top-full left-0 bg-white desktopSmWidth:shadow-lg desktopSmWidth:hidden desktopSmWidth:group-hover:block min-w-max bg-slate-100">
-                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
-                  <NuxtLink to="/tungstenHard">
+                <li class="desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
+                  <NuxtLink class="p-4 block" to="/tungstenHard">
                     {{ t('碳化鎢硬廢料') }}
                   </NuxtLink>
                 </li>
-                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
-                  <NuxtLink to="/tungstenSoft">
+                <li class="desktopSmWidth:hover:bg-gray-300 cursor-pointer border-b-2">
+                  <NuxtLink class="p-4 block" to="/tungstenSoft">
                     {{ t('碳化鎢軟廢料') }}
                   </NuxtLink>
                 </li>
-                <li class="px-4 py-4 desktopSmWidth:hover:bg-gray-300 cursor-pointer">
-                  <NuxtLink to="/highSpeedSteel">
+                <li class="desktopSmWidth:hover:bg-gray-300 cursor-pointer">
+                  <NuxtLink class="p-4 block" to="/highSpeedSteel">
                     {{ t('高速鋼廢料') }}
                   </NuxtLink>
                 </li>
