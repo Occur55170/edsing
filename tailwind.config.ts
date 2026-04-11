@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('tailwindcss').Config} */
+export default {
   content: [
     './components/**/*.{js,vue,ts}',
     './layouts/**/*.vue',
@@ -27,13 +28,4 @@ module.exports = {
     },
   },
   plugins: [],
-  vite: {
-    css: {
-      preprocessorOptions: {
-        scss: {
-          additionalData: '@use "~/assets/_colors.scss" as *;',
-        },
-      },
-    },
-  },
 }

@@ -16,7 +16,7 @@
     "@emailjs/browser": "^4.4.1",
     "@nuxtjs/device": "^3.2.4",
     "animate.css": "^4.1.1",
-    "nuxt": "^3.14.1592",
+    "nuxt": "3.15.4",
     "vue": "latest",
     "vue-router": "latest",
     "zod": "^4.1.1"
@@ -25,7 +25,7 @@
     "@iconify/json": "^2.2.380",
     "@nuxtjs/eslint-config": "^12.0.0",
     "@nuxtjs/eslint-config-typescript": "^12.1.0",
-    "@nuxtjs/i18n": "^9.0.0-rc.2",
+    "@nuxtjs/i18n": "9.1.5",
     "autoprefixer": "^10.4.20",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^9.1.0",
@@ -40,5 +40,23 @@
     "unplugin-icons": "^22.2.0",
     "unplugin-vue-components": "^29.0.0",
     "vue-tsc": "^2.1.10"
+  },
+  "overrides": {
+    "vite": "^5.4.10",
+    "rollup": "^4.24.0",
+    "lodash": "^4.17.21",
+    "flatted": "^3.4.2",
+    "h3": "^1.15.1",
+    "defu": "^6.1.4",
+    "picomatch": "^4.0.3",
+    "minimatch": "^9.0.5",
+    "yaml": "^2.8.3",
+    "node-forge": "^1.4.0",
+    "tar": "^7.5.13",
+    "serialize-javascript": "^7.0.5",
+    "devalue": "^5.1.1",
+    "brace-expansion": "^2.0.3",
+    "parse-git-config": "^3.0.0",
+    "esbuild": "^0.25.0"
   }
 }
