@@ -1,1 +1,0 @@
-import{_,a as s}from"./Footer.BZAomGrq.202604120041.js";import{_ as c,o as r,c as a,g as o,s as d}from"./entry.CBRJ35rS.202604120041.js";import"./arrow-forward-ios.CIxbLy_i.202604120041.js";const m={},f={class:"overflow-hidden"};function l(e,p){const t=_,n=s;return r(),a("div",f,[o(t),d(e.$slots,"default"),o(n)])}const h=c(m,[["render",l]]);export{h as default};
