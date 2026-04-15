@@ -5,54 +5,13 @@ import MaterialSymbolsLocationOn from '~icons/material-symbols/location-on'
 import IcRoundCall from '~icons/ic/round-call'
 import BxBxsPrinter from '~icons/bx/bxs-printer'
 import BxsEnvelope from '~icons/bxs/envelope'
+import { useAnimateOnScroll } from '~/composables/useAnimateOnScroll'
 const { t } = useI18n()
 
 const ContractDesc = useAnimateOnScroll('resetAnimate').target
 const ContractData = useAnimateOnScroll('resetAnimate').target
 const ContractFormElement = useAnimateOnScroll('resetAnimate').target
 const ContractAddress = useAnimateOnScroll('resetAnimate').target
-
-const form = ref<HTMLFormElement | null>(null)
-const errors = ref({})
-
-const formSchema = z.object({
-  name: z.string().min(1, { message: '請輸入姓名' }),
-  companyName: z.string(),
-  email: z.string().email('請輸入正確的Email格式').min(1, { message: '請輸入Email' }),
-  phone: z.string().min(1, { message: '請輸電話' }),
-  country: z.string(),
-  zone: z.string().min(1, { message: '請輸地區' }),
-  material: z.string(),
-  materialCount: z.string(),
-  mailContent: z.string(),
-})
-
-function sendEmail() {
-  if (!form.value) { return }
-
-  console.log('form', form.value)
-
-  // try {
-  //   formSchema.parse(form)
-  //   console.log('Form submitted successfully:', formData)
-  //   errors.value = {} // Clear errors on success
-  // } catch (e) {
-  //   if (e instanceof z.ZodError) {
-  //     errors.value = e.flatten().fieldErrors
-  //   }
-  // }
-
-  sendForm('service_9hriy3l', 'template_r7ylu7r', form.value, {
-    publicKey: '_sL4fACYgE7BhhDyA',
-  }).then(
-    () => {
-      console.log('SUCCESS!')
-    },
-    (error) => {
-      console.log('FAILED...', error.text)
-    }
-  )
-}
 
 useHead({
   title: '聯絡我們',
@@ -69,7 +28,7 @@ useHead({
         </div>
       </div>
       <div
-        class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
+        class="contract bg-accent py-[20px] tableSmWidth:py-[60px] desktopSmWidth:py-[200px] mb-0 tableSmWidth:mb-[100px]">
         <div ref="ContractDesc"
           class="animate_start_opacity text-xl py-8 px-12 mb-12 border-b border-b-white text-white">
           <p class="leading-[2] mb-8">
@@ -112,44 +71,6 @@ useHead({
         <div ref="ContractFormElement" class="animate_start_opacity">
           <ContractForm id="ContractForm" form-style="!w-full" banner-img="" :is-have-description="false" />
         </div>
-        <!-- <form ref="form" class="form bg-slate-700 pt-16 pb-12 px-2 tableSmWidth:px-8 my-20 max-w-[900px]" @submit.prevent="sendEmail">
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg">姓名</label>
-            <input type="text" name="user_name" class="text-black" />
-          </div>
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg">公司名稱</label>
-            <input type="text" name="user_company_name" class="text-black" />
-          </div>
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg">聯絡電話</label>
-            <input type="text" name="user_phone" class="text-black" />
-          </div>
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg text-center">Email</label>
-            <input type="email" name="user_email" class="text-black" />
-          </div>
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg">聯絡地址</label>
-            <input type="text" name="user_address" class="text-black" />
-          </div>
-          <div class="mb-8 text-sm tableSmWidth:text-xl">
-            <label class="mr-2 text-sm tableSmWidth:text-lg self-start">內容說明</label>
-            <textarea
-              id="message"
-              name="user_message"
-              cols="20"
-              rows="5"
-              class="w-full text-black"
-            ></textarea>
-          </div>
-
-          <div class="flex justify-center w-full">
-            <button class="bg-red-600 py-2 px-8 inline-block text-white !w-auto" type="submit">
-              送出
-            </button>
-          </div>
-        </form> -->
         <div ref="ContractAddress" class="animate_start_opacity mt-40 text-white">
           <p class="text-[36px] tableSmWidth:text-[56px] text-center mb-8">
             {{ t('想更近一步了解嗎') }}?
@@ -167,6 +88,17 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.head {
+  /* 鋪上與下方區塊相同的底色 */
+  @apply bg-accent;
+
+  & > img.absolute.block {
+    /* 使用遮罩讓圖片向下自然消融，完美銜接下方底色 */
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+  }
+}
+
 .contract {
   @include baseWidth(calc((100% - 900px)/2), calc((100% - 900px)/2));
 }

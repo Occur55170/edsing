@@ -75,6 +75,10 @@ useHead({
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;
+  @media (min-width: 900px) {
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
   @include baseWidth(calc((100% - 1200px)/2), calc((100% - 1200px)/2));
 }
 

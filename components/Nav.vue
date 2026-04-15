@@ -98,7 +98,7 @@ function openRecycleList() {
         </li> -->
         <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
           <NuxtLink to="/rareMetal" class="desktopSmWidth:text-white NavALink">
-            {{ t('稀有金屬') }}
+            {{ t('rareMetals') }}
           </NuxtLink>
         </li>
         <!-- <li class="px-2 py-4 desktopSmWidth:py-0 w-full desktopSmWidth:w-auto border-b-2 desktopSmWidth:border-0">
@@ -144,6 +144,8 @@ function openRecycleList() {
 <style lang="scss" scoped>
 .nav {
   @include baseWidth(0, 2%, 0%, 1%);
+  box-shadow: 0px 4px 20px 4px #020e17;
+  z-index: 10;
 
   .NavALink {
     @apply cursor-pointer;

@@ -13,7 +13,6 @@ export default defineNuxtConfig({
     },
     // 替換為你的 repository 名稱，前後都要有斜線
     baseURL: '/edsing/',
-    // 避開預設的 _nuxt 避免 Jekyll 抓不到資源
     buildAssetsDir: 'assets',
   },
   compatibilityDate: '2024-11-01',
@@ -35,6 +34,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
+          // @ts-expect-error - modern-compiler is supported by sass but types might be outdated
           api: 'modern-compiler', // or "modern"
           additionalData: '@use "~/assets/css/global.scss" as *;',
           silenceDeprecations: ['if-function'],
@@ -52,30 +52,30 @@ export default defineNuxtConfig({
           // JS 檔案加上時間格式 Hash (YYYYMMDDHHmm)
           chunkFileNames: (chunkInfo) => {
             const now = new Date();
-            const buildTime = now.getFullYear().toString() + 
-                             (now.getMonth() + 1).toString().padStart(2, '0') + 
-                             now.getDate().toString().padStart(2, '0') + 
-                             now.getHours().toString().padStart(2, '0') + 
-                             now.getMinutes().toString().padStart(2, '0');
+            const buildTime = now.getFullYear().toString() +
+              (now.getMonth() + 1).toString().padStart(2, '0') +
+              now.getDate().toString().padStart(2, '0') +
+              now.getHours().toString().padStart(2, '0') +
+              now.getMinutes().toString().padStart(2, '0');
             return `assets/[name].[hash].${buildTime}.js`;
           },
           entryFileNames: (chunkInfo) => {
             const now = new Date();
-            const buildTime = now.getFullYear().toString() + 
-                             (now.getMonth() + 1).toString().padStart(2, '0') + 
-                             now.getDate().toString().padStart(2, '0') + 
-                             now.getHours().toString().padStart(2, '0') + 
-                             now.getMinutes().toString().padStart(2, '0');
+            const buildTime = now.getFullYear().toString() +
+              (now.getMonth() + 1).toString().padStart(2, '0') +
+              now.getDate().toString().padStart(2, '0') +
+              now.getHours().toString().padStart(2, '0') +
+              now.getMinutes().toString().padStart(2, '0');
             return `assets/[name].[hash].${buildTime}.js`;
           },
           // CSS 與其他資產
           assetFileNames: (assetInfo) => {
             const now = new Date();
-            const buildTime = now.getFullYear().toString() + 
-                             (now.getMonth() + 1).toString().padStart(2, '0') + 
-                             now.getDate().toString().padStart(2, '0') + 
-                             now.getHours().toString().padStart(2, '0') + 
-                             now.getMinutes().toString().padStart(2, '0');
+            const buildTime = now.getFullYear().toString() +
+              (now.getMonth() + 1).toString().padStart(2, '0') +
+              now.getDate().toString().padStart(2, '0') +
+              now.getHours().toString().padStart(2, '0') +
+              now.getMinutes().toString().padStart(2, '0');
             return `assets/[name].[hash].${buildTime}.[ext]`;
           },
         },

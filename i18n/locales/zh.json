@@ -7,7 +7,7 @@
   "recycle": "回收",
   "wolfram carbide": "碳化鎢粉",
   "mechanical equipment": "機械設備",
-  "稀有金屬": "稀有金屬",
+  "rareMetals": "稀有金屬",
   "measurement equipment": "量測設備",
   "more": "更多",
   "contact us": "聯繫我們",
@@ -137,5 +137,4 @@
   "傳真": "傳真",
   "地址": "地址",
   "高雄市路竹區民有路153-1號": "高雄市路竹區民有路153-1號"
-
 }

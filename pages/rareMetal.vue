@@ -26,11 +26,12 @@ useHead({
 <template>
   <div>
     <NuxtLayout>
-      <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] bg-no-repeat bg-cover bg-bottom relative"
-        :style="`background: url('${baseURL}/img/RareMetal/RareMetal-top.jpg')`">
+      <div class="header w-full h-0 pb-[300px] tableSmWidth:pb-[30%] relative">
+        <img class="absolute top-0 left-0 h-full w-full block object-cover object-bottom"
+          :src="`${baseURL}/img/RareMetal/RareMetal-top.jpg`" alt="" />
         <h2
-          class="text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-0 left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)]">
-          {{ t('稀有金屬') }}
+          class="rareMetal-title font-bold tracking-wider text-white text-[36px] tableSmWidth:text-[53px] absolute bottom-[50%] left-0 pl-[1%] xl:pl-[calc((100%-1300px)/2)] z-[2]">
+          {{ t('rareMetals') }}
         </h2>
       </div>
       <div
@@ -40,7 +41,7 @@ useHead({
           <img src="/img/RareMetal/global.png" alt="" class="w-full max-w-[700px]" />
         </div>
         <div
-          class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 text-[16px] desktopSmWidth:text-xl leading-[1.6]">
+          class="text-white bg-brand w-full px-[5%] tableSmWidth:pl-[40%] desktopSmWidth:pl-[50%] py-8 tableSmWidth:py-[80px] desktopSmWidth:py-[120px] text-[16px] desktopSmWidth:text-xl leading-[1.6]">
           <div ref="rareMetalTitle" class="animate_start_opacity">
             <p>{{ t('我們長期大量收購各類金屬廢料,包括') }}：</p>
             <ol class="list-disc list-inside">
@@ -175,6 +176,24 @@ useHead({
 </template>
 
 <style lang="scss" scoped>
+.header {
+  /* 手機版下方有藍底，電腦版下方是白底，所以背景自動隨裝置切換 */
+  @apply bg-brand tableSmWidth:bg-transparent;
+
+  .rareMetal-title {
+    /* 加入多層次的文字陰影，將文字與複雜背景圖拉開距離，大幅提升辨識度 */
+    text-shadow:
+      0px 4px 5px rgba(0, 0, 0, 0.8),
+      0px 0px 15px rgba(0, 0, 0, 0.9),
+      0px 0px 30px rgba(0, 0, 0, 0.6);
+  }
+
+  &>img.absolute.block {
+    -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 40%, transparent 100%);
+  }
+}
+
 .rareMetalBottom {
   width: 100%;
   height: auto;

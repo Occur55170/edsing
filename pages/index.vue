@@ -28,7 +28,7 @@ useHead({
   <div>
     <NuxtLayout>
       <div class="header w-full overflow-hidden">
-        <img class="aaa hidden tableSmWidth:block w-full" :src="headerImg" alt="" />
+        <img class="hidden tableSmWidth:block w-full" :src="headerImg" alt="" />
         <div class="hidden tableSmWidth:block absolute -top-[20%] -right-[45%]"
           style="transform:rotateZ(350deg) scaleY(-1);">
           <headerCircle :ball-color="'#1c9328'" />
@@ -40,7 +40,7 @@ useHead({
         <div class="block tableSmWidth:hidden header-after"></div>
         <img class="block tableSmWidth:hidden w-full" src="/img/header-mobile.jpg" alt="" />
       </div>
-      <div class="precious bg-accent py-20 desktopSmWidth:py-20">
+      <div class="precious bg-accent py-[80px] desktopSmWidth:py-[180px]">
         <div class="precious-before"></div>
         <div class="preciousCon flex desktopSmWidth:flex-nowrap flex-wrap grow-0">
           <h3 ref="preciousText"
@@ -62,7 +62,7 @@ useHead({
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
                   <span>{{ t('鑽頭') }}</span>/<span>{{ t('刀片') }}</span>/<span>{{ t('採礦等級') }}</span>/<span>{{ t('鎢基合金')
-                    }}</span>/<span>{{ t('鈷鎳高溫合金') }}</span>
+                  }}</span>/<span>{{ t('鈷鎳高溫合金') }}</span>
                 </p>
                 <NuxtLink to="/tungstenHard"
                   class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
@@ -102,7 +102,7 @@ useHead({
                 </p>
                 <p class="text-white mb-6 text-left leading-[2] flex flex-wrap">
                   <span>{{ t('高速鋼刨花') }}</span>/<span>{{ t('銑刀') }}</span>/<span>{{ t('鑽頭') }}</span>/<span>{{ t('牙板')
-                    }}</span>/<span>{{ t('各式合金') }}</span>
+                  }}</span>/<span>{{ t('各式合金') }}</span>
                 </p>
                 <NuxtLink to="/highSpeedSteel"
                   class="preciousLink text-brand text-right absolute bottom-[5%] desktopSmWidth:bottom-0 right-[1%] desktopSmWidth:right-0">
@@ -116,7 +116,7 @@ useHead({
         <div class="precious-after"></div>
       </div>
 
-      <div class="recycle py-5 tableSmWidth:py-10 desktopSmWidth:py-20">
+      <div class="recycle py-[60px] tableSmWidth:py-[100px] desktopSmWidth:py-[200px]">
         <div class="flex items-center justify-between tableSmWidth:my-12 desktopSmWidth:flex-nowrap flex-wrap">
           <div ref="recycleSection"
             class="animate_start_opacity flex flex-wrap items-center 2xl:w-[25%] desktopSmWidth:w-[32%]">
@@ -176,7 +176,7 @@ useHead({
         </div>
       </div>
 
-      <div class="information bg-accent py-[80px] tableSmWidth:py-[100px] mb-0 tableSmWidth:mb-[100px]">
+      <div class="information bg-accent py-[80px] tableSmWidth:py-[100px] desktopSmWidth:py-[200px] mb-0 tableSmWidth:mb-[100px]">
         <p
           class="text-white text-center text-xl leading-[2] tableSmWidth:leading-[auto] font-bold  mx-auto  w-[90%] desktopSmWidth:w-full">
           {{ t('刀具鈍化拋光機、絲攻鑽頭刀柄專業表面處理、拋光設備、鈍化設備、鈍化拋光研磨料') }}
@@ -204,6 +204,24 @@ useHead({
 <style lang="scss" scoped>
 .header {
   position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 250px;
+    /* 增加高度讓漸層更長 */
+    z-index: 2;
+    /* 加入中間色值讓深色部分更提前出現，增強遮罩感 */
+    background: linear-gradient(to bottom,
+        transparent 0%,
+        rgba(2, 15, 23, 0.3) 40%,
+        rgba(2, 15, 23, 0.8) 75%,
+        #020F17 100%);
+    pointer-events: none;
+  }
 }
 
 .precious {
@@ -338,6 +356,27 @@ useHead({
   background-size: cover;
   position: relative;
 
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  &::before {
+    top: 0;
+    background: linear-gradient(to bottom, #020F17, transparent);
+  }
+
+  // &::after {
+  //   bottom: 0;
+  //   background: linear-gradient(to top, #020F17, transparent);
+  // }
+
   >* {
     position: relative;
     z-index: 2;
@@ -357,6 +396,19 @@ useHead({
 }
 
 .information {
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top, #020F17, transparent);
+    pointer-events: none;
+  }
+
   &>p {
     @apply relative flex items-center justify-center;
 

@@ -19,7 +19,7 @@ useHead({
 <template>
   <NuxtLayout>
     <div class="introduce">
-      <div class="head pb-[41%] relative">
+      <div class="header head pb-[41%] relative">
         <img class="absolute top-0 left-0 h-full w-full block" src="/public/img/introduce/introduceHead.jpg" alt="" />
         <div class="absolute top-0 left-0 h-full w-full block flex flex-wrap content-center justify-center">
           <img ref="introduceLogo" src="/img/logo-s.png"
@@ -30,7 +30,7 @@ useHead({
           </h2>
         </div>
       </div>
-      <div class="baseWidth py-12 tableSmWidth:pt-20">
+      <div class="baseWidth py-8 tableSmWidth:py-[60px] desktopSmWidth:py-[150px]">
         <div class="text-white text-2xl tableSmWidth:text-4xl px-[5%] leading-[1.6] tableSmWidth:leading-[2]">
           <h2 ref="introduceTitle2" class="animate_start_opacity text-24px tableSmWidth:text-[48px]">
             <span class="text-brand">{{ t('貴金屬') }}</span>{{ t('資源循環') }}
@@ -79,7 +79,7 @@ useHead({
           </p>
         </div>
       </div>
-      <div class="video videoBg relative py-10 tableSmWidth:pt-20 tableSmWidth:pb-80"
+      <div class="video videoBg relative py-10 pt-[80px] tableSmWidth:pt-[180px] tableSmWidth:pb-80"
         :style="`background-image: url(${baseURL}/img/introduce/introduce-1.jpg)`">
         <div class="videoSection w-full h-0 relative pb-[56.25%] mb-12">
           <iframe class="absolute top-0 left-0 w-full h-full"
@@ -93,8 +93,22 @@ useHead({
   </NuxtLayout>
 </template>
 <style lang="scss" scoped>
-.baseWidth {
+.introduce {
+  /* 將背景設定在父元件，完美貫穿 Header 與主內容區塊 */
   background: linear-gradient(45deg, #030f17, #032736);
+}
+
+.header {
+  position: relative;
+
+  /* 讓 Header 的背景圖片在底部自然淡出，完美透出下方的防斷層背景 */
+  &>img.absolute.block {
+    -webkit-mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+  }
+}
+
+.baseWidth {
   @include baseWidth(calc((100% - 1300px)/2), calc((100% - 1300px)/2));
 }
 
@@ -107,6 +121,15 @@ useHead({
   background-repeat: no-repeat;
   background-size: 120%;
   background-position: bottom 10% right 10%;
+
+  /* 加入頂部消融漸層遮罩，透出底下 .introduce 的漸層背景 */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 80px);
+  mask-image: linear-gradient(to bottom, transparent 0%, #000 80px);
+
+  @media (min-width: 600px) {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 180px);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 180px);
+  }
 
   &::before {
     content: '';

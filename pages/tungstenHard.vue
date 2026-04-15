@@ -36,7 +36,7 @@ useHead({
           {{ t('回收您使用過的鑽頭和刀片的價值硬質合金。') }}
         </p>
       </div>
-      <ul class="tungstenHardList grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-6 gap-y-20">
+      <ul class="tungstenHardList grid tableSmWidth:grid-cols-3 grid-cols-1 gap-x-8 gap-y-20">
         <li ref="tungstenHardList1" class="w-full animate_start_opacity">
           <div class="mb-3 w-full">
             <img src="/img/TungstenHard/recycle-list-1.jpg" alt="" />
@@ -97,6 +97,12 @@ useHead({
 .recycleBlock {
   padding-top: 100px;
   padding-bottom: 100px;
+
+  @media (min-width: 900px) {
+    padding-top: 180px;
+    padding-bottom: 180px;
+  }
+
   @include baseWidth(calc((100% - 1200px)/2), calc((100% - 1200px)/2));
 }
 

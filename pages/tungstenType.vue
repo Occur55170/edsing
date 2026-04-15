@@ -10,16 +10,18 @@ useHead({
 
 <template>
   <NuxtLayout>
-    <div class="head pb-[41%] relative">
+    <div class="header head pb-[41%] relative">
       <div class="absolute top-0 left-0 h-full w-full block flex flex-wrap content-center justify-center">
         <img src="/img/logo-s.png" class="grow-0 mx-auto max-w-[50%] desktopSmWidth:max-w-[800px] mb-4" alt="logo" />
       </div>
     </div>
-    <div class="content pb-[200px] py-4 bg-accent text-white">
+    <div class="content pb-[200px] pt-4 tableSmWidth:pt-[80px] desktopSmWidth:pt-[150px] bg-accent text-white">
       <ul>
-        <li ref="list1" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
-          <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
-          <div class="mx-4">
+        <li ref="list1"
+          class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-[80px] desktopSmWidth:my-[120px] leading-[2]">
+          <img src="/img/TungstenType/TungstenType-list-1.jpg" alt=""
+            class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
+          <div class="mx-8">
             <h4 class="my-4">
               碳化鎢粉
             </h4>
@@ -34,15 +36,19 @@ useHead({
             <p class="my-4">
               Available in 0.2µm - 60µm tungsten carbide powder.
               <br />
-              The particle size, carbon content, additives, and physical properties can be customized according to customer requirements, ensuring the product meets diverse industrial applications.
+              The particle size, carbon content, additives, and physical properties can be customized according to
+              customer requirements, ensuring the product meets diverse industrial applications.
             </p>
           </div>
         </li>
-        <li ref="list2" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
-          <div class="relative mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] overflow-hidden desktopSmWidth:order-2">
-            <img src="/img/TungstenType/TungstenType-list-1.jpg" alt="" class="w-full object-cover transform scale-150 rotate-12" />
+        <li ref="list2"
+          class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-[80px] desktopSmWidth:my-[120px]">
+          <div
+            class="relative mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] overflow-hidden desktopSmWidth:order-2">
+            <img src="/img/TungstenType/TungstenType-list-1.jpg" alt=""
+              class="w-full object-cover transform scale-150 rotate-12" />
           </div>
-          <div class="mx-4 order-1 leading-[2]">
+          <div class="mx-8 order-1 leading-[2]">
             <h4 class="my-4">
               鎢粉
             </h4>
@@ -60,13 +66,16 @@ useHead({
             <p class="my-4">
               Available in 0.2um - 60um tungsten powder.
               <br />
-              The particle size, carbon content, additives, and physical properties can be customized to meet customer requirements.
+              The particle size, carbon content, additives, and physical properties can be customized to meet customer
+              requirements.
             </p>
           </div>
         </li>
-        <li ref="list3" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24 leading-[2]">
-          <img src="/img/TungstenType/TungstenType-list-3.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
-          <div class="mx-4">
+        <li ref="list3"
+          class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-[80px] desktopSmWidth:my-[120px] leading-[2]">
+          <img src="/img/TungstenType/TungstenType-list-3.jpg" alt=""
+            class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%]" />
+          <div class="mx-8">
             <h4 class="my-4">
               三氧化鎢粉
             </h4>
@@ -79,12 +88,16 @@ useHead({
               <p>顆粒粒度/Particle Size (FSSS)：12-23 µm</p>
               <p>三氧化鎢粉具有高純度與穩定的物理特性,可依照客戶需求調整顆粒大小與密度,廣泛應用於鋼製品及相關材料生產。</p>
             </div>
-            <p>Tungsten trioxide powder features high purity and stable physical properties. Particle size and density can be customized according to customer needs, making it suitable for a wide range of tungsten products and material applications.</p>
+            <p>Tungsten trioxide powder features high purity and stable physical properties. Particle size and density
+              can be customized according to customer needs, making it suitable for a wide range of tungsten products
+              and material applications.</p>
           </div>
         </li>
-        <li ref="list4" class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-24">
-          <img src="/img/TungstenType/TungstenType-list-4.jpg" alt="" class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] desktopSmWidth:order-2" />
-          <div class="mx-4 order-1 leading-[2]">
+        <li ref="list4"
+          class="animate_start_opacity flex items-center justify-center desktopSmWidth:justify-between flex-wrap desktopSmWidth:flex-nowrap my-12 tableSmWidth:my-[80px] desktopSmWidth:my-[120px]">
+          <img src="/img/TungstenType/TungstenType-list-4.jpg" alt=""
+            class="mb-4 desktopSmWidth:mb-0 w-[50%] desktopSmWidth:w-[25%] desktopSmWidth:order-2" />
+          <div class="mx-8 order-1 leading-[2]">
             <h4 class="my-4">
               藍色氧化鎢
             </h4>
@@ -99,7 +112,9 @@ useHead({
               <p>霍爾流動性/Hall Flowability: 25-40 s/50 g</p>
               <p>藍色氧化錫具有良好的穩定性與適應性,可依照客戶需求調整顆粒分布及其他特性,廣泛應用於鑰粉末冶金及相關製程。</p>
             </div>
-            <p>Blue tungsten oxide features excellent stability and adaptability. Particle distribution and other properties can be customized based on customer needs, making it widely applicable in tungsten powder metallurgy and related production processes.</p>
+            <p>Blue tungsten oxide features excellent stability and adaptability. Particle distribution and other
+              properties can be customized based on customer needs, making it widely applicable in tungsten powder
+              metallurgy and related production processes.</p>
           </div>
         </li>
       </ul>
@@ -110,11 +125,14 @@ useHead({
 <style lang="scss" scoped>
 .head {
   background-image:
-    linear-gradient(to top, rgba(6, 39, 55, .9) 15%, rgba(6, 39, 55, .1) 40%), /* 紅色漸層 */
+    /* 加強漸層遮罩：加深暗部範圍，並確保最底部完美銜接 #062737，消除硬邊 */
+    linear-gradient(to bottom, transparent 0%, rgba(6, 39, 55, 0.4) 50%, rgba(6, 39, 55, 0.9) 80%, #062737 98%, #062737 100%),
     url('/img/introduce/introduceHead.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
+
 .content {
   background: #062737;
 
