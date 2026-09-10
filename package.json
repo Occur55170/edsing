@@ -10,7 +10,7 @@
     "postinstall": "nuxt prepare",
     "lint": "eslint --ext .ts,.js,.vue .",
     "lint:fix": "eslint . --ext .js,.ts,.vue --fix",
-    "deploy": "npx gh-pages -d .output/public"
+    "deploy": "npx gh-pages -d .output/public --dotfiles"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
