@@ -1,6 +1,13 @@
 # Edsing 官方網站
 
-[edsing.com](https://edsing.com) 官方網站專案，使用 [Nuxt 3](https://nuxt.com) 開發，並部署至 GitHub Pages。
+[edsing.com](https://edsing.com) 官方網站專案。
+
+- 使用 **Nuxt 3 + Vue 3（TypeScript）** 開發的多語系企業形象網站
+- 內容涵蓋首頁、公司介紹、產品分類（鎢鋼硬/軟質、高速鋼、稀有金屬）與聯絡我們表單
+- 支援**繁體中文 / 英文**雙語切換（`@nuxtjs/i18n`），預設語系為繁體中文
+- 以 **Tailwind CSS + SCSS** 建立版面樣式，搭配 animate.css 呈現頁面滾動/浮現動畫效果
+- 使用 **zod + EmailJS** 處理聯絡表單的驗證與寄信
+- 透過 **gh-pages** 建置並部署至 GitHub Pages
 
 ## 技術棧
 
